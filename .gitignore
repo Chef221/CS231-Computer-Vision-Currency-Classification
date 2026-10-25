@@ -1,0 +1,4 @@
+# Temporary and generated notebook files
+*.tmp
+.ipynb_checkpoints/
+__pycache__/
