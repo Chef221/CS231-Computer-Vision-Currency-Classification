@@ -2,3 +2,4 @@
 *.tmp
 .ipynb_checkpoints/
 __pycache__/
+cs231-computer-vision/
