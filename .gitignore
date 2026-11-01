@@ -3,3 +3,9 @@
 .ipynb_checkpoints/
 __pycache__/
 cs231-computer-vision/
+
+# Large data is distributed through the dataset release.
+DATA/**/*.png
+DATA_RAW/
+DATA_CROP/
+DATA_BUILD_05_*/
