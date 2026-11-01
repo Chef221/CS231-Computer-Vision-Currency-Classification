@@ -27,7 +27,13 @@ cd CS231-Computer-Vision-Currency-Classification
 
 Nếu đã có bản clone, dùng `git pull` sau khi lưu hoặc commit công việc local cần giữ; không dùng lệnh reset hoặc clean để cập nhật.
 
-Mở GitHub Release `m0-dataset-2026-11-01`, tải đủ bốn tệp và giải nén tất cả vào thư mục gốc dự án. Mỗi tệp chứa đường dẫn bắt đầu bằng `DATA/`; hai tệp train chứa các phần ảnh khác nhau. Tệp dev có thêm `DATA/metadata/dataset.csv`.
+Tải bốn ZIP từ [GitHub Release m0-dataset-2026-11-01](https://github.com/Chef221/CS231-Computer-Vision-Currency-Classification/releases/tag/m0-dataset-2026-11-01). Mỗi ZIP chứa đường dẫn bắt đầu bằng `DATA/`; hai tệp train chứa các phần ảnh khác nhau. Tệp dev có thêm `DATA/metadata/dataset.csv`. `manifest.json` ghi kích thước, SHA-256 và nguồn của bộ dữ liệu.
+
+- [data-train-1-of-2.zip](https://github.com/Chef221/CS231-Computer-Vision-Currency-Classification/releases/download/m0-dataset-2026-11-01/data-train-1-of-2.zip)
+- [data-train-2-of-2.zip](https://github.com/Chef221/CS231-Computer-Vision-Currency-Classification/releases/download/m0-dataset-2026-11-01/data-train-2-of-2.zip)
+- [data-dev.zip](https://github.com/Chef221/CS231-Computer-Vision-Currency-Classification/releases/download/m0-dataset-2026-11-01/data-dev.zip)
+- [data-test.zip](https://github.com/Chef221/CS231-Computer-Vision-Currency-Classification/releases/download/m0-dataset-2026-11-01/data-test.zip)
+- [manifest.json](https://github.com/Chef221/CS231-Computer-Vision-Currency-Classification/releases/download/m0-dataset-2026-11-01/manifest.json)
 
 ```powershell
 Expand-Archive .\data-train-1-of-2.zip -DestinationPath . -Force
