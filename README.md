@@ -1,4 +1,4 @@
-# Phân loại mệnh giá tiền giấy Việt Nam
+# Phân loại mệnh giá tiền polymer Việt Nam
 
 ## Bộ dữ liệu
 
