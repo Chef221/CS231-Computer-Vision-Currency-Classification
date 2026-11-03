@@ -1,0 +1,57 @@
+{
+  "schema_version": "ai-research-writing/citation-requests-v1",
+  "entries": [
+    {
+      "key": "hasanuzzaman_2012_banknote",
+      "identifier": "doi:10.1109/TSMCC.2011.2178120",
+      "claim_support": [
+        {
+          "claim": "Nghiên cứu học ngưỡng đối sánh từ tập huấn luyện, kiểm tra ảnh có tiền và ảnh nền, và thử nghiệm với người khiếm thị.",
+          "relation": "direct",
+          "status": "verified",
+          "evidence": "Sections III-C, V and VI describe automatic thresholds, positive/negative images and blind-user testing; no VND-gap metric is established.",
+          "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3363999/"
+        }
+      ]
+    },
+    {
+      "key": "pham_2016_discriminative_regions",
+      "identifier": "doi:10.3390/s16030328",
+      "claim_support": [
+        {
+          "claim": "Nghiên cứu dùng khoảng cách tới lớp gần nhất và chênh lệch với lớp gần thứ hai để xét kết quả; báo cáo riêng error rate và rejection rate.",
+          "relation": "direct",
+          "status": "verified",
+          "evidence": "Section 2.4.2, Table 4 and Figures 10-11. The method uses PCA and class centroids for line-sensor images, not CS231 KNN vote share.",
+          "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4813903/"
+        }
+      ]
+    },
+    {
+      "key": "oviedo_2022_banknote_net",
+      "identifier": "arxiv:2204.03738",
+      "claim_support": [
+        {
+          "claim": "BankNote-Net báo cáo Accuracy, Precision, Recall; một biến thể triển khai cho Seeing AI tối ưu Precision với confidence từ 0,99 trở lên.",
+          "relation": "direct",
+          "status": "verified",
+          "evidence": "Sections 3.2 and 4, Figure 3; this is not a guarantee of 99% correctness for another dataset or model.",
+          "source": "https://arxiv.org/html/2204.03738"
+        }
+      ]
+    },
+    {
+      "key": "geifman_2017_selective",
+      "identifier": "arxiv:1705.08500",
+      "claim_support": [
+        {
+          "claim": "Selective classification nghiên cứu sự đánh đổi giữa lỗi trên phần được trả lời và coverage khi từ chối một số đầu vào.",
+          "relation": "background",
+          "status": "verified",
+          "evidence": "Abstract and selective-classification framework. A CS231 threshold sweep does not inherit the paper's finite-sample risk guarantee.",
+          "source": "https://proceedings.neurips.cc/paper/2017/hash/4a8423d5e91fda00bb7e46540e2b0cf1-Abstract.html"
+        }
+      ]
+    }
+  ]
+}

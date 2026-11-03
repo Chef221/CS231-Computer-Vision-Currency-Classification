@@ -74,13 +74,26 @@ Bộ cuối là kết quả xử lý và kết hợp các nguồn trên: chỉ g
 
 ## Chuẩn đánh giá
 
-Metric chính và cách dùng thống nhất cho KNN, SVM, CNN và ResNet được chốt tại [docs/METRICS_STANDARD.md](docs/METRICS_STANDARD.md); triển khai dùng chung ở [src/evaluation/value_metrics.py](src/evaluation/value_metrics.py). Truyền hai vector nhãn thật/dự đoán là giá trị VND thực tế, không phải chỉ số lớp:
+KNN, SVM, CNN và ResNet dùng **Macro-F1 làm tiêu chí chính trên dev**; nếu bằng nhau thì ưu tiên **MAE theo VND thấp hơn**. Kết quả cuối báo cáo Accuracy, Macro-F1, MAE, Precision/Recall/F1 từng lớp, ma trận nhầm lẫn và bảng các cặp lỗi.
+
+Hướng dẫn import, mapping và lưu kết quả nằm tại [docs/METRICS_STANDARD.md](docs/METRICS_STANDARD.md). Công thức và ví dụ được giải thích trong [M2.2](docs/M2.2%20-%20Mô%20tả%20độ%20đo%20đánh%20giá.md). Truyền nhãn thật/dự đoán là giá trị VND thực tế, không phải chỉ số lớp:
 
 ```python
 from src.evaluation.value_metrics import evaluate_classification
 
 metrics = evaluate_classification(y_true_vnd, y_pred_vnd)
-print(metrics["macro_value_f1"], metrics["confusion_matrix"])
+print("Macro-F1:", metrics["macro_f1"])
+print("Accuracy:", metrics["accuracy"])
+print("MAE (VND/ảnh):", metrics["mae_vnd"])
+print(metrics["confusion_matrix"])
 ```
 
+Giữ nguyên import cũ nhưng đổi chỗ đọc `macro_value_f1` sang `macro_f1`; các trường value metric cũ đã bỏ. Cách chuyển được ghi trong hướng dẫn dùng chung. Hàm đánh giá vẫn là một hàm tại [src/evaluation/value_metrics.py](src/evaluation/value_metrics.py).
+
 Chạy kiểm tra bằng `python -m unittest discover -s tests -p test_value_metrics.py -v`.
+
+## Đề cương thực nghiệm
+
+[docs/EXPERIMENT_PLAN.md](docs/EXPERIMENT_PLAN.md) quy định ba phần: so sánh bốn mô hình, phân tích lỗi mệnh giá và thí nghiệm từ chối dự đoán ở bước mở rộng. Các nguồn và phần nhóm kế thừa được ghi trong [docs/REFERENCES.md](docs/REFERENCES.md).
+
+So sánh chính luôn dùng toàn bộ test sau khi khóa cấu hình. Cơ chế từ chối hiện mới là đề cương, chưa được triển khai; kết quả trên phần được trả lời sau này phải báo cáo riêng cùng coverage.

@@ -1,0 +1,107 @@
+{
+  "schema_version": "ai-research-writing/citation-lock-v1",
+  "request_sha256": "59b9bf027f18815bcd585e961f699759a522a7e22af068bd297ba3c4509b653e",
+  "records": [
+    {
+      "key": "hasanuzzaman_2012_banknote",
+      "identifier": "doi:10.1109/TSMCC.2011.2178120",
+      "status": "verified",
+      "provider": "crossref",
+      "request_url": "https://api.crossref.org/works/10.1109%2FTSMCC.2011.2178120",
+      "checked_at": "2026-11-03T16:03:31.458315+00:00",
+      "metadata": {
+        "title": "Robust and Effective Component-Based Banknote Recognition for the Blind",
+        "authors": [
+          "Faiz M. Hasanuzzaman",
+          "Xiaodong Yang",
+          "YingLi Tian"
+        ],
+        "year": 2012,
+        "doi": "10.1109/tsmcc.2011.2178120",
+        "type": "journal-article"
+      },
+      "metadata_sha256": "3f8f6833262efb71583875d446730f662d854ed10e211a8a18ed367b40d894df",
+      "claim_support_sha256": "22a557b8a129484a7579448cb5c6bd7d907e014ba4a57e0fb9726a4d0b938948",
+      "cross_check": null,
+      "cross_check_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "error": ""
+    },
+    {
+      "key": "pham_2016_discriminative_regions",
+      "identifier": "doi:10.3390/s16030328",
+      "status": "verified",
+      "provider": "crossref",
+      "request_url": "https://api.crossref.org/works/10.3390%2Fs16030328",
+      "checked_at": "2026-11-03T16:03:32.350006+00:00",
+      "metadata": {
+        "title": "Efficient Banknote Recognition Based on Selection of Discriminative Regions with One-Dimensional Visible-Light Line Sensor",
+        "authors": [
+          "Tuyen Pham",
+          "Young Park",
+          "Seung Kwon",
+          "Kang Park",
+          "Dae Jeong",
+          "Sungsoo Yoon"
+        ],
+        "year": 2016,
+        "doi": "10.3390/s16030328",
+        "type": "journal-article"
+      },
+      "metadata_sha256": "df64bdc1bc255c1af540786d5578e13db3ba34d418e3b77572953c50d34cad5a",
+      "claim_support_sha256": "4784c5c7e0359214072c87013f9d037073067dd8122dac7e179f10c7c3a3b7d5",
+      "cross_check": null,
+      "cross_check_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "error": ""
+    },
+    {
+      "key": "oviedo_2022_banknote_net",
+      "identifier": "arxiv:2204.03738",
+      "status": "verified",
+      "provider": "arxiv",
+      "request_url": "https://export.arxiv.org/api/query?id_list=2204.03738",
+      "checked_at": "2026-11-03T16:03:33.119025+00:00",
+      "metadata": {
+        "title": "BankNote-Net: Open dataset for assistive universal currency recognition",
+        "authors": [
+          "Felipe Oviedo",
+          "Srinivas Vinnakota",
+          "Eugene Seleznev",
+          "Hemant Malhotra",
+          "Saqib Shaikh",
+          "Juan Lavista Ferres"
+        ],
+        "year": 2022,
+        "arxiv_id": "2204.03738",
+        "type": "preprint"
+      },
+      "metadata_sha256": "96b87f29008e0286d858c0e1f121df5da3eae58f9383ad1eec3fdc6916b1c74a",
+      "claim_support_sha256": "269f281b0ee45425fedcc9f46af52b4e8c30fe444959ee01afcf7467376700cb",
+      "cross_check": null,
+      "cross_check_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "error": ""
+    },
+    {
+      "key": "geifman_2017_selective",
+      "identifier": "arxiv:1705.08500",
+      "status": "verified",
+      "provider": "arxiv",
+      "request_url": "https://export.arxiv.org/api/query?id_list=1705.08500",
+      "checked_at": "2026-11-03T16:03:33.799054+00:00",
+      "metadata": {
+        "title": "Selective Classification for Deep Neural Networks",
+        "authors": [
+          "Yonatan Geifman",
+          "Ran El-Yaniv"
+        ],
+        "year": 2017,
+        "arxiv_id": "1705.08500",
+        "type": "preprint"
+      },
+      "metadata_sha256": "f10fbbb0f3692063410de7ec32995ed26e034a81e58cae3f3f6e43106233d216",
+      "claim_support_sha256": "6719a93361fd07694f9191345eacc6c0af2b4ad8b655b358130d7cb76bdd5604",
+      "cross_check": null,
+      "cross_check_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "error": ""
+    }
+  ]
+}
