@@ -71,3 +71,16 @@ Bốn bộ nguồn ghi giấy phép CC BY 4.0 trong tệp `README.dataset.txt`/`
 - [Vietnamese Currency v6](https://universe.roboflow.com/first-qkz37/vietnamese-currency-lgi9i/dataset/6)
 
 Bộ cuối là kết quả xử lý và kết hợp các nguồn trên: chỉ giữ sáu mệnh giá mục tiêu, crop theo nhãn, loại trùng pixel hoàn toàn trong cùng lớp, rồi chia lại theo nhóm. Việc ghi nguồn không hàm ý các tác giả nguồn bảo trợ dự án này.
+
+## Chuẩn đánh giá
+
+Metric chính và cách dùng thống nhất cho KNN, SVM, CNN và ResNet được chốt tại [docs/METRICS_STANDARD.md](docs/METRICS_STANDARD.md); triển khai dùng chung ở [src/evaluation/value_metrics.py](src/evaluation/value_metrics.py). Truyền hai vector nhãn thật/dự đoán là giá trị VND thực tế, không phải chỉ số lớp:
+
+```python
+from src.evaluation.value_metrics import evaluate_classification
+
+metrics = evaluate_classification(y_true_vnd, y_pred_vnd)
+print(metrics["macro_value_f1"], metrics["confusion_matrix"])
+```
+
+Chạy kiểm tra bằng `python -m unittest discover -s tests -p test_value_metrics.py -v`.
