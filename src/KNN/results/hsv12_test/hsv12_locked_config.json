@@ -1,0 +1,21 @@
+{
+  "feature": "Histogram HSV 12x12x12",
+  "feature_dim": 1728,
+  "normalization": "L2",
+  "k": 1,
+  "weights": "uniform",
+  "metric": "braycurtis",
+  "algorithm": "brute",
+  "fit_split": "train",
+  "evaluation_split": "test",
+  "selection_split": "dev",
+  "selection_evidence": "src/KNN/results/hsv12_best_dev.csv",
+  "class_order_vnd": [
+    10000,
+    20000,
+    50000,
+    100000,
+    200000,
+    500000
+  ]
+}

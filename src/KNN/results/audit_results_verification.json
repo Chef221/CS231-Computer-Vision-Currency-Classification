@@ -12,7 +12,8 @@
     "05_FEATURE_HOG.ipynb",
     "06_FEATURE_HOG_CELL8.ipynb",
     "08_FEATURE_HSV_HISTOGRAM_12BINS.ipynb",
-    "09_FEATURE_HSV_HISTOGRAM_16BINS.ipynb"
+    "09_FEATURE_HSV_HISTOGRAM_16BINS.ipynb",
+    "10_EVALUATE_HSV12_TEST.ipynb"
   ],
   "scope": "Arithmetic consistency of stored results only; no retraining or prediction rerun; no DATA/split modifications.",
   "audit_environment": {
@@ -68,6 +69,7 @@
     "05_FEATURE_HOG.ipynb": "0521dd788ecfb7f54502a948d985531e97f396a4eac97e92b933d0d8ae0788d7",
     "06_FEATURE_HOG_CELL8.ipynb": "936d072f88a3fa655e7b0ea6b6a00dbe539cabaa97756edbe7746c2c499858b2",
     "08_FEATURE_HSV_HISTOGRAM_12BINS.ipynb": "f7cb9c08a9b9a766a7cb9a59c79f22707a6d03b7b56732d0b92c077f158cb9cd",
-    "09_FEATURE_HSV_HISTOGRAM_16BINS.ipynb": "45ea070c2d760631d20a7d71a7d3653f165a275552350bbffbb333933ebe2873"
+    "09_FEATURE_HSV_HISTOGRAM_16BINS.ipynb": "45ea070c2d760631d20a7d71a7d3653f165a275552350bbffbb333933ebe2873",
+    "10_EVALUATE_HSV12_TEST.ipynb": "0038293c468dbcfe961fb5289532d370f18f9860c80f210182c07cfc7960568f"
   }
 }

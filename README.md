@@ -100,4 +100,4 @@ So sánh chính luôn dùng toàn bộ test sau khi khóa cấu hình. Cơ chế
 
 ## Thực nghiệm KNN trên dev
 
-Notebook và kết quả KNN nằm tại [src/KNN](src/KNN/README.md). [Báo cáo thực nghiệm](src/KNN/EXPERIMENTS.md) ghi rõ bảy biểu diễn/cấu hình feature, 840 dòng tìm kiếm tham số, kết quả từng lớp, confusion matrix và phân tích sai lệch mệnh giá. Đây là kết quả dev; chưa đánh giá test. Hướng dẫn cài đặt, giới hạn RAM và kiểm tra CSV nằm trong README của KNN.
+Notebook và kết quả KNN nằm tại [src/KNN](src/KNN/README.md). [Báo cáo thực nghiệm](src/KNN/EXPERIMENTS.md) ghi rõ bảy biểu diễn/cấu hình feature, 840 dòng tìm kiếm tham số, kết quả từng lớp, confusion matrix và phân tích sai lệch mệnh giá. Báo cáo khảo sát ghi kết quả dev; [kết quả test HSV12 đã khóa](src/KNN/TEST_RESULTS.md) đạt Accuracy 87,19%, Macro-F1 0,874772 và MAE 31.461,69 VND/ảnh trên 1.553 ảnh, có lưu dự đoán theo tên ảnh. Hướng dẫn cài đặt, giới hạn RAM và kiểm tra CSV nằm trong README của KNN.

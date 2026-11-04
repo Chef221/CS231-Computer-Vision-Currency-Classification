@@ -92,7 +92,7 @@ all_results[all_results.feature.isin(['HSV8', 'HSV12', 'HSV16'])].to_csv(RESULTS
 
 parts = ['''# Nhật ký và phân tích thực nghiệm KNN
 
-Ngày tổng hợp: 04/11/2026. Tài liệu này ghi nhận kết quả **trên dev**, không phải kết quả cuối trên test. Các bảng được tạo từ CSV đã lưu bằng `audit_results.py`; không chạy lại training hay dự đoán khi tổng hợp.
+Ngày tổng hợp: 04/11/2026. Tài liệu này ghi nhận giai đoạn khảo sát **trên dev**. Kết quả test đã được bổ sung riêng tại [TEST_RESULTS.md](TEST_RESULTS.md); các câu mô tả “chưa đánh giá test” bên dưới chỉ trạng thái tại thời điểm khảo sát dev. Các bảng được tạo từ CSV đã lưu bằng `audit_results.py`; không chạy lại training hay dự đoán khi tổng hợp.
 
 ## 1. Câu hỏi và phạm vi
 
@@ -204,9 +204,9 @@ Lần đầu HOG hết RAM ở bước giữ toàn bộ ảnh gốc. Notebook 05
 
 ## 7. Kiểm tra bằng chứng và khả năng chạy lại
 
-`audit_results.py` kiểm tra 120 cấu hình duy nhất cho từng bảng, thứ tự chọn theo lưới, support dev, rồi dựng cặp nhãn từ confusion matrix và tính lại bằng hàm đánh giá chung. Các độ đo phải khớp dòng thắng trong grid, summary và bảng từng lớp (nếu đã có). CSV cặp lỗi theo hướng được tạo lại trực tiếp từ ma trận; `total_gap_vnd=count×gap_vnd`. Đây là kiểm tra tính nhất quán số học của file đã lưu, **không chứng minh từng dự đoán đã được tái tạo từ model**. Chưa lưu vector dự đoán gắn với tên ảnh hay model đã fit; không suy ra lỗi cụ thể của một ảnh từ bảng tổng hợp.
+`audit_results.py` kiểm tra 120 cấu hình duy nhất cho từng bảng, thứ tự chọn theo lưới, support dev, rồi dựng cặp nhãn từ confusion matrix và tính lại bằng hàm đánh giá chung. Các độ đo phải khớp dòng thắng trong grid, summary và bảng từng lớp (nếu đã có). CSV cặp lỗi theo hướng được tạo lại trực tiếp từ ma trận; `total_gap_vnd=count×gap_vnd`. Đây là kiểm tra tính nhất quán số học của file đã lưu, **không chứng minh từng dự đoán đã được tái tạo từ model**. Trong giai đoạn dev chưa lưu vector dự đoán gắn với tên ảnh hay model đã fit; không suy ra lỗi cụ thể của một ảnh từ bảng tổng hợp.
 
-Các cell code của tám notebook được kiểm tra cú pháp. Khi chuẩn bị chia sẻ, notebook RGB được sửa tối thiểu: thêm dấu đóng ngoặc trong cell lưu CSV và ghép `df_cosine` vào `df_results` trước khi chọn cấu hình, loại cấu hình lặp. Hai cell này đã xóa output cũ; không chạy lại thí nghiệm và không thay CSV kết quả gốc. CSV RGB hiện có đủ 120 cấu hình và kiểm tra nhất quán với confusion matrix. Các output khác trong notebook là lịch sử chạy trước sửa; nên dùng CSV đã kiểm tra làm evidence chính. Notebook RGB còn hard-code cấu hình thắng đã biết cho confusion matrix; nếu đổi grid thì phải cập nhật hoặc lấy trực tiếp dòng thắng.
+Các cell code của các notebook hiện có được kiểm tra cú pháp; giai đoạn dev gồm tám notebook, notebook test được bổ sung sau. Khi chuẩn bị chia sẻ, notebook RGB được sửa tối thiểu: thêm dấu đóng ngoặc trong cell lưu CSV và ghép `df_cosine` vào `df_results` trước khi chọn cấu hình, loại cấu hình lặp. Hai cell này đã xóa output cũ; không chạy lại thí nghiệm và không thay CSV kết quả gốc. CSV RGB hiện có đủ 120 cấu hình và kiểm tra nhất quán với confusion matrix. Các output khác trong notebook là lịch sử chạy trước sửa; nên dùng CSV đã kiểm tra làm evidence chính. Notebook RGB còn hard-code cấu hình thắng đã biết cho confusion matrix; nếu đổi grid thì phải cập nhật hoặc lấy trực tiếp dòng thắng.
 
 Dữ liệu train/dev đã chốt được dùng một lần chia. Không có thí nghiệm nhiều split/seed, khoảng tin cậy, đánh giá theo nguồn/điều kiện chụp, hoặc kiểm tra ngoài miền trong đợt KNN này. Không có log đủ để gán chính xác phiên bản thư viện tại thời điểm từng notebook được chạy. `audit_results_verification.json` ghi phiên bản môi trường **lúc kiểm tra**, không coi đó là môi trường đã chứng thực cho mọi lượt chạy trước.
 
@@ -257,4 +257,4 @@ verification = {
     'sha256':{str(p.relative_to(HERE)).replace('\\','/'):hashlib.sha256(p.read_bytes()).hexdigest() for p in files},
 }
 (RESULTS/'audit_results_verification.json').write_text(json.dumps(verification,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
-print('PASS: 7 result sets, 840 grid rows, 8 notebook syntax checks; report and evidence saved.')
+print('PASS: 7 result sets, 840 grid rows, all notebook syntax checks; dev report and evidence saved.')
