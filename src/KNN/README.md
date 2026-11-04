@@ -15,6 +15,7 @@ Báo cáo chi tiết: [EXPERIMENTS.md](EXPERIMENTS.md). Bảng tổng hợp: [kn
 | `08_FEATURE_HSV_HISTOGRAM_12BINS.ipynb` | HSV 12×12×12, 1.728 chiều |
 | `09_FEATURE_HSV_HISTOGRAM_16BINS.ipynb` | HSV 16×16×16, 4.096 chiều |
 | `10_EVALUATE_HSV12_TEST.ipynb` | Fit cấu hình HSV12 đã khóa trên train, đánh giá toàn test |
+| `11_ANALYZE_KNN_NEIGHBORS.ipynb` | Truy vết ba lỗi test, xem năm hàng xóm; quyết định chính thức vẫn k=1 |
 
 Giữ số notebook theo lịch sử thực nghiệm; không có notebook 07 trong gói hiện tại. Bảy notebook khảo sát feature có lưới 120 cấu hình KNN mỗi notebook; notebook 10 không tìm tham số; chọn bằng Macro-F1 dev, phá hòa bằng MAE_VND rồi thứ tự thử. Không lấy số cấu hình làm số lần lặp độc lập.
 
@@ -54,3 +55,9 @@ py -3 src/KNN/audit_test_results.py
 ```
 
 Lệnh này tạo lại TEST_RESULTS.md và các bảng đối chiếu từ dự đoán đã lưu, xác minh summary/JSON/confusion matrix/bảng lỗi. Notebook 10 lưu riêng cấu hình khóa, dự đoán từng ảnh, chỉ số và hình lỗi trong `results/hsv12_test/`.
+
+## Phần báo cáo học phần và phân tích hàng xóm
+
+[Báo cáo KNN](../../docs/KNN_REPORT/BAO_CAO_THUC_NGHIEM_KNN.md) trình bày năm cấu hình được chọn đưa vào báo cáo, kết quả test và phân tích lỗi, kèm ba hình minh họa. Các thí nghiệm còn lại vẫn được giữ trong hồ sơ đầy đủ.
+
+Notebook 11 xuất bảng và hình vào [results/neighbor_analysis](results/neighbor_analysis). Cả ba dự đoán truy vết khớp kết quả test đã lưu. Năm hàng xóm chỉ để phân tích, không chọn lại k theo test. Script [build_figures.py](../../docs/KNN_REPORT/build_figures.py) dựng hình báo cáo và kiểm tra lại khoảng cách của 15 cặp ảnh, cần DATA trên máy; không fit hoặc thay đổi mô hình.

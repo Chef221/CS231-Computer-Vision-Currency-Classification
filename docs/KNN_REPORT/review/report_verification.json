@@ -1,0 +1,207 @@
+{
+  "status": "PASS",
+  "report_sha256": "41d8a9846e3a8b86a0d592259af5830d54017b8ff8e85c0ec0e4d01c29d4b3c7",
+  "numeric_checks": [
+    {
+      "source": "review/selected_dev_results.csv",
+      "feature": "RGB histogram",
+      "column": "accuracy",
+      "display": "67,20"
+    },
+    {
+      "source": "review/selected_dev_results.csv",
+      "feature": "RGB histogram",
+      "column": "macro_f1",
+      "display": "0,673358"
+    },
+    {
+      "source": "review/selected_dev_results.csv",
+      "feature": "RGB histogram",
+      "column": "mae_vnd",
+      "display": "71.815,86"
+    },
+    {
+      "source": "review/selected_dev_results.csv",
+      "feature": "HSV8",
+      "column": "accuracy",
+      "display": "86,32"
+    },
+    {
+      "source": "review/selected_dev_results.csv",
+      "feature": "HSV8",
+      "column": "macro_f1",
+      "display": "0,866711"
+    },
+    {
+      "source": "review/selected_dev_results.csv",
+      "feature": "HSV8",
+      "column": "mae_vnd",
+      "display": "31.496,16"
+    },
+    {
+      "source": "review/selected_dev_results.csv",
+      "feature": "HSV12",
+      "column": "accuracy",
+      "display": "89,39"
+    },
+    {
+      "source": "review/selected_dev_results.csv",
+      "feature": "HSV12",
+      "column": "macro_f1",
+      "display": "0,898057"
+    },
+    {
+      "source": "review/selected_dev_results.csv",
+      "feature": "HSV12",
+      "column": "mae_vnd",
+      "display": "23.554,99"
+    },
+    {
+      "source": "review/selected_dev_results.csv",
+      "feature": "Color Moments",
+      "column": "accuracy",
+      "display": "60,10"
+    },
+    {
+      "source": "review/selected_dev_results.csv",
+      "feature": "Color Moments",
+      "column": "macro_f1",
+      "display": "0,603584"
+    },
+    {
+      "source": "review/selected_dev_results.csv",
+      "feature": "Color Moments",
+      "column": "mae_vnd",
+      "display": "93.331,20"
+    },
+    {
+      "source": "review/selected_dev_results.csv",
+      "feature": "HOG cell16",
+      "column": "accuracy",
+      "display": "47,38"
+    },
+    {
+      "source": "review/selected_dev_results.csv",
+      "feature": "HOG cell16",
+      "column": "macro_f1",
+      "display": "0,467904"
+    },
+    {
+      "source": "review/selected_dev_results.csv",
+      "feature": "HOG cell16",
+      "column": "mae_vnd",
+      "display": "99.578,01"
+    },
+    {
+      "source": "src/KNN/results/hsv12_test/hsv12_per_class_test.csv",
+      "class": 10000,
+      "column": "precision",
+      "display": "0,8652"
+    },
+    {
+      "source": "src/KNN/results/hsv12_test/hsv12_per_class_test.csv",
+      "class": 10000,
+      "column": "recall",
+      "display": "0,8683"
+    },
+    {
+      "source": "src/KNN/results/hsv12_test/hsv12_per_class_test.csv",
+      "class": 10000,
+      "column": "f1",
+      "display": "0,8668"
+    },
+    {
+      "source": "src/KNN/results/hsv12_test/hsv12_per_class_test.csv",
+      "class": 20000,
+      "column": "precision",
+      "display": "0,8553"
+    },
+    {
+      "source": "src/KNN/results/hsv12_test/hsv12_per_class_test.csv",
+      "class": 20000,
+      "column": "recall",
+      "display": "0,8973"
+    },
+    {
+      "source": "src/KNN/results/hsv12_test/hsv12_per_class_test.csv",
+      "class": 20000,
+      "column": "f1",
+      "display": "0,8758"
+    },
+    {
+      "source": "src/KNN/results/hsv12_test/hsv12_per_class_test.csv",
+      "class": 50000,
+      "column": "precision",
+      "display": "0,9387"
+    },
+    {
+      "source": "src/KNN/results/hsv12_test/hsv12_per_class_test.csv",
+      "class": 50000,
+      "column": "recall",
+      "display": "0,8924"
+    },
+    {
+      "source": "src/KNN/results/hsv12_test/hsv12_per_class_test.csv",
+      "class": 50000,
+      "column": "f1",
+      "display": "0,9149"
+    },
+    {
+      "source": "src/KNN/results/hsv12_test/hsv12_per_class_test.csv",
+      "class": 100000,
+      "column": "precision",
+      "display": "0,9129"
+    },
+    {
+      "source": "src/KNN/results/hsv12_test/hsv12_per_class_test.csv",
+      "class": 100000,
+      "column": "recall",
+      "display": "0,8907"
+    },
+    {
+      "source": "src/KNN/results/hsv12_test/hsv12_per_class_test.csv",
+      "class": 100000,
+      "column": "f1",
+      "display": "0,9016"
+    },
+    {
+      "source": "src/KNN/results/hsv12_test/hsv12_per_class_test.csv",
+      "class": 200000,
+      "column": "precision",
+      "display": "0,8344"
+    },
+    {
+      "source": "src/KNN/results/hsv12_test/hsv12_per_class_test.csv",
+      "class": 200000,
+      "column": "recall",
+      "display": "0,8423"
+    },
+    {
+      "source": "src/KNN/results/hsv12_test/hsv12_per_class_test.csv",
+      "class": 200000,
+      "column": "f1",
+      "display": "0,8383"
+    },
+    {
+      "source": "src/KNN/results/hsv12_test/hsv12_per_class_test.csv",
+      "class": 500000,
+      "column": "precision",
+      "display": "0,8479"
+    },
+    {
+      "source": "src/KNN/results/hsv12_test/hsv12_per_class_test.csv",
+      "class": 500000,
+      "column": "recall",
+      "display": "0,8544"
+    },
+    {
+      "source": "src/KNN/results/hsv12_test/hsv12_per_class_test.csv",
+      "class": 500000,
+      "column": "f1",
+      "display": "0,8511"
+    },
+    {
+      "other_checks": "3 evidence figures; 5 selected feature rows; 6 test-class rows; figure files readable at 300 DPI; local image links valid; no excluded experiment rows"
+    }
+  ]
+}
