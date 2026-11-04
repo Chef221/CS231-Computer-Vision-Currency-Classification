@@ -1,0 +1,2 @@
+feature,feature_dim,k,weights,metric,macro_f1,mae_vnd,accuracy
+"HOG gray 128x128, cell8, block2, orientations9",8100,1,uniform,correlation,0.4646617923799774,100754.4757033248,0.46994884910485935

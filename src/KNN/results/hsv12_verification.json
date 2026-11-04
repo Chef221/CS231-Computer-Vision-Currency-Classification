@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "grid_configurations": 120,
+  "dev_images": 1564,
+  "correct_images": 1398,
+  "verified_against": "Reconstructed labels from saved confusion matrix; official evaluate_classification; grid first row and summary CSV",
+  "accuracy": 0.8938618925831202,
+  "macro_f1": 0.898057292781346,
+  "mae_vnd": 23554.987212276214
+}

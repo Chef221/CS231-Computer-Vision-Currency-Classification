@@ -97,3 +97,7 @@ Chạy kiểm tra bằng `python -m unittest discover -s tests -p test_value_met
 [docs/EXPERIMENT_PLAN.md](docs/EXPERIMENT_PLAN.md) quy định ba phần: so sánh bốn mô hình, phân tích lỗi mệnh giá và thí nghiệm từ chối dự đoán ở bước mở rộng. Các nguồn và phần nhóm kế thừa được ghi trong [docs/REFERENCES.md](docs/REFERENCES.md).
 
 So sánh chính luôn dùng toàn bộ test sau khi khóa cấu hình. Cơ chế từ chối hiện mới là đề cương, chưa được triển khai; kết quả trên phần được trả lời sau này phải báo cáo riêng cùng coverage.
+
+## Thực nghiệm KNN trên dev
+
+Notebook và kết quả KNN nằm tại [src/KNN](src/KNN/README.md). [Báo cáo thực nghiệm](src/KNN/EXPERIMENTS.md) ghi rõ bảy biểu diễn/cấu hình feature, 840 dòng tìm kiếm tham số, kết quả từng lớp, confusion matrix và phân tích sai lệch mệnh giá. Đây là kết quả dev; chưa đánh giá test. Hướng dẫn cài đặt, giới hạn RAM và kiểm tra CSV nằm trong README của KNN.

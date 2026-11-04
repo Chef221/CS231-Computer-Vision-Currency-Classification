@@ -1,0 +1,2 @@
+feature,feature_dim,k,weights,metric,macro_f1,mae_vnd,accuracy
+Color Moments RGB (mean + std + skewness),9,8,distance,cosine,0.6035839754689359,93331.2020460358,0.6010230179028133
