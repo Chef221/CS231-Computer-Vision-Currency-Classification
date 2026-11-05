@@ -1,0 +1,11 @@
+# SVM — notebook RGB224 trên Kaggle
+
+Chạy notebook theo thứ tự ghi trong [README SVM](../README.md). Gắn Dataset code có `src/SVM/pipeline.py` và Dataset ảnh chứa `DATA/{train,dev,test}/{mệnh_giá}/*.png` vào **mỗi** notebook trên Kaggle. Ô đầu notebook tự tìm hai Dataset, kể cả đường dẫn `/kaggle/input/datasets/<tài_khoản>/<tên_dataset>`; không cần chèn ô đặt đường dẫn thủ công. Nếu gắn nhiều bản code hoặc DATA, đặt `CS231_PROJECT_ROOT` hoặc `CS231_DATA_ROOT` để chọn đúng bản. Nếu môi trường Kaggle thiếu thư viện, cài từ `src/SVM/requirements.txt` bằng đường dẫn tuyệt đối của Dataset code mà ô đầu notebook đã in ra; đường dẫn tương đối `src/SVM/requirements.txt` chỉ đúng khi đang ở thư mục gốc repository.
+
+Trên Kaggle, đầu ra mặc định nằm tại `/kaggle/working/CS231_SVM/results_224`. Có thể đổi bằng `CS231_SVM_RESULTS_ROOT`; trên máy local, mặc định là `src/SVM/results_224`. Sau khi notebook 01 chạy thành công, dùng **Save Version → Save & Run All**, rồi gắn Output của đúng version đó vào notebook 02 qua **Add Input → Notebooks**. Làm tương tự theo chuỗi `01 → 02 → 03 → 04 → 05A → 05B → 06 → 07 → 08`. Notebook 02–08 đã có ô tự chép toàn bộ `results_224` của **một** Notebook Output được gắn vào thư mục kết quả trước khi chạy các ô xử lý; không cần chèn ô chép thủ công. Nếu thiếu Output hoặc file kết quả của bước ngay trước, notebook sẽ báo lỗi. Gắn lại phiên bản notebook trước đã chạy thành công và có đủ các file đầu ra.
+
+HOG 6.084 chiều trên 12.494 ảnh và PCA `svd_solver='full'` có thể tốn nhiều RAM và thời gian CPU. Hai biến thể ghép cũng tạo ma trận lớn; kiểm tra dung lượng phiên Kaggle trước khi chạy liên tiếp các bước này.
+
+Các file NPY/PKL và manifest phải đi cùng nhau. Notebook 06 ghi SHA-256 cho các bảng grid, feature đã chọn và mã xử lý. Notebook 07 kiểm tra chúng trước khi chấm test. Nếu dữ liệu, thư viện hoặc cache thay đổi, kiểm tra và chạy lại các bước liên quan rồi tạo khóa mới trong một lần thực nghiệm mới; không sửa hash để vượt qua kiểm tra.
+
+Notebook 01–05 chỉ đọc train/dev. Notebook 06 chỉ tổng hợp dev. Notebook 07 đọc test một lần với pipeline đã khóa. Notebook 08 phân tích kết quả đã lưu; không chỉnh mô hình theo lỗi test. Các ô Markdown giải thích phương pháp, công thức và cách đọc đầu ra cho độc giả chung; các nhận xét phụ thuộc kết quả thực chạy chỉ được viết sau khi có số liệu.
