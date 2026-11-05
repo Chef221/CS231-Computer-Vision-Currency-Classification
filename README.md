@@ -105,9 +105,3 @@ Notebook hiện tại nằm trong [src/KNN/224](src/KNN/224/README.md); thứ t�
 Phương án khóa là HSV12, k=1, uniform. Trên 1.553 ảnh test hiện có, mô hình nhận đúng 1.187 ảnh: Accuracy 76,43%, Macro-F1 0,768710, MAE 53.947,20đ/ảnh. Test từng được đánh giá trong khảo sát trước, nên không gọi đây là holdout hoàn toàn chưa xem. Không trộn các kết quả cũ vào bảng RGB224.
 
 [Báo cáo KNN](docs/KNN_REPORT/BAO_CAO_THUC_NGHIEM_KNN.md) trình bày từ tiền xử lý đến phân tích lỗi, với năm bảng và sáu hình từ dữ liệu thật. [Cấu hình khóa](src/KNN/results_224/selection/locked_knn_config.json), [kết quả test](src/KNN/results_224/test_final/TEST_REVIEW.md) và [phân tích lỗi](src/KNN/results_224/error_analysis/ERROR_ANALYSIS_REVIEW.md) được lưu riêng để đối chiếu. Các notebook/kết quả khảo sát cũ đã được dọn khỏi checkout hiện tại.
-
-## Thực nghiệm SVM
-
-[src/SVM](src/SVM/README.md) có chín notebook RGB224 theo cùng năm biến thể đặc trưng và quy trình train → dev → khóa cấu hình → test → phân tích lỗi. Các notebook đã chạy trên Kaggle; kết quả được lưu tại [src/SVM/results_224](src/SVM/results_224/README.md). Phương án khóa là HSV12+HOG với SVC RBF, `C=10`, `gamma='scale'`. Trên 1.553 ảnh test, SVM đạt Accuracy 87,70%, Macro-F1 0,881102 và MAE 32.891,18đ/ảnh. Ma trận đặc trưng NPY và PCA pickle không nằm trong Git do dung lượng lớn.
-
-[Báo cáo SVM](docs/SVM_REPORT/BAO_CAO_THUC_NGHIEM_SVM.md) trình bày đủ 35 cấu hình dev, kết quả test, phân tích lỗi và so sánh ghép cặp từng ảnh với KNN trên cùng split; các hình và phụ lục CSV nằm cạnh báo cáo.

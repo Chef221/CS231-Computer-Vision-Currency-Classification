@@ -1,2 +1,0 @@
-feature_id,order,kernel,C,gamma,accuracy,macro_f1,mae_vnd,n_support_vectors
-HOG_PCA,5,rbf,10.0,scale,0.5268542199488491,0.5148717974649029,99757.03324808185,12408

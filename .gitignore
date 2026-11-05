@@ -13,6 +13,4 @@ DATA_BUILD_05_*/
 # Recreated locally by the KNN notebooks; too large for regular Git.
 src/KNN/results_224/**/*.npy
 src/KNN/results_224/**/*.pkl
-src/SVM/results_224/**/*.npy
-src/SVM/results_224/**/*.pkl
 .scratch/
