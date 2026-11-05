@@ -1,0 +1,39 @@
+{
+  "scope": "train only, illustration selection",
+  "cached_histograms_screened": 4489,
+  "visual_candidates_reviewed": 24,
+  "selected": [
+    {
+      "label_vnd": 10000,
+      "relative_path": "train/10000/10000_000896.png",
+      "s_mean": 108.44724569515306,
+      "v_mean": 142.64295679209184,
+      "s_median": 130.0,
+      "v_median": 155.0
+    },
+    {
+      "label_vnd": 500000,
+      "relative_path": "train/500000/500000_001722.png",
+      "s_mean": 44.381417410714285,
+      "v_mean": 86.44116709183673,
+      "s_median": 44.0,
+      "v_median": 67.0
+    }
+  ],
+  "fixed_display_ranges": {
+    "H": [
+      0,
+      179
+    ],
+    "S": [
+      0,
+      255
+    ],
+    "V": [
+      0,
+      255
+    ]
+  },
+  "pixel_enhancement": false,
+  "limitations": "Selected for visual contrast; scene/background/illumination differ; not evidence of universal class separation."
+}

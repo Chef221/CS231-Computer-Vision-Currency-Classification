@@ -1,0 +1,212 @@
+{
+  "status": "PASS",
+  "format": "course-report-section-markdown",
+  "numeric_evidence": [
+    {
+      "report_text": "| HSV12 | 1.728 | 1 / uniform | 79,60 | 0,798307 | 46.585,68 |",
+      "source": "selection/best_by_feature_dev.csv",
+      "selector": "feature_id=HSV12; dimensions from pipeline/cache"
+    },
+    {
+      "report_text": "| HSV12+HOG | 7.812 | 6 / distance | 72,95 | 0,731995 | 62.071,61 |",
+      "source": "selection/best_by_feature_dev.csv",
+      "selector": "feature_id=HSV12_HOG; dimensions from pipeline/cache"
+    },
+    {
+      "report_text": "| HSV12+HOG-PCA | 3.146 | 6 / distance | 71,10 | 0,713416 | 66.086,96 |",
+      "source": "selection/best_by_feature_dev.csv",
+      "selector": "feature_id=HSV12_HOG_PCA; dimensions from pipeline/cache"
+    },
+    {
+      "report_text": "| HOG-PCA | 1.418 | 5 / distance | 44,37 | 0,437934 | 106.898,98 |",
+      "source": "selection/best_by_feature_dev.csv",
+      "selector": "feature_id=HOG_PCA; dimensions from pipeline/cache"
+    },
+    {
+      "report_text": "| HOG | 6.084 | 1 / uniform | 39,07 | 0,390748 | 116.234,02 |",
+      "source": "selection/best_by_feature_dev.csv",
+      "selector": "feature_id=HOG; dimensions from pipeline/cache"
+    },
+    {
+      "report_text": "0,798307",
+      "source": "selection/reference_dev.csv",
+      "selector": "feature_id=HSV12; macro_f1"
+    },
+    {
+      "report_text": "0,390748",
+      "source": "selection/reference_dev.csv",
+      "selector": "feature_id=HOG; macro_f1"
+    },
+    {
+      "report_text": "0,431541",
+      "source": "selection/reference_dev.csv",
+      "selector": "feature_id=HOG_PCA; macro_f1"
+    },
+    {
+      "report_text": "0,726608",
+      "source": "selection/reference_dev.csv",
+      "selector": "feature_id=HSV12_HOG; macro_f1"
+    },
+    {
+      "report_text": "0,701336",
+      "source": "selection/reference_dev.csv",
+      "selector": "feature_id=HSV12_HOG_PCA; macro_f1"
+    },
+    {
+      "report_text": "| Test | 1.553 | 1.187 | 76,43 | 0,768710 | 53.947,20 |",
+      "source": "test_final/predictions_test.csv",
+      "selector": "all rows; shared evaluate_classification"
+    },
+    {
+      "report_text": "| Dev | 1.564 | 1.245 | 79,60 | 0,798307 | 46.585,68 |",
+      "source": "selection/best_by_feature_dev.csv",
+      "selector": "HSV12; count from dev confusion matrix"
+    },
+    {
+      "report_text": "| 10.000đ | 210 / 281 | 0,7071 | 0,7473 | 0,7266 |",
+      "source": "test_final/predictions_test.csv",
+      "selector": "shared metrics; class=10000"
+    },
+    {
+      "report_text": "| 20.000đ | 181 / 224 | 0,8227 | 0,8080 | 0,8153 |",
+      "source": "test_final/predictions_test.csv",
+      "selector": "shared metrics; class=20000"
+    },
+    {
+      "report_text": "| 50.000đ | 170 / 223 | 0,7907 | 0,7623 | 0,7763 |",
+      "source": "test_final/predictions_test.csv",
+      "selector": "shared metrics; class=50000"
+    },
+    {
+      "report_text": "| 100.000đ | 195 / 247 | 0,8478 | 0,7895 | 0,8176 |",
+      "source": "test_final/predictions_test.csv",
+      "selector": "shared metrics; class=100000"
+    },
+    {
+      "report_text": "| 200.000đ | 233 / 317 | 0,7236 | 0,7350 | 0,7293 |",
+      "source": "test_final/predictions_test.csv",
+      "selector": "shared metrics; class=200000"
+    },
+    {
+      "report_text": "| 500.000đ | 198 / 261 | 0,7361 | 0,7586 | 0,7472 |",
+      "source": "test_final/predictions_test.csv",
+      "selector": "shared metrics; class=500000"
+    },
+    {
+      "report_text": "| 20.000đ ↔ 500.000đ | 37 | 480.000 | 17.760.000 |",
+      "source": "error_analysis/error_pairs_bidirectional.csv",
+      "selector": "pair=20000,500000; count*gap"
+    },
+    {
+      "report_text": "| 10.000đ ↔ 500.000đ | 31 | 490.000 | 15.190.000 |",
+      "source": "error_analysis/error_pairs_bidirectional.csv",
+      "selector": "pair=10000,500000; count*gap"
+    },
+    {
+      "report_text": "| 10.000đ ↔ 200.000đ | 62 | 190.000 | 11.780.000 |",
+      "source": "error_analysis/error_pairs_bidirectional.csv",
+      "selector": "pair=10000,200000; count*gap"
+    },
+    {
+      "report_text": "| 200.000đ ↔ 500.000đ | 37 | 300.000 | 11.100.000 |",
+      "source": "error_analysis/error_pairs_bidirectional.csv",
+      "selector": "pair=200000,500000; count*gap"
+    },
+    {
+      "report_text": "| 100.000đ ↔ 500.000đ | 16 | 400.000 | 6.400.000 |",
+      "source": "error_analysis/error_pairs_bidirectional.csv",
+      "selector": "pair=100000,500000; count*gap"
+    },
+    {
+      "report_text": "83.780.000",
+      "source": "test_final/predictions_test.csv",
+      "selector": "sum absolute VND gaps"
+    },
+    {
+      "report_text": "3,17",
+      "source": "selection/best_by_feature_dev.csv",
+      "selector": "HSV12 accuracy minus test, percentage points"
+    },
+    {
+      "report_text": "0,029597",
+      "source": "selection/best_by_feature_dev.csv",
+      "selector": "HSV12 macro_f1 minus test"
+    },
+    {
+      "report_text": "7.361,52",
+      "source": "selection/best_by_feature_dev.csv",
+      "selector": "test MAE minus HSV12 dev"
+    },
+    {
+      "report_text": "95,0056",
+      "source": "hog_pca/run_config.json",
+      "selector": "explained_variance_ratio_sum*100"
+    },
+    {
+      "report_text": "76,69",
+      "source": "hog_pca/run_config.json",
+      "selector": "dimension reduction percent"
+    },
+    {
+      "report_text": "0,103367",
+      "source": "error_analysis/selected_cases.csv",
+      "selector": "case_id=C04; nearest_distance"
+    },
+    {
+      "report_text": "0,284761",
+      "source": "error_analysis/selected_cases.csv",
+      "selector": "case_id=C04; contrast_distance"
+    },
+    {
+      "report_text": "0,507406",
+      "source": "error_analysis/selected_cases.csv",
+      "selector": "case_id=C09; nearest_distance"
+    },
+    {
+      "report_text": "0,882157",
+      "source": "error_analysis/selected_cases.csv",
+      "selector": "case_id=C09; contrast_distance"
+    },
+    {
+      "report_text": "0,56349629",
+      "source": "error_analysis/selected_cases.csv",
+      "selector": "case_id=C10; nearest_distance"
+    },
+    {
+      "report_text": "0,56369638",
+      "source": "error_analysis/selected_cases.csv",
+      "selector": "case_id=C10; contrast_distance"
+    },
+    {
+      "report_text": "0,79974383",
+      "source": "error_analysis/selected_cases.csv",
+      "selector": "case_id=C11; nearest_distance"
+    },
+    {
+      "report_text": "0,79995364",
+      "source": "error_analysis/selected_cases.csv",
+      "selector": "case_id=C11; contrast_distance"
+    }
+  ],
+  "embedded_figures": [
+    "KNN224_FIGURES/KNN_1_RESIZE.png",
+    "KNN224_FIGURES/KNN_HSV_CHANNELS.png",
+    "KNN224_FIGURES/KNN_2_HOG.png",
+    "KNN224_FIGURES/KNN_3_CONFUSION_TEST.png",
+    "KNN224_FIGURES/KNN_4_ERRORS.png",
+    "KNN224_FIGURES/KNN_5_BOUNDARY.png"
+  ],
+  "source_hashes": {
+    "selection/best_by_feature_dev.csv": "1d807ae10d5a70ff7c586a8076acb9e2c978cd2310919880ab8a917b1bcd8321",
+    "selection/reference_dev.csv": "6d7494c232aa802388b4342020d3d7106a650a2dad2bb6b7bcc0797d4afaae18",
+    "test_final/predictions_test.csv": "0eed3f6eba22db9f7d1dc3611076be7bd2a70a89dd5ce27fd8f0764f5cdff4e5",
+    "hog_pca/run_config.json": "c5cf7d33d55997a3107dc580835b0f213ae26c61180c8b43d3d0fbb00e460f2f",
+    "error_analysis/selected_cases.csv": "69a487618878af919ee3e569fbfdfc107f5aa8bc99149efa02ecd89126e027d6"
+  },
+  "report_sha256": "bc30fab19a043ff2511ce4263417e14a4d9064a072001f987d15ca052b556766",
+  "limits": [
+    "Markdown and six figures checked; no final Word/PDF page-layout check",
+    "No grid rerun or new model training",
+    "Single reused test split; no causal visual ablations"
+  ]
+}

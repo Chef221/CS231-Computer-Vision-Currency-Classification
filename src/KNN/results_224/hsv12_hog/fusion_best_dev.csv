@@ -1,0 +1,2 @@
+feature,feature_dim,k,weights,metric,macro_f1,accuracy,mae_vnd
+HSV12 + HOG,7812,6,distance,euclidean,0.7319949792405468,0.729539641943734,62071.611253196934

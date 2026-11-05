@@ -1,0 +1,2 @@
+feature,feature_dim,k,weights,metric,macro_f1,mae_vnd,accuracy
+HOG RGB224 - no PCA,6084,1,uniform,euclidean,0.39074817533497597,116234.01534526855,0.3906649616368286

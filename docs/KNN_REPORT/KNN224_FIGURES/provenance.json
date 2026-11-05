@@ -1,0 +1,52 @@
+{
+  "script": "docs/KNN_REPORT/build_figures_224.py",
+  "preprocessing_examples": [
+    "train/10000/10000_000001.png",
+    "train/500000/500000_000001.png"
+  ],
+  "hsv_examples": [
+    "train/10000/10000_000896.png",
+    "train/500000/500000_001722.png"
+  ],
+  "case_groups": [
+    [
+      "C04",
+      "C09"
+    ],
+    [
+      "C10",
+      "C11"
+    ]
+  ],
+  "sources": {
+    "DATA/test/10000/10000_002541.png": "f626847ffc1c057a66fb5805b296ce7edef11e69bc0e86c8d09e78ff6e387589",
+    "DATA/test/100000/100000_000770.png": "74caceb05ddc8a914ead7dd35680d602662493320709c89148516796f166ccf9",
+    "DATA/test/200000/200000_002160.png": "fb237a24ead4b1b96ba9646e93e4bbadde41ebd95560e185d34c809090c6453f",
+    "DATA/test/500000/500000_000368.png": "0f48abdc7d76e37ac190467d7880a3bdb8c48c1888058c37b66bcb430a056440",
+    "DATA/train/10000/10000_000001.png": "3283191dc4a76e7d6b420de0814d7a3c6793227dc01b64fdca6f5bb38a6d10c0",
+    "DATA/train/10000/10000_000896.png": "abd5602ac8754660ab773714ded0c89b784d98c6bb65c14ac9dd0684b655522f",
+    "DATA/train/10000/10000_001774.png": "078878bcaa46a6af44db741cd2fbe485800bf75ed36f1fe7ebc9f56764b8fe61",
+    "DATA/train/100000/100000_000816.png": "8c5be94c00159994d3269e8311fefbb3255dd189a0ddd7510fc36c84b8356dc4",
+    "DATA/train/20000/20000_000992.png": "355398e376b68958890c6492cd4cfb1983ad103a77eb524a9cbd55b4b20afef3",
+    "DATA/train/20000/20000_001139.png": "4973d672dc54cb59ae89aeb4e0c6281b2d32b46f00ac34e721d80b265118cc64",
+    "DATA/train/20000/20000_001932.png": "47cb4efe9e75d71e5ac07a430d19effa79a4596c598ca1714188c09548e810e7",
+    "DATA/train/200000/200000_002161.png": "51fd7c87e52f79cc24bf44094ad146d250f447739122432ab5337d0bb19f6455",
+    "DATA/train/500000/500000_000001.png": "fa84e156da56bd7c491bc8dd39e25135db249331ffe453b3ffe3f7cb81de6e42",
+    "DATA/train/500000/500000_000742.png": "5cd240ec24dffa39262fff68133d2473c426dd64eb088ae6edbd8b8f1573d175",
+    "DATA/train/500000/500000_001202.png": "f6dad093793f7dd320127292b3123bfb390b311eb08308f35313ebdc7990e2cf",
+    "DATA/train/500000/500000_001722.png": "9716cb82eeeb646c793ae6b85d0bea2ed6d241cc109fc3d5fed32ffc31713078",
+    "src/KNN/results_224/error_analysis/selected_cases.csv": "69a487618878af919ee3e569fbfdfc107f5aa8bc99149efa02ecd89126e027d6",
+    "src/KNN/results_224/hsv12/features/train_manifest.csv": "306ad6579983415f55d5b87198ead18c907de3272fcb08346a7029a51504da03",
+    "src/KNN/results_224/test_final/confusion_matrix_test.csv": "0d17d06df0445c0738567e3274470fcfde6f54273a755112d313fea5130411de"
+  },
+  "outputs": {
+    "docs/KNN_REPORT/KNN224_FIGURES/KNN_1_RESIZE.png": "eb64aa02b26c1a68c92db9606618b7b5e0422f616c852c4b3586a91ca6c3778a",
+    "docs/KNN_REPORT/KNN224_FIGURES/KNN_HSV_CHANNELS.png": "4cf2ca81ff84f394c003f972a8858aeb8f018a1c75dbf6d4702186acb239d739",
+    "docs/KNN_REPORT/KNN224_FIGURES/KNN_2_HOG.png": "8530339beb4e57c99c266ccff6eac5ed3753f09ff363ef032ea58c7208ce8bf3",
+    "docs/KNN_REPORT/KNN224_FIGURES/KNN_3_CONFUSION_TEST.png": "2dbd127cebec27c0abfe0d5066eb6bc407fcd5f25302e24365f7ae37cbc7af1f",
+    "docs/KNN_REPORT/KNN224_FIGURES/KNN_3_CONFUSION_TEST.pdf": "7778b1e75790a7a7298088e60c0b0d76e1f3d69893499b834281f8bf3638df58",
+    "docs/KNN_REPORT/KNN224_FIGURES/KNN_4_ERRORS.png": "52e7df21c44ee53082e645384f3980e30f459a65b171986d3786cd74c3ffb34f",
+    "docs/KNN_REPORT/KNN224_FIGURES/KNN_5_BOUNDARY.png": "2dc981f044590e281902a2d780c080107fb7c9a6dc19ed2b326dccd01b9f69ce"
+  },
+  "new_model_training": false
+}

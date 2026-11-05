@@ -1,0 +1,2 @@
+feature,feature_dim,k,weights,metric,macro_f1,mae_vnd,accuracy
+HOG RGB224 + PCA95 + L2,1418,5,distance,euclidean,0.4379339420802933,106898.97698209719,0.4437340153452685

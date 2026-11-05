@@ -1,0 +1,11 @@
+{
+  "lock_sha256": "f36937587fa52e1d0d6e6a5748bcb8236c87cf4eadb62e532186531ba9f17ffc",
+  "preprocessing_code_sha256": "1cbada4dae212889baa6f62b30c68177a5b1f9bb6488d9b7fac8ca26b041d831",
+  "metrics_code_sha256": "783375c180999515d6862659d9bdf735b5a3675f6a5881afdf3f275cda9ecc3c",
+  "feature_seconds": 11.706348199997592,
+  "fit_seconds": 0.1253586999991967,
+  "predict_seconds": 3.6454087999991316,
+  "train_samples": 12494,
+  "test_samples": 1553,
+  "test_used_for_tuning": false
+}

@@ -98,8 +98,10 @@ Chạy kiểm tra bằng `python -m unittest discover -s tests -p test_value_met
 
 So sánh chính luôn dùng toàn bộ test sau khi khóa cấu hình. Cơ chế từ chối hiện mới là đề cương, chưa được triển khai; kết quả trên phần được trả lời sau này phải báo cáo riêng cùng coverage.
 
-## Thực nghiệm KNN trên dev
+## Thực nghiệm KNN
 
-Notebook và kết quả KNN nằm tại [src/KNN](src/KNN/README.md). [Báo cáo thực nghiệm](src/KNN/EXPERIMENTS.md) ghi rõ bảy biểu diễn/cấu hình feature, 840 dòng tìm kiếm tham số, kết quả từng lớp, confusion matrix và phân tích sai lệch mệnh giá. Báo cáo khảo sát ghi kết quả dev; [kết quả test HSV12 đã khóa](src/KNN/TEST_RESULTS.md) đạt Accuracy 87,19%, Macro-F1 0,874772 và MAE 31.461,69 VND/ảnh trên 1.553 ảnh, có lưu dự đoán theo tên ảnh. Hướng dẫn cài đặt, giới hạn RAM và kiểm tra CSV nằm trong README của KNN.
+Notebook hiện tại nằm trong [src/KNN/224](src/KNN/224/README.md); thứ tự chạy và kết quả được hướng dẫn tại [README KNN](src/KNN/README.md). Lượt thực nghiệm dùng RGB224, không augmentation, năm biến thể thuộc ba họ feature: HSV12, HOG và kết hợp; PCA là biến thể của nhánh HOG. Tổng cộng 100 cấu hình được đánh giá trên dev với Euclidean.
 
-Bản viết để ghép vào báo cáo học phần: [Báo cáo thực nghiệm KNN](docs/KNN_REPORT/BAO_CAO_THUC_NGHIEM_KNN.md), kèm ba hình từ dữ liệu thật. Phạm vi trình bày gồm RGB, HSV8, HSV12, Color Moments và HOG cấu hình đầu; lịch sử thử nghiệm đầy đủ vẫn được giữ trong thư mục KNN.
+Phương án khóa là HSV12, k=1, uniform. Trên 1.553 ảnh test hiện có, mô hình nhận đúng 1.187 ảnh: Accuracy 76,43%, Macro-F1 0,768710, MAE 53.947,20đ/ảnh. Test từng được đánh giá trong khảo sát trước, nên không gọi đây là holdout hoàn toàn chưa xem. Không trộn các kết quả cũ vào bảng RGB224.
+
+[Báo cáo KNN](docs/KNN_REPORT/BAO_CAO_THUC_NGHIEM_KNN.md) trình bày từ tiền xử lý đến phân tích lỗi, với năm bảng và sáu hình từ dữ liệu thật. [Cấu hình khóa](src/KNN/results_224/selection/locked_knn_config.json), [kết quả test](src/KNN/results_224/test_final/TEST_REVIEW.md) và [phân tích lỗi](src/KNN/results_224/error_analysis/ERROR_ANALYSIS_REVIEW.md) được lưu riêng để đối chiếu. Các notebook/kết quả khảo sát cũ đã được dọn khỏi checkout hiện tại.

@@ -1,0 +1,3 @@
+split,images,rgb224_uint8,all_correct_format
+train,12494,12494,True
+dev,1564,1564,True

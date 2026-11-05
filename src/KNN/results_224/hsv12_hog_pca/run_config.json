@@ -1,0 +1,39 @@
+{
+  "feature": "HSV12 + HOG-PCA",
+  "image": "RGB uint8 224x224, OpenCV INTER_LINEAR",
+  "hsv": "joint HSV12, OpenCV ranges, L2",
+  "hog_source": "hog_pca",
+  "pca_on_hog": true,
+  "branch_norm": "L2 separately",
+  "concatenation_order": [
+    "HSV12",
+    "HOG branch"
+  ],
+  "normalization_after_concat": false,
+  "extra_branch_weights": false,
+  "feature_dtype": "float32",
+  "feature_dim": 3146,
+  "k_options": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "weight_options": [
+    "uniform",
+    "distance"
+  ],
+  "metric_options": [
+    "euclidean"
+  ],
+  "algorithm": "brute",
+  "best_k": 6,
+  "best_weights": "distance",
+  "best_metric": "euclidean"
+}

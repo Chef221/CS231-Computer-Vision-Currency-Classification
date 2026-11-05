@@ -1,0 +1,384 @@
+{
+  "status": "PASS_SAVED_RESULTS_CONSISTENCY",
+  "checks": {
+    "grid_20_combinations": true,
+    "cm_shape_order": true,
+    "cm_total": true,
+    "best_metrics_match_cm": true,
+    "best_matches_grid": true,
+    "ranking_and_tie_break": true,
+    "all_grid_ranges": true,
+    "all_grid_integer_counts": true,
+    "per_class_matches": true,
+    "train_folder_order_matches_manifest": true,
+    "dev_folder_order_matches_manifest": true,
+    "notebook_all_cells_executed_no_errors": true,
+    "rgb224_bilinear_source": true
+  },
+  "metrics_from_cm": {
+    "class_order_vnd": [
+      10000,
+      20000,
+      50000,
+      100000,
+      200000,
+      500000
+    ],
+    "n_samples": 1564,
+    "confusion_matrix": [
+      [
+        254,
+        6,
+        9,
+        4,
+        27,
+        15
+      ],
+      [
+        5,
+        213,
+        1,
+        4,
+        6,
+        9
+      ],
+      [
+        16,
+        11,
+        146,
+        2,
+        11,
+        9
+      ],
+      [
+        15,
+        8,
+        9,
+        197,
+        10,
+        11
+      ],
+      [
+        34,
+        4,
+        9,
+        4,
+        234,
+        24
+      ],
+      [
+        10,
+        17,
+        4,
+        7,
+        18,
+        201
+      ]
+    ],
+    "accuracy": 0.7960358056265985,
+    "macro_f1": 0.7983069780027404,
+    "mae_vnd": 46585.67774936061,
+    "total_gap_vnd": 72860000,
+    "per_class": [
+      {
+        "denomination_vnd": 10000,
+        "support": 315,
+        "predicted_count": 334,
+        "tp": 254,
+        "fp": 80,
+        "fn": 61,
+        "precision": 0.7604790419161677,
+        "recall": 0.8063492063492064,
+        "f1": 0.7827426810477658
+      },
+      {
+        "denomination_vnd": 20000,
+        "support": 238,
+        "predicted_count": 259,
+        "tp": 213,
+        "fp": 46,
+        "fn": 25,
+        "precision": 0.8223938223938224,
+        "recall": 0.8949579831932774,
+        "f1": 0.8571428571428571
+      },
+      {
+        "denomination_vnd": 50000,
+        "support": 195,
+        "predicted_count": 178,
+        "tp": 146,
+        "fp": 32,
+        "fn": 49,
+        "precision": 0.8202247191011236,
+        "recall": 0.7487179487179487,
+        "f1": 0.7828418230563002
+      },
+      {
+        "denomination_vnd": 100000,
+        "support": 250,
+        "predicted_count": 218,
+        "tp": 197,
+        "fp": 21,
+        "fn": 53,
+        "precision": 0.9036697247706422,
+        "recall": 0.788,
+        "f1": 0.8418803418803419
+      },
+      {
+        "denomination_vnd": 200000,
+        "support": 309,
+        "predicted_count": 306,
+        "tp": 234,
+        "fp": 72,
+        "fn": 75,
+        "precision": 0.7647058823529411,
+        "recall": 0.7572815533980582,
+        "f1": 0.7609756097560976
+      },
+      {
+        "denomination_vnd": 500000,
+        "support": 257,
+        "predicted_count": 269,
+        "tp": 201,
+        "fp": 68,
+        "fn": 56,
+        "precision": 0.7472118959107806,
+        "recall": 0.7821011673151751,
+        "f1": 0.7642585551330798
+      }
+    ],
+    "error_pairs": [
+      {
+        "true_vnd": 10000,
+        "predicted_vnd": 20000,
+        "count": 6,
+        "gap_vnd": 10000,
+        "total_gap_vnd": 60000
+      },
+      {
+        "true_vnd": 10000,
+        "predicted_vnd": 50000,
+        "count": 9,
+        "gap_vnd": 40000,
+        "total_gap_vnd": 360000
+      },
+      {
+        "true_vnd": 10000,
+        "predicted_vnd": 100000,
+        "count": 4,
+        "gap_vnd": 90000,
+        "total_gap_vnd": 360000
+      },
+      {
+        "true_vnd": 10000,
+        "predicted_vnd": 200000,
+        "count": 27,
+        "gap_vnd": 190000,
+        "total_gap_vnd": 5130000
+      },
+      {
+        "true_vnd": 10000,
+        "predicted_vnd": 500000,
+        "count": 15,
+        "gap_vnd": 490000,
+        "total_gap_vnd": 7350000
+      },
+      {
+        "true_vnd": 20000,
+        "predicted_vnd": 10000,
+        "count": 5,
+        "gap_vnd": 10000,
+        "total_gap_vnd": 50000
+      },
+      {
+        "true_vnd": 20000,
+        "predicted_vnd": 50000,
+        "count": 1,
+        "gap_vnd": 30000,
+        "total_gap_vnd": 30000
+      },
+      {
+        "true_vnd": 20000,
+        "predicted_vnd": 100000,
+        "count": 4,
+        "gap_vnd": 80000,
+        "total_gap_vnd": 320000
+      },
+      {
+        "true_vnd": 20000,
+        "predicted_vnd": 200000,
+        "count": 6,
+        "gap_vnd": 180000,
+        "total_gap_vnd": 1080000
+      },
+      {
+        "true_vnd": 20000,
+        "predicted_vnd": 500000,
+        "count": 9,
+        "gap_vnd": 480000,
+        "total_gap_vnd": 4320000
+      },
+      {
+        "true_vnd": 50000,
+        "predicted_vnd": 10000,
+        "count": 16,
+        "gap_vnd": 40000,
+        "total_gap_vnd": 640000
+      },
+      {
+        "true_vnd": 50000,
+        "predicted_vnd": 20000,
+        "count": 11,
+        "gap_vnd": 30000,
+        "total_gap_vnd": 330000
+      },
+      {
+        "true_vnd": 50000,
+        "predicted_vnd": 100000,
+        "count": 2,
+        "gap_vnd": 50000,
+        "total_gap_vnd": 100000
+      },
+      {
+        "true_vnd": 50000,
+        "predicted_vnd": 200000,
+        "count": 11,
+        "gap_vnd": 150000,
+        "total_gap_vnd": 1650000
+      },
+      {
+        "true_vnd": 50000,
+        "predicted_vnd": 500000,
+        "count": 9,
+        "gap_vnd": 450000,
+        "total_gap_vnd": 4050000
+      },
+      {
+        "true_vnd": 100000,
+        "predicted_vnd": 10000,
+        "count": 15,
+        "gap_vnd": 90000,
+        "total_gap_vnd": 1350000
+      },
+      {
+        "true_vnd": 100000,
+        "predicted_vnd": 20000,
+        "count": 8,
+        "gap_vnd": 80000,
+        "total_gap_vnd": 640000
+      },
+      {
+        "true_vnd": 100000,
+        "predicted_vnd": 50000,
+        "count": 9,
+        "gap_vnd": 50000,
+        "total_gap_vnd": 450000
+      },
+      {
+        "true_vnd": 100000,
+        "predicted_vnd": 200000,
+        "count": 10,
+        "gap_vnd": 100000,
+        "total_gap_vnd": 1000000
+      },
+      {
+        "true_vnd": 100000,
+        "predicted_vnd": 500000,
+        "count": 11,
+        "gap_vnd": 400000,
+        "total_gap_vnd": 4400000
+      },
+      {
+        "true_vnd": 200000,
+        "predicted_vnd": 10000,
+        "count": 34,
+        "gap_vnd": 190000,
+        "total_gap_vnd": 6460000
+      },
+      {
+        "true_vnd": 200000,
+        "predicted_vnd": 20000,
+        "count": 4,
+        "gap_vnd": 180000,
+        "total_gap_vnd": 720000
+      },
+      {
+        "true_vnd": 200000,
+        "predicted_vnd": 50000,
+        "count": 9,
+        "gap_vnd": 150000,
+        "total_gap_vnd": 1350000
+      },
+      {
+        "true_vnd": 200000,
+        "predicted_vnd": 100000,
+        "count": 4,
+        "gap_vnd": 100000,
+        "total_gap_vnd": 400000
+      },
+      {
+        "true_vnd": 200000,
+        "predicted_vnd": 500000,
+        "count": 24,
+        "gap_vnd": 300000,
+        "total_gap_vnd": 7200000
+      },
+      {
+        "true_vnd": 500000,
+        "predicted_vnd": 10000,
+        "count": 10,
+        "gap_vnd": 490000,
+        "total_gap_vnd": 4900000
+      },
+      {
+        "true_vnd": 500000,
+        "predicted_vnd": 20000,
+        "count": 17,
+        "gap_vnd": 480000,
+        "total_gap_vnd": 8160000
+      },
+      {
+        "true_vnd": 500000,
+        "predicted_vnd": 50000,
+        "count": 4,
+        "gap_vnd": 450000,
+        "total_gap_vnd": 1800000
+      },
+      {
+        "true_vnd": 500000,
+        "predicted_vnd": 100000,
+        "count": 7,
+        "gap_vnd": 400000,
+        "total_gap_vnd": 2800000
+      },
+      {
+        "true_vnd": 500000,
+        "predicted_vnd": 200000,
+        "count": 18,
+        "gap_vnd": 300000,
+        "total_gap_vnd": 5400000
+      }
+    ]
+  },
+  "correct": 1245,
+  "errors": 319,
+  "comparison_old_euclidean": {
+    "k": 1,
+    "weights": "uniform",
+    "metric": "euclidean",
+    "macro_f1": 0.7989195457386971,
+    "mae_vnd": 45492.3273657289,
+    "accuracy": 0.7966751918158568
+  },
+  "limitations": [
+    "No new inference or feature extraction performed.",
+    "Metrics reconstructed from confusion counts; not an audit of individual predictions.",
+    "This old-style notebook does not export per-image predictions or feature matrices."
+  ],
+  "sha256": {
+    "hsv12_best_dev.csv": "3ca605643b85c9c2592ff63aca6b78d92748f841f0fb29182ad8fe27cf952686",
+    "hsv12_confusion_matrix_dev.csv": "7210d7acb467d2e3a3afa749c8265592afb9e259ca7b40c7572d186d6f228777",
+    "hsv12_knn_grid_dev.csv": "9e59ec1923610a3865ae0ec2c2a5cebf95934726d35f4c0def9694492872d9e0",
+    "hsv12_per_class_dev.csv": "c9feb321b01f014febdf377df823f65befd2f39297f8b9f5b0bf5b1b252cfd76"
+  }
+}

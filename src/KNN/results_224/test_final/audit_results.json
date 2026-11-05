@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "checks": [
+    "All code cells executed without saved errors",
+    "Lock copy and all 15 input/code hashes match",
+    "All 1553 test paths, labels and prediction rows aligned",
+    "All saved metrics, confusion matrix, per-class and error-pair tables recomputed correctly",
+    "All test feature vectors finite, nonnegative and L2; 18 images recomputed exactly",
+    "All 1553 predictions replayed exactly with locked train features and KNN"
+  ],
+  "n_test": 1553,
+  "n_correct": 1187,
+  "n_errors": 366,
+  "metrics": {
+    "accuracy": 0.7643271088216356,
+    "macro_f1": 0.7687098286084958,
+    "mae_vnd": 53947.198969736,
+    "total_gap_vnd": 83780000
+  },
+  "image_feature_recomputations": 18,
+  "predictions_replayed": 1553,
+  "limits": [
+    "18 test images re-decoded; remaining feature rows were not re-extracted",
+    "No label-quality or dataset-independence re-audit",
+    "Test previously used in earlier experiments; not an untouched holdout"
+  ]
+}

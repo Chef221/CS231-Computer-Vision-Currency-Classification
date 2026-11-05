@@ -1,0 +1,86 @@
+{
+  "source_hog_config": {
+    "image": "RGB uint8 224x224, OpenCV INTER_LINEAR",
+    "orientations": 9,
+    "pixels_per_cell": [
+      16,
+      16
+    ],
+    "cells_per_block": [
+      2,
+      2
+    ],
+    "block_norm": "L2-Hys",
+    "transform_sqrt": false,
+    "pca": false,
+    "whole_vector_norm": "L2",
+    "feature_dtype": "float32",
+    "k_options": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "weight_options": [
+      "uniform",
+      "distance"
+    ],
+    "metric_options": [
+      "euclidean"
+    ],
+    "algorithm": "brute",
+    "best_k": 1,
+    "best_weights": "uniform",
+    "best_metric": "euclidean"
+  },
+  "pca": true,
+  "pca_fit_split": "train",
+  "pca_variance_requested": 0.95,
+  "pca_solver": "full",
+  "whiten": false,
+  "original_dim": 6084,
+  "pca_dim": 1418,
+  "explained_variance_ratio_sum": 0.9500564336776733,
+  "whole_vector_norm_after_pca": "L2",
+  "feature_dtype": "float32",
+  "k_options": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "weight_options": [
+    "uniform",
+    "distance"
+  ],
+  "metric_options": [
+    "euclidean"
+  ],
+  "algorithm": "brute",
+  "best_k": 5,
+  "best_weights": "distance",
+  "best_metric": "euclidean",
+  "timing_seconds": {
+    "pca_fit": 116.86914340000294,
+    "train_transform_and_l2": 1.8738185000001977,
+    "dev_transform_and_l2": 0.27881089999937103,
+    "grid_fit_predict_and_metrics": 13.639876999997796,
+    "best_dev_predict_only": 0.3926576000012574
+  },
+  "versions": {
+    "sklearn": "1.6.1",
+    "numpy": "2.2.6"
+  }
+}

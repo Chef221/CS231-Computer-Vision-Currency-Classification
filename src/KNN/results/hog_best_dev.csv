@@ -1,2 +1,0 @@
-feature,feature_dim,k,weights,metric,macro_f1,mae_vnd,accuracy
-"HOG gray 128x128, cell16, block2, orientations9",1764,1,uniform,braycurtis,0.4679043407230574,99578.00511508952,0.47378516624040923

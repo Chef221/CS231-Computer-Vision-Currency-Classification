@@ -1,0 +1,382 @@
+{
+  "status": "PASS_HOG_RGB224_AUDIT",
+  "checks": {
+    "all_saved_metrics_match_recomputed_predictions": true,
+    "winner_params": true,
+    "winner_csv_metrics": true,
+    "train_shape_dtype_labels": true,
+    "train_all_features_finite_nonnegative_and_correct_l2": true,
+    "dev_shape_dtype_labels": true,
+    "dev_all_features_finite_nonnegative_and_correct_l2": true
+  },
+  "metrics": {
+    "class_order_vnd": [
+      10000,
+      20000,
+      50000,
+      100000,
+      200000,
+      500000
+    ],
+    "n_samples": 1564,
+    "confusion_matrix": [
+      [
+        118,
+        62,
+        36,
+        33,
+        34,
+        32
+      ],
+      [
+        46,
+        106,
+        23,
+        19,
+        28,
+        16
+      ],
+      [
+        31,
+        31,
+        77,
+        14,
+        23,
+        19
+      ],
+      [
+        34,
+        40,
+        30,
+        82,
+        38,
+        26
+      ],
+      [
+        51,
+        55,
+        27,
+        21,
+        123,
+        32
+      ],
+      [
+        39,
+        50,
+        27,
+        10,
+        26,
+        105
+      ]
+    ],
+    "accuracy": 0.3906649616368286,
+    "macro_f1": 0.39074817533497597,
+    "mae_vnd": 116234.01534526855,
+    "total_gap_vnd": 181790000,
+    "per_class": [
+      {
+        "denomination_vnd": 10000,
+        "support": 315,
+        "predicted_count": 319,
+        "tp": 118,
+        "fp": 201,
+        "fn": 197,
+        "precision": 0.36990595611285265,
+        "recall": 0.3746031746031746,
+        "f1": 0.3722397476340694
+      },
+      {
+        "denomination_vnd": 20000,
+        "support": 238,
+        "predicted_count": 344,
+        "tp": 106,
+        "fp": 238,
+        "fn": 132,
+        "precision": 0.3081395348837209,
+        "recall": 0.44537815126050423,
+        "f1": 0.3642611683848797
+      },
+      {
+        "denomination_vnd": 50000,
+        "support": 195,
+        "predicted_count": 220,
+        "tp": 77,
+        "fp": 143,
+        "fn": 118,
+        "precision": 0.35,
+        "recall": 0.39487179487179486,
+        "f1": 0.3710843373493976
+      },
+      {
+        "denomination_vnd": 100000,
+        "support": 250,
+        "predicted_count": 179,
+        "tp": 82,
+        "fp": 97,
+        "fn": 168,
+        "precision": 0.4581005586592179,
+        "recall": 0.328,
+        "f1": 0.3822843822843823
+      },
+      {
+        "denomination_vnd": 200000,
+        "support": 309,
+        "predicted_count": 272,
+        "tp": 123,
+        "fp": 149,
+        "fn": 186,
+        "precision": 0.4522058823529412,
+        "recall": 0.39805825242718446,
+        "f1": 0.423407917383821
+      },
+      {
+        "denomination_vnd": 500000,
+        "support": 257,
+        "predicted_count": 230,
+        "tp": 105,
+        "fp": 125,
+        "fn": 152,
+        "precision": 0.45652173913043476,
+        "recall": 0.4085603112840467,
+        "f1": 0.43121149897330596
+      }
+    ],
+    "error_pairs": [
+      {
+        "true_vnd": 10000,
+        "predicted_vnd": 20000,
+        "count": 62,
+        "gap_vnd": 10000,
+        "total_gap_vnd": 620000
+      },
+      {
+        "true_vnd": 10000,
+        "predicted_vnd": 50000,
+        "count": 36,
+        "gap_vnd": 40000,
+        "total_gap_vnd": 1440000
+      },
+      {
+        "true_vnd": 10000,
+        "predicted_vnd": 100000,
+        "count": 33,
+        "gap_vnd": 90000,
+        "total_gap_vnd": 2970000
+      },
+      {
+        "true_vnd": 10000,
+        "predicted_vnd": 200000,
+        "count": 34,
+        "gap_vnd": 190000,
+        "total_gap_vnd": 6460000
+      },
+      {
+        "true_vnd": 10000,
+        "predicted_vnd": 500000,
+        "count": 32,
+        "gap_vnd": 490000,
+        "total_gap_vnd": 15680000
+      },
+      {
+        "true_vnd": 20000,
+        "predicted_vnd": 10000,
+        "count": 46,
+        "gap_vnd": 10000,
+        "total_gap_vnd": 460000
+      },
+      {
+        "true_vnd": 20000,
+        "predicted_vnd": 50000,
+        "count": 23,
+        "gap_vnd": 30000,
+        "total_gap_vnd": 690000
+      },
+      {
+        "true_vnd": 20000,
+        "predicted_vnd": 100000,
+        "count": 19,
+        "gap_vnd": 80000,
+        "total_gap_vnd": 1520000
+      },
+      {
+        "true_vnd": 20000,
+        "predicted_vnd": 200000,
+        "count": 28,
+        "gap_vnd": 180000,
+        "total_gap_vnd": 5040000
+      },
+      {
+        "true_vnd": 20000,
+        "predicted_vnd": 500000,
+        "count": 16,
+        "gap_vnd": 480000,
+        "total_gap_vnd": 7680000
+      },
+      {
+        "true_vnd": 50000,
+        "predicted_vnd": 10000,
+        "count": 31,
+        "gap_vnd": 40000,
+        "total_gap_vnd": 1240000
+      },
+      {
+        "true_vnd": 50000,
+        "predicted_vnd": 20000,
+        "count": 31,
+        "gap_vnd": 30000,
+        "total_gap_vnd": 930000
+      },
+      {
+        "true_vnd": 50000,
+        "predicted_vnd": 100000,
+        "count": 14,
+        "gap_vnd": 50000,
+        "total_gap_vnd": 700000
+      },
+      {
+        "true_vnd": 50000,
+        "predicted_vnd": 200000,
+        "count": 23,
+        "gap_vnd": 150000,
+        "total_gap_vnd": 3450000
+      },
+      {
+        "true_vnd": 50000,
+        "predicted_vnd": 500000,
+        "count": 19,
+        "gap_vnd": 450000,
+        "total_gap_vnd": 8550000
+      },
+      {
+        "true_vnd": 100000,
+        "predicted_vnd": 10000,
+        "count": 34,
+        "gap_vnd": 90000,
+        "total_gap_vnd": 3060000
+      },
+      {
+        "true_vnd": 100000,
+        "predicted_vnd": 20000,
+        "count": 40,
+        "gap_vnd": 80000,
+        "total_gap_vnd": 3200000
+      },
+      {
+        "true_vnd": 100000,
+        "predicted_vnd": 50000,
+        "count": 30,
+        "gap_vnd": 50000,
+        "total_gap_vnd": 1500000
+      },
+      {
+        "true_vnd": 100000,
+        "predicted_vnd": 200000,
+        "count": 38,
+        "gap_vnd": 100000,
+        "total_gap_vnd": 3800000
+      },
+      {
+        "true_vnd": 100000,
+        "predicted_vnd": 500000,
+        "count": 26,
+        "gap_vnd": 400000,
+        "total_gap_vnd": 10400000
+      },
+      {
+        "true_vnd": 200000,
+        "predicted_vnd": 10000,
+        "count": 51,
+        "gap_vnd": 190000,
+        "total_gap_vnd": 9690000
+      },
+      {
+        "true_vnd": 200000,
+        "predicted_vnd": 20000,
+        "count": 55,
+        "gap_vnd": 180000,
+        "total_gap_vnd": 9900000
+      },
+      {
+        "true_vnd": 200000,
+        "predicted_vnd": 50000,
+        "count": 27,
+        "gap_vnd": 150000,
+        "total_gap_vnd": 4050000
+      },
+      {
+        "true_vnd": 200000,
+        "predicted_vnd": 100000,
+        "count": 21,
+        "gap_vnd": 100000,
+        "total_gap_vnd": 2100000
+      },
+      {
+        "true_vnd": 200000,
+        "predicted_vnd": 500000,
+        "count": 32,
+        "gap_vnd": 300000,
+        "total_gap_vnd": 9600000
+      },
+      {
+        "true_vnd": 500000,
+        "predicted_vnd": 10000,
+        "count": 39,
+        "gap_vnd": 490000,
+        "total_gap_vnd": 19110000
+      },
+      {
+        "true_vnd": 500000,
+        "predicted_vnd": 20000,
+        "count": 50,
+        "gap_vnd": 480000,
+        "total_gap_vnd": 24000000
+      },
+      {
+        "true_vnd": 500000,
+        "predicted_vnd": 50000,
+        "count": 27,
+        "gap_vnd": 450000,
+        "total_gap_vnd": 12150000
+      },
+      {
+        "true_vnd": 500000,
+        "predicted_vnd": 100000,
+        "count": 10,
+        "gap_vnd": 400000,
+        "total_gap_vnd": 4000000
+      },
+      {
+        "true_vnd": 500000,
+        "predicted_vnd": 200000,
+        "count": 26,
+        "gap_vnd": 300000,
+        "total_gap_vnd": 7800000
+      }
+    ]
+  },
+  "raw_l2_norm_summary": {
+    "train": {
+      "min": 10.0,
+      "median": 13.0,
+      "max": 13.000000953674316
+    },
+    "dev": {
+      "min": 10.0,
+      "median": 13.0,
+      "max": 13.000000953674316
+    }
+  },
+  "additional_checks_completed_in_audit": [
+    "All 20 k/weights/Euclidean combinations and tie-break order correct.",
+    "Confusion matrix and per-class CSVs match saved predictions.",
+    "18 dev PNG descriptors recomputed: all match before-L2 features.",
+    "18 dev predictions replayed against full saved train feature matrix: all match.",
+    "All notebook code cells executed; no saved errors."
+  ],
+  "precision_note": "CSV/JSON MAE differs by 1.46e-11 VND due to float serialization; verified within 1e-8 VND.",
+  "limits": [
+    "Only 18 images and model predictions were replayed, not full inference.",
+    "Other 19 grid configurations were not rerun.",
+    "No PCA or test inference performed."
+  ]
+}

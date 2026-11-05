@@ -1,0 +1,40 @@
+{
+  "image": "RGB uint8 224x224, OpenCV INTER_LINEAR",
+  "orientations": 9,
+  "pixels_per_cell": [
+    16,
+    16
+  ],
+  "cells_per_block": [
+    2,
+    2
+  ],
+  "block_norm": "L2-Hys",
+  "transform_sqrt": false,
+  "pca": false,
+  "whole_vector_norm": "L2",
+  "feature_dtype": "float32",
+  "k_options": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "weight_options": [
+    "uniform",
+    "distance"
+  ],
+  "metric_options": [
+    "euclidean"
+  ],
+  "algorithm": "brute",
+  "best_k": 1,
+  "best_weights": "uniform",
+  "best_metric": "euclidean"
+}

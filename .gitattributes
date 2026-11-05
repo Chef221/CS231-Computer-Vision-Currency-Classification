@@ -1,0 +1,5 @@
+# Preserve exact bytes for files referenced by experiment SHA-256 records.
+src/KNN/results_224/** -text whitespace=cr-at-eol
+docs/KNN_REPORT/** -text whitespace=cr-at-eol
+src/preprocessing.py -text whitespace=cr-at-eol
+src/evaluation/value_metrics.py -text whitespace=cr-at-eol

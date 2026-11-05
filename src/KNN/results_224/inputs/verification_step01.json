@@ -1,0 +1,26 @@
+{
+  "status": "PASS_STEP01_RGB224_INPUT",
+  "scope": "all train/dev image decode, resize shape/dtype; manifests checked; no label-quality audit; no feature extraction or model fitting",
+  "counts": [
+    {
+      "split": "train",
+      "images": 12494,
+      "rgb224_uint8": 12494,
+      "all_correct_format": true
+    },
+    {
+      "split": "dev",
+      "images": 1564,
+      "rgb224_uint8": 1564,
+      "all_correct_format": true
+    }
+  ],
+  "unit_tests_passed": 2,
+  "sha256": {
+    "dev_manifest.csv": "8b25f956ed65dda0717b4cb71ae22adb8930573eaca4c74affc150271aee84a7",
+    "experiment_config.json": "cd96514ad40001a8f17512f9960a10ec64587187893a2d531bcc8aecddeb04b6",
+    "image_counts.csv": "4db84b22d022f551f508c578aa870076312c13b70fbd74f9fb8c7b923f81f9a2",
+    "input_checks.csv": "8131d4cedaa1471a036a51f307384e564dcbed8aff2cbe7995e4634fdce95b7f",
+    "train_manifest.csv": "306ad6579983415f55d5b87198ead18c907de3272fcb08346a7029a51504da03"
+  }
+}

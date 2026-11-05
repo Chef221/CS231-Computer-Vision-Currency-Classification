@@ -1,0 +1,379 @@
+{
+  "status": "PASS_FUSION_AUDIT",
+  "checks": {
+    "train_shape_and_alignment": true,
+    "train_all_concatenation_values_exact": true,
+    "dev_shape_and_alignment": true,
+    "dev_all_concatenation_values_exact": true,
+    "predictions_alignment": true,
+    "full_metrics_recomputed": true,
+    "cm_matches": true,
+    "per_class_matches": true,
+    "grid_20": true,
+    "ranking_ties": true,
+    "winner_metrics_match": true,
+    "winner_params_match": true,
+    "18_predictions_replayed": true,
+    "source_and_normalization_config": true,
+    "notebook_all_executed_no_errors": true,
+    "comparison_best_matches": true,
+    "comparison_reference_matches": true
+  },
+  "hsv_cache_checks": {
+    "hsv_train_shape_labels": true,
+    "hsv_train_all_unit_l2_finite_nonnegative": true,
+    "hsv_dev_shape_labels": true,
+    "hsv_dev_all_unit_l2_finite_nonnegative": true,
+    "18_hsv_dev_pngs_match_cache": true
+  },
+  "metrics": {
+    "class_order_vnd": [
+      10000,
+      20000,
+      50000,
+      100000,
+      200000,
+      500000
+    ],
+    "n_samples": 1564,
+    "confusion_matrix": [
+      [
+        238,
+        7,
+        14,
+        9,
+        26,
+        21
+      ],
+      [
+        7,
+        197,
+        4,
+        4,
+        8,
+        18
+      ],
+      [
+        16,
+        7,
+        136,
+        3,
+        19,
+        14
+      ],
+      [
+        23,
+        8,
+        12,
+        175,
+        17,
+        15
+      ],
+      [
+        40,
+        9,
+        20,
+        5,
+        208,
+        27
+      ],
+      [
+        10,
+        18,
+        8,
+        5,
+        29,
+        187
+      ]
+    ],
+    "accuracy": 0.729539641943734,
+    "macro_f1": 0.7319949792405468,
+    "mae_vnd": 62071.611253196934,
+    "total_gap_vnd": 97080000,
+    "per_class": [
+      {
+        "denomination_vnd": 10000,
+        "support": 315,
+        "predicted_count": 334,
+        "tp": 238,
+        "fp": 96,
+        "fn": 77,
+        "precision": 0.7125748502994012,
+        "recall": 0.7555555555555555,
+        "f1": 0.7334360554699538
+      },
+      {
+        "denomination_vnd": 20000,
+        "support": 238,
+        "predicted_count": 246,
+        "tp": 197,
+        "fp": 49,
+        "fn": 41,
+        "precision": 0.8008130081300813,
+        "recall": 0.8277310924369747,
+        "f1": 0.8140495867768595
+      },
+      {
+        "denomination_vnd": 50000,
+        "support": 195,
+        "predicted_count": 194,
+        "tp": 136,
+        "fp": 58,
+        "fn": 59,
+        "precision": 0.7010309278350515,
+        "recall": 0.6974358974358974,
+        "f1": 0.699228791773779
+      },
+      {
+        "denomination_vnd": 100000,
+        "support": 250,
+        "predicted_count": 201,
+        "tp": 175,
+        "fp": 26,
+        "fn": 75,
+        "precision": 0.8706467661691543,
+        "recall": 0.7,
+        "f1": 0.7760532150776053
+      },
+      {
+        "denomination_vnd": 200000,
+        "support": 309,
+        "predicted_count": 307,
+        "tp": 208,
+        "fp": 99,
+        "fn": 101,
+        "precision": 0.6775244299674267,
+        "recall": 0.6731391585760518,
+        "f1": 0.6753246753246753
+      },
+      {
+        "denomination_vnd": 500000,
+        "support": 257,
+        "predicted_count": 282,
+        "tp": 187,
+        "fp": 95,
+        "fn": 70,
+        "precision": 0.6631205673758865,
+        "recall": 0.7276264591439688,
+        "f1": 0.6938775510204082
+      }
+    ],
+    "error_pairs": [
+      {
+        "true_vnd": 10000,
+        "predicted_vnd": 20000,
+        "count": 7,
+        "gap_vnd": 10000,
+        "total_gap_vnd": 70000
+      },
+      {
+        "true_vnd": 10000,
+        "predicted_vnd": 50000,
+        "count": 14,
+        "gap_vnd": 40000,
+        "total_gap_vnd": 560000
+      },
+      {
+        "true_vnd": 10000,
+        "predicted_vnd": 100000,
+        "count": 9,
+        "gap_vnd": 90000,
+        "total_gap_vnd": 810000
+      },
+      {
+        "true_vnd": 10000,
+        "predicted_vnd": 200000,
+        "count": 26,
+        "gap_vnd": 190000,
+        "total_gap_vnd": 4940000
+      },
+      {
+        "true_vnd": 10000,
+        "predicted_vnd": 500000,
+        "count": 21,
+        "gap_vnd": 490000,
+        "total_gap_vnd": 10290000
+      },
+      {
+        "true_vnd": 20000,
+        "predicted_vnd": 10000,
+        "count": 7,
+        "gap_vnd": 10000,
+        "total_gap_vnd": 70000
+      },
+      {
+        "true_vnd": 20000,
+        "predicted_vnd": 50000,
+        "count": 4,
+        "gap_vnd": 30000,
+        "total_gap_vnd": 120000
+      },
+      {
+        "true_vnd": 20000,
+        "predicted_vnd": 100000,
+        "count": 4,
+        "gap_vnd": 80000,
+        "total_gap_vnd": 320000
+      },
+      {
+        "true_vnd": 20000,
+        "predicted_vnd": 200000,
+        "count": 8,
+        "gap_vnd": 180000,
+        "total_gap_vnd": 1440000
+      },
+      {
+        "true_vnd": 20000,
+        "predicted_vnd": 500000,
+        "count": 18,
+        "gap_vnd": 480000,
+        "total_gap_vnd": 8640000
+      },
+      {
+        "true_vnd": 50000,
+        "predicted_vnd": 10000,
+        "count": 16,
+        "gap_vnd": 40000,
+        "total_gap_vnd": 640000
+      },
+      {
+        "true_vnd": 50000,
+        "predicted_vnd": 20000,
+        "count": 7,
+        "gap_vnd": 30000,
+        "total_gap_vnd": 210000
+      },
+      {
+        "true_vnd": 50000,
+        "predicted_vnd": 100000,
+        "count": 3,
+        "gap_vnd": 50000,
+        "total_gap_vnd": 150000
+      },
+      {
+        "true_vnd": 50000,
+        "predicted_vnd": 200000,
+        "count": 19,
+        "gap_vnd": 150000,
+        "total_gap_vnd": 2850000
+      },
+      {
+        "true_vnd": 50000,
+        "predicted_vnd": 500000,
+        "count": 14,
+        "gap_vnd": 450000,
+        "total_gap_vnd": 6300000
+      },
+      {
+        "true_vnd": 100000,
+        "predicted_vnd": 10000,
+        "count": 23,
+        "gap_vnd": 90000,
+        "total_gap_vnd": 2070000
+      },
+      {
+        "true_vnd": 100000,
+        "predicted_vnd": 20000,
+        "count": 8,
+        "gap_vnd": 80000,
+        "total_gap_vnd": 640000
+      },
+      {
+        "true_vnd": 100000,
+        "predicted_vnd": 50000,
+        "count": 12,
+        "gap_vnd": 50000,
+        "total_gap_vnd": 600000
+      },
+      {
+        "true_vnd": 100000,
+        "predicted_vnd": 200000,
+        "count": 17,
+        "gap_vnd": 100000,
+        "total_gap_vnd": 1700000
+      },
+      {
+        "true_vnd": 100000,
+        "predicted_vnd": 500000,
+        "count": 15,
+        "gap_vnd": 400000,
+        "total_gap_vnd": 6000000
+      },
+      {
+        "true_vnd": 200000,
+        "predicted_vnd": 10000,
+        "count": 40,
+        "gap_vnd": 190000,
+        "total_gap_vnd": 7600000
+      },
+      {
+        "true_vnd": 200000,
+        "predicted_vnd": 20000,
+        "count": 9,
+        "gap_vnd": 180000,
+        "total_gap_vnd": 1620000
+      },
+      {
+        "true_vnd": 200000,
+        "predicted_vnd": 50000,
+        "count": 20,
+        "gap_vnd": 150000,
+        "total_gap_vnd": 3000000
+      },
+      {
+        "true_vnd": 200000,
+        "predicted_vnd": 100000,
+        "count": 5,
+        "gap_vnd": 100000,
+        "total_gap_vnd": 500000
+      },
+      {
+        "true_vnd": 200000,
+        "predicted_vnd": 500000,
+        "count": 27,
+        "gap_vnd": 300000,
+        "total_gap_vnd": 8100000
+      },
+      {
+        "true_vnd": 500000,
+        "predicted_vnd": 10000,
+        "count": 10,
+        "gap_vnd": 490000,
+        "total_gap_vnd": 4900000
+      },
+      {
+        "true_vnd": 500000,
+        "predicted_vnd": 20000,
+        "count": 18,
+        "gap_vnd": 480000,
+        "total_gap_vnd": 8640000
+      },
+      {
+        "true_vnd": 500000,
+        "predicted_vnd": 50000,
+        "count": 8,
+        "gap_vnd": 450000,
+        "total_gap_vnd": 3600000
+      },
+      {
+        "true_vnd": 500000,
+        "predicted_vnd": 100000,
+        "count": 5,
+        "gap_vnd": 400000,
+        "total_gap_vnd": 2000000
+      },
+      {
+        "true_vnd": 500000,
+        "predicted_vnd": 200000,
+        "count": 29,
+        "gap_vnd": 300000,
+        "total_gap_vnd": 8700000
+      }
+    ]
+  },
+  "prediction_sample": 18,
+  "limits": [
+    "All saved features checked by blocks; only 18 PNG HSV descriptors and 18 model predictions per fusion replayed.",
+    "Other grid configurations not rerun; no test access or PCA refit."
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "feature": "HSV12",
+  "knn": {
+    "n_neighbors": 1,
+    "weights": "uniform",
+    "metric": "euclidean",
+    "algorithm": "brute"
+  },
+  "n_test": 1553,
+  "n_errors": 366,
+  "n_selected_cases": 12,
+  "neighbor_labels_match_saved_predictions": true,
+  "sha256": {
+    "src/KNN/results_224/selection/locked_knn_config.json": "f36937587fa52e1d0d6e6a5748bcb8236c87cf4eadb62e532186531ba9f17ffc",
+    "src/KNN/results_224/test_final/X_test.npy": "8e50ed27cfd3e2dabf9f4855716026da4ae441766406d4e5e88b594447cec3d5",
+    "src/KNN/results_224/test_final/predictions_test.csv": "0eed3f6eba22db9f7d1dc3611076be7bd2a70a89dd5ce27fd8f0764f5cdff4e5",
+    "src/KNN/results_224/test_final/test_manifest.csv": "965c7f31f72071e2f9481759bcaf199beab21589eb0d22e0098105c5b257a798",
+    "src/KNN/results_224/test_final/metrics_test.json": "7737ddae9b7964fc28d2b8fab119691c3265be9b8cef80199bf19fa128d825fe",
+    "src/preprocessing.py": "1cbada4dae212889baa6f62b30c68177a5b1f9bb6488d9b7fac8ca26b041d831"
+  },
+  "selection": "3 frequent pairs both directions; 3 largest-total-gap directions; 1 boundary error; 2 correct controls; no duplicate query",
+  "visual_causes_verified": false,
+  "test_used_for_retuning": false
+}

@@ -1,0 +1,2 @@
+feature,feature_dim,k,weights,metric,n_test,accuracy,macro_f1,mae_vnd
+HSV12,1728,1,uniform,euclidean,1553,0.7643271088216356,0.7687098286084958,53947.198969736

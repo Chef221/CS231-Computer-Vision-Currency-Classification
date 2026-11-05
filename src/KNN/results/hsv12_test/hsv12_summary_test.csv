@@ -1,2 +1,0 @@
-feature,feature_dim,k,weights,metric,n_samples,accuracy,macro_f1,mae_vnd,total_gap_vnd
-Histogram HSV 12x12x12,1728,1,uniform,braycurtis,1553,0.8718609143593046,0.8747722561915229,31461.687057308434,48860000

@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "checks": [
+    "All code cells executed without saved errors",
+    "Analysis source hashes and all locked source hashes match",
+    "All 1553 chosen/same-class/other-class neighbors have correct labels, paths and globally minimal distances",
+    "All summary tables and all 12 selected cases match declared deterministic selection",
+    "All displayed query/train features re-extracted exactly: 12 test and 21 distinct train images"
+  ],
+  "n_test": 1553,
+  "n_errors": 366,
+  "n_cases": 12,
+  "n_near_ties": 0,
+  "limits": [
+    "Visual review covers the 12 selected queries and displayed train images, not all 366 errors",
+    "Some selected queries are visually very similar; 12 queries are not 12 independent failure mechanisms",
+    "No causal background/lighting ablation, label-quality audit or full dataset leakage audit"
+  ]
+}
