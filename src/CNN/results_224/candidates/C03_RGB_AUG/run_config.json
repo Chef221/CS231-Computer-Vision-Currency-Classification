@@ -1,0 +1,34 @@
+{
+  "candidate": {
+    "candidate_id": "C03_RGB_AUG",
+    "color": "rgb",
+    "augmentation": true,
+    "channels": [
+      32,
+      64,
+      128
+    ]
+  },
+  "training": {
+    "seed": 42,
+    "batch_size": 64,
+    "num_workers": 2,
+    "max_epochs": 25,
+    "patience": 6,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "optimizer": "AdamW",
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "scheduler": "CosineAnnealingLR",
+    "eta_min": 1e-05,
+    "loss": "CrossEntropyLoss",
+    "label_smoothing": 0.0,
+    "class_weights": null,
+    "amp_cuda": true,
+    "gradient_clip_norm": 5.0
+  },
+  "protocol_sha256": "e38919926b90514a80598f7f9b355b725489c2398ec5c0e996e4c8cb83b38ffc"
+}

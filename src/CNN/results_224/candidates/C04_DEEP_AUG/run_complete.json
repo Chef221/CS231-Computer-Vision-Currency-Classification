@@ -1,0 +1,45 @@
+{
+  "metadata": {
+    "candidate": {
+      "candidate_id": "C04_DEEP_AUG",
+      "color": "rgb",
+      "augmentation": true,
+      "channels": [
+        32,
+        64,
+        128,
+        256
+      ]
+    },
+    "training": {
+      "seed": 42,
+      "batch_size": 64,
+      "num_workers": 2,
+      "max_epochs": 25,
+      "patience": 6,
+      "learning_rate": 0.001,
+      "weight_decay": 0.0001,
+      "optimizer": "AdamW",
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "scheduler": "CosineAnnealingLR",
+      "eta_min": 1e-05,
+      "loss": "CrossEntropyLoss",
+      "label_smoothing": 0.0,
+      "class_weights": null,
+      "amp_cuda": true,
+      "gradient_clip_norm": 5.0
+    },
+    "protocol_sha256": "e38919926b90514a80598f7f9b355b725489c2398ec5c0e996e4c8cb83b38ffc"
+  },
+  "sha256": {
+    "best.pt": "983063cc4c304487d5aca0625d08744ec557860806bc479b2dec82f70319b918",
+    "history.csv": "8ec0a034d186546bdeee214621c833fdc8fc6d26887514ebc03cc5436e2959f3",
+    "metrics_dev.json": "2c3c4f12039527626c3bb22ef3a19d427272a18fb8d69bd1edd32d4025c5d242",
+    "predictions_dev.csv": "dfa81dddcadf1f2a54c4fc2ac9eb1e07efdb01d3b9df038c10cc973b2aa916ba",
+    "summary.json": "9f5165f158e490b0df1d7d0f0880ccaee05a76b31a80ac8e601e451279682ffe",
+    "run_config.json": "87a4b9e0ddb912b65e8b4663e210cc253c18a47f6f3d4c3a1a7bed1f3b716967"
+  }
+}
