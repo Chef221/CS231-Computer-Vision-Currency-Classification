@@ -1,0 +1,68 @@
+{
+  "status": "verified",
+  "lock_sha256": "9bccf375a9df5ceaafffa71b25f98c4aa5819ac8846fe15332b98ff6bac93edb",
+  "locked_files_verified": 41,
+  "missing_large_checkpoints": [],
+  "run_complete_files_verified": 24,
+  "baseline_files_verified": 14,
+  "source_code_matches_lock": true,
+  "train_dev_test_manifests_match_both_baselines": true,
+  "selected_candidate": "C04_DEEP_AUG",
+  "selected_epoch": 24,
+  "correct_test_images": 1507,
+  "test_errors": 46,
+  "accuracy": 0.9703799098518996,
+  "macro_f1": 0.9699628437046163,
+  "mae_vnd": 9104.95814552479,
+  "total_gap_vnd": 14140000,
+  "candidate_timing": [
+    {
+      "candidate_id": "C01_RGB",
+      "epochs": 25,
+      "best_epoch": 25,
+      "train_seconds": 2262.782684833999,
+      "dev_seconds": 285.23669030099995,
+      "train_plus_dev_seconds": 2548.019375134999
+    },
+    {
+      "candidate_id": "C02_GRAY",
+      "epochs": 25,
+      "best_epoch": 25,
+      "train_seconds": 2073.8604866579994,
+      "dev_seconds": 264.83075973900077,
+      "train_plus_dev_seconds": 2338.691246397
+    },
+    {
+      "candidate_id": "C03_RGB_AUG",
+      "epochs": 25,
+      "best_epoch": 24,
+      "train_seconds": 2350.474689583,
+      "dev_seconds": 283.0683927759994,
+      "train_plus_dev_seconds": 2633.5430823589995
+    },
+    {
+      "candidate_id": "C04_DEEP_AUG",
+      "epochs": 25,
+      "best_epoch": 24,
+      "train_seconds": 2319.987838897,
+      "dev_seconds": 283.2071989229976,
+      "train_plus_dev_seconds": 2603.1950378199977
+    }
+  ],
+  "paired": {
+    "KNN": {
+      "both_correct": 1168,
+      "only_cnn_correct": 339,
+      "only_baseline_correct": 19,
+      "both_wrong": 27
+    },
+    "SVM": {
+      "both_correct": 1339,
+      "only_cnn_correct": 168,
+      "only_baseline_correct": 23,
+      "both_wrong": 23
+    }
+  },
+  "all_three_models_wrong": 18,
+  "scope": "Saved evidence and metadata verified; no retraining or GPU inference rerun; image bytes not compared across original training sessions."
+}

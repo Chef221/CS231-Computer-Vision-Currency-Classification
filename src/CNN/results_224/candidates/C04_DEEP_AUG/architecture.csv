@@ -1,0 +1,7 @@
+stage,output,parameters
+block_1,"(32, 112, 112)",10208
+block_2,"(64, 56, 56)",55552
+block_3,"(128, 28, 28)",221696
+block_4,"(256, 14, 14)",885760
+global_average_pool,"(256,)",0
+dense128_dropout_dense6,"(6,)",33670

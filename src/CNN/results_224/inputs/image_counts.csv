@@ -1,0 +1,13 @@
+split,denomination_vnd,count
+train,10000,2299
+train,20000,1916
+train,50000,1646
+train,100000,1918
+train,200000,2525
+train,500000,2190
+dev,10000,315
+dev,20000,238
+dev,50000,195
+dev,100000,250
+dev,200000,309
+dev,500000,257

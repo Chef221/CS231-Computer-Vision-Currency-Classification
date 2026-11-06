@@ -1,0 +1,18 @@
+{
+  "feature_id": "HSV12_HOG",
+  "feature_dim": 7812,
+  "preprocessing": "RGB uint8 224x224 OpenCV INTER_LINEAR",
+  "feature_pipeline": "concatenate L2 HSV12 then L2 hog; no post-concat normalization",
+  "svm_grid": "linear C=(0.1,1,10); rbf C=(1,10), gamma=(scale,10)",
+  "class_weight": null,
+  "cache_size_mb": 512,
+  "decision_function_shape": "ovr",
+  "break_ties": true,
+  "best_params": {
+    "kernel": "rbf",
+    "C": 10.0,
+    "gamma": "scale"
+  },
+  "fit_split": "train",
+  "selection_split": "dev"
+}

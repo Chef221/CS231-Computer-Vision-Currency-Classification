@@ -1,0 +1,45 @@
+{
+  "status": "measured",
+  "figures": {
+    "CNN_ARCHITECTURE.svg": {
+      "source": "docs/CNN_REPORT/CNN224_FIGURES/CNN_ARCHITECTURE.svg",
+      "sha256": "5394f73d8e4d3b2974d7084a6069297d5122f3c7eeccb603eef90aa4961e814f"
+    },
+    "CNN_1_RESIZE.png": {
+      "source": "src/CNN/results_224/inputs/rgb224_examples.png",
+      "sha256": "fcc8df891ae6295ffbb4c6241d5a9e50ee816431fbe865460fcfbf2cce508083"
+    },
+    "CNN_2_AUGMENTATION.png": {
+      "source": "src/CNN/results_224/inputs/augmentation_examples.png",
+      "sha256": "95dd727cebde802e0dfd1ab56576dd6b4c948291a685bb53082e8492a6699ce2"
+    },
+    "CNN_4_EMBEDDING_PCA.png": {
+      "source": "src/CNN/results_224/feature_analysis/embedding_pca_dev.png",
+      "sha256": "d7b2e57ee99570ad2766ef201fd32b10bc89eddd435efe26c9bbb678242734dc"
+    },
+    "CNN_5_FEATURE_MAPS.png": {
+      "source": "src/CNN/results_224/feature_analysis/feature_maps.png",
+      "sha256": "22432f64f34e8b8eea10257a95ff16d2bfacadd8f412815fc51dd9d40a7b7dee"
+    },
+    "CNN_6_CONFUSION_TEST.png": {
+      "source": "src/CNN/results_224/test_final/confusion_matrix_test.png",
+      "sha256": "75a0113a8d7e9c6ca55404614f3a53b6f1e6f7e257cf40e058146e36b2b2bf01"
+    },
+    "CNN_7_GRADCAM.png": {
+      "source": "src/CNN/results_224/error_analysis/cases_page_02.png",
+      "sha256": "3fc31fd2612e51b06c250eb8dc8a01bf84e00f4c2e7f9cbd0df0c36a5de8b9a2"
+    },
+    "CNN_8_GRADCAM_BOUNDARY.png": {
+      "source": "src/CNN/results_224/error_analysis/cases_page_03.png",
+      "sha256": "f4d8bc9df94ca60e807b3787ba23d93fd9665f82f0590fa0ec4c3b5b8ccd3fc4"
+    },
+    "CNN_3_LEARNING_CURVES.png": {
+      "source": "src/CNN/results_224/candidates/C04_DEEP_AUG/learning_curves.png",
+      "sha256": "4b160a15482069053390c5158201695a8e1a8faa90df9b4a271b8a09b795178c"
+    }
+  },
+  "reference_provenance_sha256": "fa019546b4ac2bc04879f4da1d3b75514f666b846954cccb768c540d1142582d",
+  "verified_lock_files": 41,
+  "missing_large_checkpoints": [],
+  "report_sha256": "649f2cc2b35039ec960e3bc4ecaa97a35290affd76f7d7adef14f5cb742e9462"
+}

@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="370" viewBox="0 0 1200 370" role="img" aria-labelledby="title desc">
+  <title id="title">Kiến trúc CNN phân loại sáu mệnh giá</title>
+  <desc id="desc">Ảnh RGB224 qua ba khối 32, 64, 128 kênh; C04 thêm khối 256. Global average pooling, Dense128, dropout và Dense6 tạo logits. C02 nhận ảnh xám một kênh.</desc>
+  <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#526276"/></marker></defs>
+  <rect width="1200" height="370" fill="white"/>
+  <g font-family="DejaVu Sans,Arial,sans-serif" fill="#182c42" text-anchor="middle">
+    <text x="600" y="35" font-size="23" font-weight="bold">CNN học trực tiếp từ pixel — không pretrained</text>
+    <g stroke="#526276" stroke-width="2" marker-end="url(#arrow)">
+      <path d="M134 133 H164"/><path d="M290 133 H320"/><path d="M446 133 H476"/>
+      <path d="M602 133 H632"/><path d="M758 133 H788"/><path d="M914 133 H944"/>
+      <path d="M1070 133 H1100"/>
+    </g>
+    <g stroke="#53758e" stroke-width="1.5" fill="#edf5fa">
+      <rect x="14" y="84" width="120" height="98" rx="7"/>
+      <rect x="164" y="84" width="126" height="98" rx="7"/>
+      <rect x="320" y="84" width="126" height="98" rx="7"/>
+      <rect x="476" y="84" width="126" height="98" rx="7"/>
+      <rect x="632" y="84" width="126" height="98" rx="7" stroke-dasharray="6 4" fill="#fff4df"/>
+      <rect x="788" y="84" width="126" height="98" rx="7"/>
+      <rect x="944" y="84" width="126" height="98" rx="7"/>
+      <rect x="1100" y="84" width="86" height="98" rx="7" fill="#e6f4ea"/>
+    </g>
+    <g font-size="18" font-weight="bold">
+      <text x="74" y="118">Ảnh 224²</text><text x="227" y="118">Khối 1</text>
+      <text x="383" y="118">Khối 2</text><text x="539" y="118">Khối 3</text>
+      <text x="695" y="118">Khối 4*</text><text x="851" y="118">GAP</text>
+      <text x="1007" y="118">Dense128</text><text x="1143" y="118">Dense6</text>
+    </g>
+    <g font-size="15">
+      <text x="74" y="147">RGB / gray</text><text x="227" y="147">32 × 112²</text>
+      <text x="383" y="147">64 × 56²</text><text x="539" y="147">128 × 28²</text>
+      <text x="695" y="147">256 × 14²</text><text x="851" y="147">128 / 256</text>
+      <text x="1007" y="147">ReLU</text><text x="1143" y="147">logits</text>
+      <text x="1007" y="168">Dropout 0,5</text>
+    </g>
+    <rect x="165" y="224" width="870" height="64" fill="#f5f7f9" stroke="#ced9e0" rx="5"/>
+    <text x="600" y="250" font-size="18">Mỗi khối: [Conv3×3 → BatchNorm → ReLU] × 2</text>
+    <text x="600" y="276" font-size="18">→ MaxPool2×2 → Dropout2d(0,1)</text>
+    <text x="600" y="324" font-size="16">* Khối 4 chỉ có ở C04; C01–C03 đi từ khối 3 thẳng đến GAP.</text>
+    <text x="600" y="351" font-size="16">Cross-entropy khi train; đổi chỉ số 0…5 về VND trước khi tính Accuracy, Macro-F1 và MAE.</text>
+  </g>
+</svg>

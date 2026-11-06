@@ -1,0 +1,22 @@
+candidate_id,stage,output,parameters
+C01_RGB,block_1,"(32, 112, 112)",10208
+C01_RGB,block_2,"(64, 56, 56)",55552
+C01_RGB,block_3,"(128, 28, 28)",221696
+C01_RGB,global_average_pool,"(128,)",0
+C01_RGB,dense128_dropout_dense6,"(6,)",17286
+C02_GRAY,block_1,"(32, 112, 112)",9632
+C02_GRAY,block_2,"(64, 56, 56)",55552
+C02_GRAY,block_3,"(128, 28, 28)",221696
+C02_GRAY,global_average_pool,"(128,)",0
+C02_GRAY,dense128_dropout_dense6,"(6,)",17286
+C03_RGB_AUG,block_1,"(32, 112, 112)",10208
+C03_RGB_AUG,block_2,"(64, 56, 56)",55552
+C03_RGB_AUG,block_3,"(128, 28, 28)",221696
+C03_RGB_AUG,global_average_pool,"(128,)",0
+C03_RGB_AUG,dense128_dropout_dense6,"(6,)",17286
+C04_DEEP_AUG,block_1,"(32, 112, 112)",10208
+C04_DEEP_AUG,block_2,"(64, 56, 56)",55552
+C04_DEEP_AUG,block_3,"(128, 28, 28)",221696
+C04_DEEP_AUG,block_4,"(256, 14, 14)",885760
+C04_DEEP_AUG,global_average_pool,"(256,)",0
+C04_DEEP_AUG,dense128_dropout_dense6,"(6,)",33670

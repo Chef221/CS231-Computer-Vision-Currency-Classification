@@ -1,0 +1,31 @@
+{
+  "purpose": "Read-only KNN/SVM RGB224 evidence for later paired CNN comparison; not CNN results.",
+  "baselines": {
+    "KNN": {
+      "folder": "knn_rgb224",
+      "source_commit": "fabe1b4c2305569414d32b8c33022c3ef6cac84c",
+      "source_root": "src/KNN/results_224/"
+    },
+    "SVM": {
+      "folder": "svm_rgb224",
+      "source_commit": "6d87bc4792554b7e38ac065f9b7546b9b954bee6",
+      "source_root": "src/SVM/results_224/"
+    }
+  },
+  "sha256": {
+    "knn_rgb224/metrics_test.json": "7737ddae9b7964fc28d2b8fab119691c3265be9b8cef80199bf19fa128d825fe",
+    "knn_rgb224/predictions_test.csv": "0eed3f6eba22db9f7d1dc3611076be7bd2a70a89dd5ce27fd8f0764f5cdff4e5",
+    "knn_rgb224/train_manifest.csv": "306ad6579983415f55d5b87198ead18c907de3272fcb08346a7029a51504da03",
+    "knn_rgb224/dev_manifest.csv": "8b25f956ed65dda0717b4cb71ae22adb8930573eaca4c74affc150271aee84a7",
+    "knn_rgb224/test_manifest.csv": "965c7f31f72071e2f9481759bcaf199beab21589eb0d22e0098105c5b257a798",
+    "knn_rgb224/experiment_config.json": "cd96514ad40001a8f17512f9960a10ec64587187893a2d531bcc8aecddeb04b6",
+    "knn_rgb224/locked_knn_config.json": "f36937587fa52e1d0d6e6a5748bcb8236c87cf4eadb62e532186531ba9f17ffc",
+    "svm_rgb224/metrics_test.json": "efba8ae8df3bc336b61d4ea79956002833a7b8642a35b74aba996bf8dc6e927f",
+    "svm_rgb224/predictions_test.csv": "4b57616ceb7eb8a19eada0bca3ffa2e1e96bd119270e7f3884922fcf848f85ca",
+    "svm_rgb224/train_manifest.csv": "df553bde8a2d1bd8c8f2dc9d78fccbfb55411829e54afcf10c4877816d5e9999",
+    "svm_rgb224/dev_manifest.csv": "b09ad96958bc0ac97cf4ee1685488ad3e05b53144c4bb8fff0a43723b5f59a8d",
+    "svm_rgb224/test_manifest.csv": "a9596feb2d2b583fc5b235628e770b96742667b0985d07ae2fd3033a3204788c",
+    "svm_rgb224/experiment_config.json": "82fef9f6c857f33043d02bb439740e05ee694b5e33e71248b8028133bfdaa8c4",
+    "svm_rgb224/locked_svm_config.json": "0e1fe5a75547927876fe2e0e9ad40653974cddf65ddd1a61a9d0cd25002db512"
+  }
+}

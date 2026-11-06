@@ -1,0 +1,116 @@
+{
+  "scope": "Read-only cache checks. All shapes and labels checked; L2/concatenation/finite checks use 16 deterministic sample rows per split. Selected matrices additionally have complete SHA-256 checks in validation.json.",
+  "arrays": [
+    {
+      "folder": "hsv12",
+      "split": "train",
+      "shape": [
+        12494,
+        1728
+      ],
+      "dtype": "float32",
+      "labels_match": true,
+      "sample_finite": true
+    },
+    {
+      "folder": "hog",
+      "split": "train",
+      "shape": [
+        12494,
+        6084
+      ],
+      "dtype": "float32",
+      "labels_match": true,
+      "sample_finite": true
+    },
+    {
+      "folder": "hog_pca",
+      "split": "train",
+      "shape": [
+        12494,
+        1418
+      ],
+      "dtype": "float32",
+      "labels_match": true,
+      "sample_finite": true
+    },
+    {
+      "folder": "hsv12_hog",
+      "split": "train",
+      "shape": [
+        12494,
+        7812
+      ],
+      "dtype": "float32",
+      "labels_match": true,
+      "sample_finite": true
+    },
+    {
+      "folder": "hsv12_hog_pca",
+      "split": "train",
+      "shape": [
+        12494,
+        3146
+      ],
+      "dtype": "float32",
+      "labels_match": true,
+      "sample_finite": true
+    },
+    {
+      "folder": "hsv12",
+      "split": "dev",
+      "shape": [
+        1564,
+        1728
+      ],
+      "dtype": "float32",
+      "labels_match": true,
+      "sample_finite": true
+    },
+    {
+      "folder": "hog",
+      "split": "dev",
+      "shape": [
+        1564,
+        6084
+      ],
+      "dtype": "float32",
+      "labels_match": true,
+      "sample_finite": true
+    },
+    {
+      "folder": "hog_pca",
+      "split": "dev",
+      "shape": [
+        1564,
+        1418
+      ],
+      "dtype": "float32",
+      "labels_match": true,
+      "sample_finite": true
+    },
+    {
+      "folder": "hsv12_hog",
+      "split": "dev",
+      "shape": [
+        1564,
+        7812
+      ],
+      "dtype": "float32",
+      "labels_match": true,
+      "sample_finite": true
+    },
+    {
+      "folder": "hsv12_hog_pca",
+      "split": "dev",
+      "shape": [
+        1564,
+        3146
+      ],
+      "dtype": "float32",
+      "labels_match": true,
+      "sample_finite": true
+    }
+  ],
+  "sampled_fusion_concatenation_matches": true
+}

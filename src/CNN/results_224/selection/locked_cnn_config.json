@@ -1,0 +1,226 @@
+{
+  "created_utc": "2026-11-06T14:48:11.851024+00:00",
+  "candidate": {
+    "candidate_id": "C04_DEEP_AUG",
+    "color": "rgb",
+    "augmentation": true,
+    "channels": [
+      32,
+      64,
+      128,
+      256
+    ]
+  },
+  "best_epoch": 24,
+  "checkpoint": "candidates/C04_DEEP_AUG/best.pt",
+  "classes_vnd": [
+    10000,
+    20000,
+    50000,
+    100000,
+    200000,
+    500000
+  ],
+  "training_split": "train",
+  "refit_train_plus_dev": false,
+  "dev_metrics": {
+    "accuracy": 0.9641943734015346,
+    "macro_f1": 0.9645590136191361,
+    "mae_vnd": 9584.398976982096
+  },
+  "protocol": {
+    "model_family": "CNN",
+    "protocol_id": "cnn_rgb224_v1",
+    "classes_vnd": [
+      10000,
+      20000,
+      50000,
+      100000,
+      200000,
+      500000
+    ],
+    "split_sizes": {
+      "train": 12494,
+      "dev": 1564,
+      "test": 1553
+    },
+    "preprocessing": {
+      "reader": "src.preprocessing.read_rgb224",
+      "size": [
+        224,
+        224
+      ],
+      "resize": "direct OpenCV INTER_LINEAR",
+      "scale": "float32 / 255",
+      "normalization": "no ImageNet mean/std; no fitted pixel scaler"
+    },
+    "architecture": {
+      "block": "2 x (Conv3x3, BN, ReLU), MaxPool2, Dropout2d0.1",
+      "head": "GAP, Dense128, ReLU, Dropout0.5, Dense6 logits",
+      "initialization": "Kaiming conv; Xavier linear; BN weight1 bias0",
+      "pretrained": false
+    },
+    "augmentation": {
+      "train_only": true,
+      "degrees": [
+        -12,
+        12
+      ],
+      "translate_fraction": [
+        -0.05,
+        0.05
+      ],
+      "scale": [
+        0.95,
+        1.05
+      ],
+      "brightness_add_fraction": [
+        -0.1,
+        0.1
+      ],
+      "contrast": [
+        0.9,
+        1.1
+      ],
+      "border_fill": [
+        127,
+        127,
+        127
+      ],
+      "flip": false,
+      "hue_saturation_jitter": false
+    },
+    "candidates": [
+      {
+        "candidate_id": "C01_RGB",
+        "color": "rgb",
+        "augmentation": false,
+        "channels": [
+          32,
+          64,
+          128
+        ]
+      },
+      {
+        "candidate_id": "C02_GRAY",
+        "color": "gray",
+        "augmentation": false,
+        "channels": [
+          32,
+          64,
+          128
+        ]
+      },
+      {
+        "candidate_id": "C03_RGB_AUG",
+        "color": "rgb",
+        "augmentation": true,
+        "channels": [
+          32,
+          64,
+          128
+        ]
+      },
+      {
+        "candidate_id": "C04_DEEP_AUG",
+        "color": "rgb",
+        "augmentation": true,
+        "channels": [
+          32,
+          64,
+          128,
+          256
+        ]
+      }
+    ],
+    "training": {
+      "seed": 42,
+      "batch_size": 64,
+      "num_workers": 2,
+      "max_epochs": 25,
+      "patience": 6,
+      "learning_rate": 0.001,
+      "weight_decay": 0.0001,
+      "optimizer": "AdamW",
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "scheduler": "CosineAnnealingLR",
+      "eta_min": 1e-05,
+      "loss": "CrossEntropyLoss",
+      "label_smoothing": 0.0,
+      "class_weights": null,
+      "amp_cuda": true,
+      "gradient_clip_norm": 5.0
+    },
+    "selection": "max unrounded dev macro_f1; min mae_vnd; candidate order; earliest epoch",
+    "checkpoint_selection": "max unrounded dev macro_f1; min mae_vnd; earliest epoch",
+    "refit_train_plus_dev": false,
+    "determinism": "fixed seeds; deterministic warn_only; no cross-device equality guarantee",
+    "test_history": "Previously inspected in earlier project experiments; not a new holdout.",
+    "source_sha256": {
+      "src/preprocessing.py": "1cbada4dae212889baa6f62b30c68177a5b1f9bb6488d9b7fac8ca26b041d831",
+      "src/evaluation/value_metrics.py": "783375c180999515d6862659d9bdf735b5a3675f6a5881afdf3f275cda9ecc3c",
+      "src/CNN/model.py": "8fa7b246d54db6d74860a08f0b5c8c0acd429eecfb8750e3ddbe2aae9949ecbb",
+      "src/CNN/data.py": "1d27f7cf2c2b1921ac10d823db2cf0d5f0d4b139e7cc00fc568a065c9d478cd7",
+      "src/CNN/pipeline.py": "68a295326de120b24d564fc1e341bea28e48de998392fd5a77cef90d3b0c4579",
+      "src/CNN/analysis.py": "c02b1a9ee39b110ffed461eb67dfbf33443513953118b71eddbb404c3559aa2d",
+      "src/CNN/runtime.py": "9d99530fd6c1c29393c630e0c2f893b2b1cb8bb10b05b08ab958a7f458596bde"
+    }
+  },
+  "environment_at_lock": {
+    "python": "3.13.16",
+    "torch": "2.11.0+cu130",
+    "numpy": "2.1.3",
+    "pandas": "2.3.3",
+    "opencv": "4.14.0",
+    "sklearn": "1.6.1",
+    "device": "cuda:0",
+    "gpu": "Tesla T4",
+    "cuda": "13.0"
+  },
+  "sha256": {
+    "results/inputs/experiment_config.json": "e38919926b90514a80598f7f9b355b725489c2398ec5c0e996e4c8cb83b38ffc",
+    "results/inputs/manifest_hashes.json": "901be25b4bfe2634afcc188690c0d576e1d240044fcca28279791c75ba8056a6",
+    "results/inputs/train_manifest.csv": "df553bde8a2d1bd8c8f2dc9d78fccbfb55411829e54afcf10c4877816d5e9999",
+    "results/inputs/dev_manifest.csv": "b09ad96958bc0ac97cf4ee1685488ad3e05b53144c4bb8fff0a43723b5f59a8d",
+    "results/candidates/C01_RGB/run_complete.json": "1250770eef40b1040dc813a7de7df9a8ee9d1fee4cc3a122607b857a6f41b016",
+    "results/candidates/C01_RGB/best.pt": "e72e0c5e0460680670cc913c635cd8b05ae085162988f8e55fe375e76a3872e1",
+    "results/candidates/C01_RGB/summary.json": "f8b89b70daedc9af3e3896587382a375d87a6e252530ff559a561a876668a373",
+    "results/candidates/C01_RGB/history.csv": "a9abb81a5433a0ca7ab7defe1d717bf22bcc4b85b54dd495ecfa5aa9de6d5ecf",
+    "results/candidates/C01_RGB/run_config.json": "a5b7304ae48ab765d1648d436a9cc272eef6bafe29a3fbb162429f6ede4b654f",
+    "results/candidates/C01_RGB/metrics_dev.json": "50b2a6d1ff27b6d1566e5fbf655d4e0ea11b34d286e18cac1e6185c3386f7fd2",
+    "results/candidates/C01_RGB/predictions_dev.csv": "ca6b4b8a74c59f3a9f39a8f057c5d36fbbead910a099fa8927de6141ffc1707f",
+    "results/candidates/C02_GRAY/run_complete.json": "bb045fffb9d4621d72f879644d9d7291d58a1994753ec9ee061ba73a5c4ca6ce",
+    "results/candidates/C02_GRAY/best.pt": "26fc75948d054fef8c4207bba94548695298d05e4d590916301c8d910294c348",
+    "results/candidates/C02_GRAY/summary.json": "b4a591ec1765887841134a3c2b74df20f8a7dda9e26a102decf29d04cc9e7857",
+    "results/candidates/C02_GRAY/history.csv": "3c2a8a20015070ce0a2f16ac5bfde3aaf76a26d9f86dc1b4ba5dc45cdbf51dc0",
+    "results/candidates/C02_GRAY/run_config.json": "4e1219ec9f4334009ff29d9f5a6d39002deb14d528945ef41f513b9667a2ea78",
+    "results/candidates/C02_GRAY/metrics_dev.json": "805b244dd78269d590208206515c22880761f62e02cdf2c15436b54491c71aa6",
+    "results/candidates/C02_GRAY/predictions_dev.csv": "bc1a6e9e2cc7221a04d63096e41840c9458820e2f7f32d034cab678ab0f9bdbf",
+    "results/candidates/C03_RGB_AUG/run_complete.json": "8b2242b8bb21fb6eb16e04c0f4e404f153f97703d6259af9b2f61ec601695ccf",
+    "results/candidates/C03_RGB_AUG/best.pt": "51b1b4ca1d1aba27a425fbe9313b7480f3f6229694d0d032bd72273f14d52423",
+    "results/candidates/C03_RGB_AUG/summary.json": "076d12f1418a1576b2f352774ff7d87d98a1ddd21bc620b6ad0c3969423c0f32",
+    "results/candidates/C03_RGB_AUG/history.csv": "e89ebb79b9dd881d07e12c2f27e4f6f0cf666f1916f4ad8a55c1d14d3ff6f9e7",
+    "results/candidates/C03_RGB_AUG/run_config.json": "eb228c999b901b9ae5df55c1d167b67aeef9e5e5b683089fa5822d5d11b62af5",
+    "results/candidates/C03_RGB_AUG/metrics_dev.json": "602e86adb971b3ab716180963a2e08b0f7deae1a44772e67ff1a3e8f5d99c9cb",
+    "results/candidates/C03_RGB_AUG/predictions_dev.csv": "4057008a9f269f4ca3b221086e140a1ac8fa83bed4d4b557e9e60b7407d207c1",
+    "results/candidates/C04_DEEP_AUG/run_complete.json": "94dc6c5481b179bacc3148ed9f4087ad41aebc51a6f87458c5967393396e9386",
+    "results/candidates/C04_DEEP_AUG/best.pt": "983063cc4c304487d5aca0625d08744ec557860806bc479b2dec82f70319b918",
+    "results/candidates/C04_DEEP_AUG/summary.json": "9f5165f158e490b0df1d7d0f0880ccaee05a76b31a80ac8e601e451279682ffe",
+    "results/candidates/C04_DEEP_AUG/history.csv": "8ec0a034d186546bdeee214621c833fdc8fc6d26887514ebc03cc5436e2959f3",
+    "results/candidates/C04_DEEP_AUG/run_config.json": "87a4b9e0ddb912b65e8b4663e210cc253c18a47f6f3d4c3a1a7bed1f3b716967",
+    "results/candidates/C04_DEEP_AUG/metrics_dev.json": "2c3c4f12039527626c3bb22ef3a19d427272a18fb8d69bd1edd32d4025c5d242",
+    "results/candidates/C04_DEEP_AUG/predictions_dev.csv": "dfa81dddcadf1f2a54c4fc2ac9eb1e07efdb01d3b9df038c10cc973b2aa916ba",
+    "results/selection/best_by_candidate_dev.csv": "dc41c2617f0adaf81af58475b9440541584a1f6b974f924c98ece3ccfe3efd1b",
+    "results/selection/all_epochs_dev.csv": "d74202152dd23a95c559ebf11c8c59a34836a44179518d3798ce83325396afde",
+    "project/src/preprocessing.py": "1cbada4dae212889baa6f62b30c68177a5b1f9bb6488d9b7fac8ca26b041d831",
+    "project/src/evaluation/value_metrics.py": "783375c180999515d6862659d9bdf735b5a3675f6a5881afdf3f275cda9ecc3c",
+    "project/src/CNN/model.py": "8fa7b246d54db6d74860a08f0b5c8c0acd429eecfb8750e3ddbe2aae9949ecbb",
+    "project/src/CNN/data.py": "1d27f7cf2c2b1921ac10d823db2cf0d5f0d4b139e7cc00fc568a065c9d478cd7",
+    "project/src/CNN/pipeline.py": "68a295326de120b24d564fc1e341bea28e48de998392fd5a77cef90d3b0c4579",
+    "project/src/CNN/analysis.py": "c02b1a9ee39b110ffed461eb67dfbf33443513953118b71eddbb404c3559aa2d",
+    "project/src/CNN/runtime.py": "9d99530fd6c1c29393c630e0c2f893b2b1cb8bb10b05b08ab958a7f458596bde"
+  }
+}

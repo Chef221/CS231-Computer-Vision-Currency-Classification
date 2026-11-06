@@ -1,0 +1,38 @@
+{
+  "candidate_id": "C04_DEEP_AUG",
+  "fit_split_pca": "train",
+  "plot_split": "dev",
+  "embedding_dim": 256,
+  "pca_explained_variance_ratio": [
+    0.3266719579696655,
+    0.21210341155529022
+  ],
+  "feature_map_example": "train/10000/10000_000001.png",
+  "selected_channels": [
+    {
+      "block": 1,
+      "channels": [
+        22,
+        15,
+        5,
+        30,
+        0,
+        29
+      ]
+    },
+    {
+      "block": 4,
+      "channels": [
+        195,
+        98,
+        139,
+        108,
+        206,
+        210
+      ]
+    }
+  ],
+  "channel_selection": "six highest spatial mean activations per displayed block",
+  "lock_sha256": "9bccf375a9df5ceaafffa71b25f98c4aa5819ac8846fe15332b98ff6bac93edb",
+  "interpretation": "PCA2 is descriptive; channel semantics and causal importance are not established."
+}

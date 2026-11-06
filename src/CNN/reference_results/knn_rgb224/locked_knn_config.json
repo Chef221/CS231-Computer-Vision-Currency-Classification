@@ -1,0 +1,173 @@
+{
+  "created_utc": "2026-11-05T07:36:57.141591+00:00",
+  "feature_id": "HSV12",
+  "feature_dim": 1728,
+  "feature_dtype": "float32",
+  "feature_folder": "src/KNN/results_224/hsv12/features",
+  "result_folder": "src/KNN/results_224/hsv12",
+  "classes_vnd": [
+    10000,
+    20000,
+    50000,
+    100000,
+    200000,
+    500000
+  ],
+  "preprocessing": {
+    "color": "RGB",
+    "size": [
+      224,
+      224
+    ],
+    "dtype": "uint8",
+    "resize": "direct",
+    "library": "opencv",
+    "interpolation": "INTER_LINEAR",
+    "augmentation": false
+  },
+  "experiment_protocol": {
+    "classes_vnd": [
+      10000,
+      20000,
+      50000,
+      100000,
+      200000,
+      500000
+    ],
+    "splits": {
+      "train": 12494,
+      "dev": 1564,
+      "test": 1553
+    },
+    "preprocessing": {
+      "color": "RGB",
+      "size": [
+        224,
+        224
+      ],
+      "dtype": "uint8",
+      "resize": "direct",
+      "library": "opencv",
+      "interpolation": "INTER_LINEAR",
+      "augmentation": false
+    },
+    "hsv": {
+      "bins": [
+        12,
+        12,
+        12
+      ],
+      "ranges": [
+        0,
+        180,
+        0,
+        256,
+        0,
+        256
+      ],
+      "normalization": "L2"
+    },
+    "hog": {
+      "grayscale": true,
+      "orientations": 9,
+      "pixels_per_cell": [
+        16,
+        16
+      ],
+      "cells_per_block": [
+        2,
+        2
+      ],
+      "block_norm": "L2-Hys",
+      "transform_sqrt": false,
+      "dimensions_before_pca": 6084
+    },
+    "pca": {
+      "n_components": 0.95,
+      "svd_solver": "full",
+      "whiten": false,
+      "fit_split": "train"
+    },
+    "hog_pipeline": "HOG -> optional PCA -> whole-vector L2",
+    "fusion": "concatenate L2 HSV then L2 HOG branch; no additional weighting or normalization",
+    "feature_dtype": "float32",
+    "candidate_order": [
+      "HSV12",
+      "HOG",
+      "HOG_PCA",
+      "HSV12_HOG",
+      "HSV12_HOG_PCA"
+    ],
+    "knn": {
+      "k": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "weights": [
+        "uniform",
+        "distance"
+      ],
+      "metric": "euclidean",
+      "algorithm": "brute"
+    },
+    "selection": [
+      "max unrounded macro_f1",
+      "min unrounded mae_vnd",
+      "candidate order then k then weights"
+    ],
+    "test_history": "Previously evaluated and inspected; not an untouched holdout.",
+    "versions": {
+      "opencv": "4.12.0",
+      "numpy": "2.2.6",
+      "pandas": "2.3.2"
+    }
+  },
+  "uses_pca": false,
+  "pca_file": null,
+  "knn": {
+    "n_neighbors": 1,
+    "weights": "uniform",
+    "metric": "euclidean",
+    "algorithm": "brute"
+  },
+  "dev_metrics": {
+    "macro_f1": 0.7983069780027404,
+    "accuracy": 0.7960358056265985,
+    "mae_vnd": 46585.67774936061
+  },
+  "training_split": "train",
+  "refit_train_plus_dev": false,
+  "selection_rule": "max unrounded Macro-F1, min unrounded MAE, feature order, k, weights order",
+  "grid_configurations": 100,
+  "test_history": "Previously evaluated and inspected in earlier experiments; not an untouched holdout.",
+  "test_evaluation_in_this_notebook": false,
+  "sha256": {
+    "src/KNN/results_224/hsv12/hsv12_knn_grid_dev.csv": "9e59ec1923610a3865ae0ec2c2a5cebf95934726d35f4c0def9694492872d9e0",
+    "src/KNN/results_224/hog/hog_knn_grid_dev.csv": "3439053642fb41a7d1bf6f98965fe4577ca3370b6e8696a9d278c8dd226f7fa0",
+    "src/KNN/results_224/hog_pca/hog_pca_knn_grid_dev.csv": "51b557ea3848b3bd22d767dfcb8df7060f0c4092e104ff6be6e454af72b7d651",
+    "src/KNN/results_224/hsv12_hog/fusion_knn_grid_dev.csv": "d9ea7a4eea69577e032f4993ca65731ff8fa92e22695eb4e4440d1af8a8359ea",
+    "src/KNN/results_224/hsv12_hog_pca/fusion_knn_grid_dev.csv": "4cf1fbfee6092f3f3a36bc3a28098396d2f1302507d4a6662a46b46cad42af87",
+    "src/KNN/results_224/inputs/experiment_config.json": "cd96514ad40001a8f17512f9960a10ec64587187893a2d531bcc8aecddeb04b6",
+    "src/KNN/results_224/hsv12/features/X_train.npy": "e6786d787575772172c7a547d43f413ef756f93035cbd89196c97f161372bfc0",
+    "src/KNN/results_224/hsv12/features/X_dev.npy": "e8278d9f7a31d247b9a24ee1f3e695e38c19dccbecc90e95188af893069cad83",
+    "src/KNN/results_224/hsv12/features/y_train.npy": "15b0b8f8aa862c35dd8b3ecd8bc6997c166ddc94966caeb20467c8715155b6df",
+    "src/KNN/results_224/hsv12/features/y_dev.npy": "fdb2a9c7ed9395971a29bcba92fb619e32a635009e458a1dcde40ebdecf0ce0b",
+    "src/KNN/results_224/hsv12/features/train_manifest.csv": "306ad6579983415f55d5b87198ead18c907de3272fcb08346a7029a51504da03",
+    "src/KNN/results_224/hsv12/features/dev_manifest.csv": "8b25f956ed65dda0717b4cb71ae22adb8930573eaca4c74affc150271aee84a7"
+  },
+  "environment_at_lock": {
+    "python": "3.13.7",
+    "sklearn": "1.6.1",
+    "opencv": "4.12.0",
+    "numpy": "2.2.6",
+    "pandas": "2.3.2"
+  }
+}
