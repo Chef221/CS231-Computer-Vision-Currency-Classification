@@ -1,0 +1,44 @@
+{
+  "metadata": {
+    "candidate": {
+      "candidate_id": "C01_RGB",
+      "color": "rgb",
+      "augmentation": false,
+      "channels": [
+        32,
+        64,
+        128
+      ]
+    },
+    "training": {
+      "seed": 42,
+      "batch_size": 64,
+      "num_workers": 2,
+      "max_epochs": 25,
+      "patience": 6,
+      "learning_rate": 0.001,
+      "weight_decay": 0.0001,
+      "optimizer": "AdamW",
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "scheduler": "CosineAnnealingLR",
+      "eta_min": 1e-05,
+      "loss": "CrossEntropyLoss",
+      "label_smoothing": 0.0,
+      "class_weights": null,
+      "amp_cuda": true,
+      "gradient_clip_norm": 5.0
+    },
+    "protocol_sha256": "e38919926b90514a80598f7f9b355b725489c2398ec5c0e996e4c8cb83b38ffc"
+  },
+  "sha256": {
+    "best.pt": "e72e0c5e0460680670cc913c635cd8b05ae085162988f8e55fe375e76a3872e1",
+    "history.csv": "a9abb81a5433a0ca7ab7defe1d717bf22bcc4b85b54dd495ecfa5aa9de6d5ecf",
+    "metrics_dev.json": "50b2a6d1ff27b6d1566e5fbf655d4e0ea11b34d286e18cac1e6185c3386f7fd2",
+    "predictions_dev.csv": "ca6b4b8a74c59f3a9f39a8f057c5d36fbbead910a099fa8927de6141ffc1707f",
+    "summary.json": "f8b89b70daedc9af3e3896587382a375d87a6e252530ff559a561a876668a373",
+    "run_config.json": "a5b7304ae48ab765d1648d436a9cc272eef6bafe29a3fbb162429f6ede4b654f"
+  }
+}

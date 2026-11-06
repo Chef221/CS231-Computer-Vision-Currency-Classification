@@ -1,0 +1,13 @@
+case_id,relative_path,y_true_vnd,y_pred_vnd,selection_reason,observation,hypothesis,not_verified
+C01,test/20000/20000_000045.png,20000,500000,frequent_directed_pair,,,
+C02,test/50000/50000_000144.png,50000,10000,frequent_directed_pair,,,
+C03,test/200000/200000_000051.png,200000,50000,frequent_directed_pair,,,
+C04,test/500000/500000_001850.png,500000,100000,frequent_directed_pair,,,
+C05,test/20000/20000_000080.png,20000,500000,large_vnd_gap,,,
+C06,test/500000/500000_002425.png,500000,100000,large_vnd_gap,,,
+C07,test/500000/500000_002084.png,500000,200000,large_vnd_gap,,,
+C08,test/50000/50000_001241.png,50000,10000,high_softmax_error,,,
+C09,test/500000/500000_002557.png,500000,20000,small_softmax_gap_error,,,
+C10,test/10000/10000_002886.png,10000,10000,small_softmax_gap_correct,,,
+C11,test/10000/10000_000288.png,10000,10000,high_softmax_correct,,,
+C12,test/10000/10000_002625.png,10000,50000,additional_error,,,

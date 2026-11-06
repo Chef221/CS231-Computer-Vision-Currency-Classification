@@ -1,0 +1,18 @@
+{
+  "paired_manifest_check": "train/dev/test paths, VND labels and row order all match",
+  "cnn_predictions_sha256": "2407c83f3722ef4a07bdc4be4141a183c0238e7956650d34c0298f3bb8048a5a",
+  "reference_provenance_sha256": "fa019546b4ac2bc04879f4da1d3b75514f666b846954cccb768c540d1142582d",
+  "baseline_sources": {
+    "KNN": {
+      "folder": "knn_rgb224",
+      "source_commit": "fabe1b4c2305569414d32b8c33022c3ef6cac84c",
+      "source_root": "src/KNN/results_224/"
+    },
+    "SVM": {
+      "folder": "svm_rgb224",
+      "source_commit": "6d87bc4792554b7e38ac065f9b7546b9b954bee6",
+      "source_root": "src/SVM/results_224/"
+    }
+  },
+  "limitation": "CNN may use augmentation and learned features; hardware/libraries differ; one seed and split."
+}

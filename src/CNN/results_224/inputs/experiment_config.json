@@ -1,0 +1,141 @@
+{
+  "model_family": "CNN",
+  "protocol_id": "cnn_rgb224_v1",
+  "classes_vnd": [
+    10000,
+    20000,
+    50000,
+    100000,
+    200000,
+    500000
+  ],
+  "split_sizes": {
+    "train": 12494,
+    "dev": 1564,
+    "test": 1553
+  },
+  "preprocessing": {
+    "reader": "src.preprocessing.read_rgb224",
+    "size": [
+      224,
+      224
+    ],
+    "resize": "direct OpenCV INTER_LINEAR",
+    "scale": "float32 / 255",
+    "normalization": "no ImageNet mean/std; no fitted pixel scaler"
+  },
+  "architecture": {
+    "block": "2 x (Conv3x3, BN, ReLU), MaxPool2, Dropout2d0.1",
+    "head": "GAP, Dense128, ReLU, Dropout0.5, Dense6 logits",
+    "initialization": "Kaiming conv; Xavier linear; BN weight1 bias0",
+    "pretrained": false
+  },
+  "augmentation": {
+    "train_only": true,
+    "degrees": [
+      -12,
+      12
+    ],
+    "translate_fraction": [
+      -0.05,
+      0.05
+    ],
+    "scale": [
+      0.95,
+      1.05
+    ],
+    "brightness_add_fraction": [
+      -0.1,
+      0.1
+    ],
+    "contrast": [
+      0.9,
+      1.1
+    ],
+    "border_fill": [
+      127,
+      127,
+      127
+    ],
+    "flip": false,
+    "hue_saturation_jitter": false
+  },
+  "candidates": [
+    {
+      "candidate_id": "C01_RGB",
+      "color": "rgb",
+      "augmentation": false,
+      "channels": [
+        32,
+        64,
+        128
+      ]
+    },
+    {
+      "candidate_id": "C02_GRAY",
+      "color": "gray",
+      "augmentation": false,
+      "channels": [
+        32,
+        64,
+        128
+      ]
+    },
+    {
+      "candidate_id": "C03_RGB_AUG",
+      "color": "rgb",
+      "augmentation": true,
+      "channels": [
+        32,
+        64,
+        128
+      ]
+    },
+    {
+      "candidate_id": "C04_DEEP_AUG",
+      "color": "rgb",
+      "augmentation": true,
+      "channels": [
+        32,
+        64,
+        128,
+        256
+      ]
+    }
+  ],
+  "training": {
+    "seed": 42,
+    "batch_size": 64,
+    "num_workers": 2,
+    "max_epochs": 25,
+    "patience": 6,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "optimizer": "AdamW",
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "scheduler": "CosineAnnealingLR",
+    "eta_min": 1e-05,
+    "loss": "CrossEntropyLoss",
+    "label_smoothing": 0.0,
+    "class_weights": null,
+    "amp_cuda": true,
+    "gradient_clip_norm": 5.0
+  },
+  "selection": "max unrounded dev macro_f1; min mae_vnd; candidate order; earliest epoch",
+  "checkpoint_selection": "max unrounded dev macro_f1; min mae_vnd; earliest epoch",
+  "refit_train_plus_dev": false,
+  "determinism": "fixed seeds; deterministic warn_only; no cross-device equality guarantee",
+  "test_history": "Previously inspected in earlier project experiments; not a new holdout.",
+  "source_sha256": {
+    "src/preprocessing.py": "1cbada4dae212889baa6f62b30c68177a5b1f9bb6488d9b7fac8ca26b041d831",
+    "src/evaluation/value_metrics.py": "783375c180999515d6862659d9bdf735b5a3675f6a5881afdf3f275cda9ecc3c",
+    "src/CNN/model.py": "8fa7b246d54db6d74860a08f0b5c8c0acd429eecfb8750e3ddbe2aae9949ecbb",
+    "src/CNN/data.py": "1d27f7cf2c2b1921ac10d823db2cf0d5f0d4b139e7cc00fc568a065c9d478cd7",
+    "src/CNN/pipeline.py": "68a295326de120b24d564fc1e341bea28e48de998392fd5a77cef90d3b0c4579",
+    "src/CNN/analysis.py": "c02b1a9ee39b110ffed461eb67dfbf33443513953118b71eddbb404c3559aa2d",
+    "src/CNN/runtime.py": "9d99530fd6c1c29393c630e0c2f893b2b1cb8bb10b05b08ab958a7f458596bde"
+  }
+}

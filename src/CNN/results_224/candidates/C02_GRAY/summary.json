@@ -1,0 +1,22 @@
+{
+  "candidate_id": "C02_GRAY",
+  "best_epoch": 25,
+  "epochs_run": 25,
+  "embedding_dim": 128,
+  "parameters": 304166,
+  "accuracy": 0.39961636828644503,
+  "macro_f1": 0.3523943931739571,
+  "mae_vnd": 141585.67774936062,
+  "train_seconds": 2073.860486658,
+  "environment": {
+    "python": "3.13.16",
+    "torch": "2.11.0+cu130",
+    "numpy": "2.1.3",
+    "pandas": "2.3.3",
+    "opencv": "4.14.0",
+    "sklearn": "1.6.1",
+    "device": "cuda:0",
+    "gpu": "Tesla T4",
+    "cuda": "13.0"
+  }
+}
