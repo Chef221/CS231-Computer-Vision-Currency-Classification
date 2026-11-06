@@ -14,6 +14,10 @@ DATA_BUILD_05_*/
 src/KNN/results_224/**/*.npy
 src/KNN/results_224/**/*.pkl
 
+# SVM feature matrices and PCA are kept in the complete experiment output.
+src/SVM/results_224/**/*.npy
+src/SVM/results_224/**/*.pkl
+
 # CNN weights and learned matrices stay in Kaggle outputs/local storage.
 src/CNN/results_224/**/*.pt
 src/CNN/results_224/**/*.pth

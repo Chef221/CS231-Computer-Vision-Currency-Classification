@@ -1,0 +1,96 @@
+{
+  "status": "verified",
+  "notebooks": [
+    {
+      "notebook": "src/SVM/224/01_PREPARE_INPUT.ipynb",
+      "cells": 11,
+      "code_cells": 7
+    },
+    {
+      "notebook": "src/SVM/224/02_FEATURE_HSV12.ipynb",
+      "cells": 15,
+      "code_cells": 9
+    },
+    {
+      "notebook": "src/SVM/224/03_FEATURE_HOG.ipynb",
+      "cells": 15,
+      "code_cells": 9
+    },
+    {
+      "notebook": "src/SVM/224/04_FEATURE_HOG_PCA.ipynb",
+      "cells": 16,
+      "code_cells": 10
+    },
+    {
+      "notebook": "src/SVM/224/05A_FEATURE_HSV12_HOG.ipynb",
+      "cells": 14,
+      "code_cells": 9
+    },
+    {
+      "notebook": "src/SVM/224/05B_FEATURE_HSV12_HOG_PCA.ipynb",
+      "cells": 14,
+      "code_cells": 9
+    },
+    {
+      "notebook": "src/SVM/224/06_SELECT_FINAL_SVM.ipynb",
+      "cells": 11,
+      "code_cells": 7
+    },
+    {
+      "notebook": "src/SVM/224/07_EVALUATE_TEST.ipynb",
+      "cells": 15,
+      "code_cells": 9
+    },
+    {
+      "notebook": "src/SVM/224/08_ERROR_ANALYSIS.ipynb",
+      "cells": 17,
+      "code_cells": 10
+    },
+    {
+      "notebook": "src/CNN/224/01_PREPARE_INPUT.ipynb",
+      "cells": 11,
+      "code_cells": 6
+    },
+    {
+      "notebook": "src/CNN/224/02_TRAIN_RGB.ipynb",
+      "cells": 12,
+      "code_cells": 7
+    },
+    {
+      "notebook": "src/CNN/224/03_TRAIN_GRAY.ipynb",
+      "cells": 12,
+      "code_cells": 7
+    },
+    {
+      "notebook": "src/CNN/224/04_TRAIN_RGB_AUG.ipynb",
+      "cells": 12,
+      "code_cells": 7
+    },
+    {
+      "notebook": "src/CNN/224/05_TRAIN_DEEP_AUG.ipynb",
+      "cells": 12,
+      "code_cells": 7
+    },
+    {
+      "notebook": "src/CNN/224/06_SELECT_FINAL_CNN.ipynb",
+      "cells": 12,
+      "code_cells": 7
+    },
+    {
+      "notebook": "src/CNN/224/07_EVALUATE_TEST.ipynb",
+      "cells": 12,
+      "code_cells": 7
+    },
+    {
+      "notebook": "src/CNN/224/08_ERROR_ANALYSIS.ipynb",
+      "cells": 14,
+      "code_cells": 8
+    }
+  ],
+  "checks": [
+    "nbformat schema without warnings",
+    "unique cell IDs",
+    "Python AST for every code cell",
+    "outputs empty and execution counts unset"
+  ]
+}

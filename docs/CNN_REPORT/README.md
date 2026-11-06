@@ -40,3 +40,5 @@ Script dùng thư viện chuẩn Python, không fit CNN/PCA. Khi có test, scrip
 `REPORT_TEMPLATE.md` là nguồn cấu trúc; sửa phần phương pháp ở template rồi dựng lại Markdown. Các nhận xét dev, test, cặp lỗi và so sánh được tính từ file gốc để giữ đồng bộ khi tái tạo. [REFERENCE_NOTES.md](REFERENCE_NOTES.md) ghi ý tưởng kế thừa từ tài liệu tham khảo. Nhãn Bảng CNN có thể đánh số lại khi ghép báo cáo chung; giữ `CNN224_FIGURES/` cạnh Markdown.
 
 Hồ sơ nội bộ nằm trong `review/`: [kết quả đối chiếu](review/validation.json), [nguồn nhập output](review/import_record.json) và [ghi chú xem ảnh](review/VISUAL_REVIEW.md). Không đưa hồ sơ nội bộ vào thân báo cáo nộp. CSV ghi chú gốc của notebook được giữ nguyên; các quan sát bổ sung tách rõ điều nhìn thấy và điều chưa kiểm chứng. Phần báo cáo công khai giới hạn một seed/split, lịch sử test đã được xem và khác biệt pipeline/thư viện giữa ba mô hình.
+
+[Mục lục báo cáo](../README.md) dẫn tới cả ba mô hình. [Hồ sơ rà soát SVM/CNN theo cấu trúc KNN](../MODEL_FORMAT_REVIEW.md) ghi phạm vi kiểm tra code, notebook, dữ liệu, khóa và các khác biệt phương pháp cần giữ.

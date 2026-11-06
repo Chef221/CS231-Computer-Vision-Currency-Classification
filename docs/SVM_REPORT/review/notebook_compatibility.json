@@ -1,0 +1,47 @@
+{
+  "cell_ids_added": 128,
+  "notebooks": [
+    {
+      "notebook": "src/SVM/224/01_PREPARE_INPUT.ipynb",
+      "changed_code_cells": []
+    },
+    {
+      "notebook": "src/SVM/224/02_FEATURE_HSV12.ipynb",
+      "changed_code_cells": []
+    },
+    {
+      "notebook": "src/SVM/224/03_FEATURE_HOG.ipynb",
+      "changed_code_cells": []
+    },
+    {
+      "notebook": "src/SVM/224/04_FEATURE_HOG_PCA.ipynb",
+      "changed_code_cells": []
+    },
+    {
+      "notebook": "src/SVM/224/05A_FEATURE_HSV12_HOG.ipynb",
+      "changed_code_cells": []
+    },
+    {
+      "notebook": "src/SVM/224/05B_FEATURE_HSV12_HOG_PCA.ipynb",
+      "changed_code_cells": []
+    },
+    {
+      "notebook": "src/SVM/224/06_SELECT_FINAL_SVM.ipynb",
+      "changed_code_cells": []
+    },
+    {
+      "notebook": "src/SVM/224/07_EVALUATE_TEST.ipynb",
+      "changed_code_cells": [
+        12,
+        14
+      ]
+    },
+    {
+      "notebook": "src/SVM/224/08_ERROR_ANALYSIS.ipynb",
+      "changed_code_cells": [
+        8
+      ]
+    }
+  ],
+  "scope": "nbformat cell IDs and empty error-table schemas only; trained feature/model code, metrics and configurations unchanged."
+}

@@ -106,6 +106,14 @@ Phương án khóa là HSV12, k=1, uniform. Trên 1.553 ảnh test hiện có, m
 
 [Báo cáo KNN](docs/KNN_REPORT/BAO_CAO_THUC_NGHIEM_KNN.md) trình bày từ tiền xử lý đến phân tích lỗi, với năm bảng và sáu hình từ dữ liệu thật. [Cấu hình khóa](src/KNN/results_224/selection/locked_knn_config.json), [kết quả test](src/KNN/results_224/test_final/TEST_REVIEW.md) và [phân tích lỗi](src/KNN/results_224/error_analysis/ERROR_ANALYSIS_REVIEW.md) được lưu riêng để đối chiếu. Các notebook/kết quả khảo sát cũ đã được dọn khỏi checkout hiện tại.
 
+## Thực nghiệm SVM
+
+[src/SVM](src/SVM/README.md) có chín notebook RGB224 theo cùng năm biến thể đặc trưng của KNN, chạy trên Kaggle và chọn theo 35 cấu hình SVC trên dev. Phương án khóa là HSV12+HOG với SVC RBF, `C=10`, `gamma='scale'`. Trên cùng 1.553 ảnh test, mô hình đúng 1.362 ảnh: Accuracy **87,70%**, Macro-F1 **0,881102**, MAE **32.891,18đ/ảnh**.
+
+[Báo cáo SVM](docs/SVM_REPORT/BAO_CAO_THUC_NGHIEM_SVM.md) trình bày dữ liệu, đặc trưng, cấu hình, test, phân tích lỗi và so sánh với KNN. [Cấu hình khóa](src/SVM/results_224/selection/locked_svm_config.json), [kết quả test](src/SVM/results_224/test_final/TEST_REVIEW.md) và [phân tích lỗi](src/SVM/results_224/error_analysis/ERROR_ANALYSIS_REVIEW.md) giữ số liệu và bằng chứng riêng. NPY/PKL được giữ local/ngoài Git.
+
+[Mục lục báo cáo](docs/README.md) tập hợp KNN, SVM và CNN; [hồ sơ rà soát](docs/MODEL_FORMAT_REVIEW.md) ghi kết quả đối chiếu code, notebook và số liệu theo cùng cấu trúc.
+
 ## Thực nghiệm CNN
 
 [src/CNN](src/CNN/README.md) có tám notebook chạy trên Kaggle: chuẩn bị RGB224, huấn luyện bốn CNN từ đầu, chọn checkpoint trên dev, khóa trọng số, đánh giá test và phân tích lỗi. Bốn cấu hình khảo sát RGB, ảnh xám, augmentation và thêm một khối tích chập. Các notebook giữ cùng split và chuẩn Macro-F1/Accuracy/MAE theo VND của dự án, kèm learning curve, feature map, PCA của biểu diễn GAP và Grad-CAM.

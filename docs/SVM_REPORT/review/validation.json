@@ -1,0 +1,75 @@
+{
+  "status": "verified",
+  "source_commit": "6d87bc4792554b7e38ac065f9b7546b9b954bee6",
+  "locked_files_verified": 15,
+  "missing_large_caches": [],
+  "source_code_matches_lock": true,
+  "dev_grid_rows": 35,
+  "report_appendix_rows_verified": 35,
+  "figure_sources_verified": 6,
+  "selected_feature": "HSV12_HOG",
+  "selected_svc": {
+    "kernel": "rbf",
+    "C": 10.0,
+    "gamma": "scale",
+    "cache_size": 512,
+    "decision_function_shape": "ovr",
+    "break_ties": true
+  },
+  "dev_features": [
+    {
+      "feature_id": "HSV12",
+      "feature_order": 0,
+      "correct_dev": 1367,
+      "accuracy": 0.8740409207161125,
+      "macro_f1": 0.879543973891197,
+      "mae_vnd": 29705.882352941175
+    },
+    {
+      "feature_id": "HOG",
+      "feature_order": 1,
+      "correct_dev": 811,
+      "accuracy": 0.518542199488491,
+      "macro_f1": 0.5065564508649092,
+      "mae_vnd": 100409.20716112532
+    },
+    {
+      "feature_id": "HOG_PCA",
+      "feature_order": 2,
+      "correct_dev": 824,
+      "accuracy": 0.5268542199488491,
+      "macro_f1": 0.5148717974649029,
+      "mae_vnd": 99757.03324808185
+    },
+    {
+      "feature_id": "HSV12_HOG",
+      "feature_order": 3,
+      "correct_dev": 1374,
+      "accuracy": 0.8785166240409207,
+      "macro_f1": 0.8812126158644066,
+      "mae_vnd": 27653.452685421995
+    },
+    {
+      "feature_id": "HSV12_HOG_PCA",
+      "feature_order": 4,
+      "correct_dev": 1320,
+      "accuracy": 0.8439897698209718,
+      "macro_f1": 0.8467316735599875,
+      "mae_vnd": 36809.46291560102
+    }
+  ],
+  "test_correct": 1362,
+  "test_errors": 191,
+  "accuracy": 0.8770122343850612,
+  "macro_f1": 0.8811015854426875,
+  "mae_vnd": 32891.17836445589,
+  "total_gap_vnd": 51080000,
+  "knn_train_dev_test_manifests_match": true,
+  "paired_knn": {
+    "both_correct": 1124,
+    "only_svm_correct": 238,
+    "only_knn_correct": 63,
+    "both_wrong": 128
+  },
+  "scope": "Saved evidence, code hashes and selection checked; no SVC/PCA refit or test inference rerun; source-image bytes across sessions not compared."
+}

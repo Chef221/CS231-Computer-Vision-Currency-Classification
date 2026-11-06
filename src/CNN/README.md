@@ -67,3 +67,5 @@ python -m unittest discover -s tests -p test_cnn_pipeline.py -v
 ```
 
 Bộ kiểm tra dùng ảnh và protocol nhỏ tạo riêng trong thư mục tạm để xác minh mapping VND, resume sau gián đoạn, chọn checkpoint, phát hiện thay đổi hash, đọc lại test, Grad-CAM và dựng báo cáo. Các số từ fixture không được ghi vào `results_224` hoặc báo cáo chính thức; kiểm tra CPU không thay một lượt huấn luyện đầy đủ trên Kaggle GPU.
+
+[Hồ sơ rà soát chung](../../docs/MODEL_FORMAT_REVIEW.md) đối chiếu SVM/CNN theo cấu trúc KNN; [mục lục báo cáo](../../docs/README.md) dẫn tới đầy đủ ba phần.
