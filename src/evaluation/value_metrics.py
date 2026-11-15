@@ -10,46 +10,63 @@ def evaluate_classification(y_true, y_pred):
     """Score hard predictions with actual VND values as labels."""
     true = np.asarray(y_true, dtype=np.int64)
     pred = np.asarray(y_pred, dtype=np.int64)
+    n_samples = len(true)
+
+    # Overall metrics
     matrix = confusion_matrix(true, pred, labels=CLASS_ORDER)
     precision, recall, f1, support = precision_recall_fscore_support(
-        true, pred, labels=CLASS_ORDER, average=None, zero_division=0
+        true, pred, labels=CLASS_ORDER, zero_division=0
     )
-    predicted_count = matrix.sum(axis=0)
+    accuracy = float(np.trace(matrix) / n_samples)
+    macro_f1 = float(f1.mean())
 
-    # Precision, Recall và F1 thông thường cho từng mệnh giá.
+    gaps = np.abs(true - pred)
+    total_gap = int(gaps.sum())
+    mae_vnd = total_gap / n_samples
+
+    # One row per denomination
     per_class = []
-    for i, value in enumerate(CLASS_ORDER):
+    for i, denomination in enumerate(CLASS_ORDER):
         tp = int(matrix[i, i])
+        predicted_count = int(matrix[:, i].sum())
+        true_count = int(matrix[i, :].sum())
+
         per_class.append({
-            "denomination_vnd": int(value), "support": int(support[i]),
-            "predicted_count": int(predicted_count[i]),
-            "tp": tp, "fp": int(predicted_count[i] - tp),
-            "fn": int(matrix[i, :].sum() - tp),
-            "precision": float(precision[i]), "recall": float(recall[i]),
+            "denomination_vnd": denomination,
+            "support": int(support[i]),
+            "predicted_count": predicted_count,
+            "tp": tp,
+            "fp": predicted_count - tp,
+            "fn": true_count - tp,
+            "precision": float(precision[i]),
+            "recall": float(recall[i]),
             "f1": float(f1[i]),
         })
 
-    # Mỗi dòng mô tả một cặp mệnh giá đã bị nhầm.
+    # One row per observed mistake, with the true and predicted labels in order
     error_pairs = []
-    for i, true_value in enumerate(CLASS_ORDER):
-        for j, predicted_value in enumerate(CLASS_ORDER):
+    for i, true_vnd in enumerate(CLASS_ORDER):
+        for j, predicted_vnd in enumerate(CLASS_ORDER):
             count = int(matrix[i, j])
-            if i != j and count > 0:
-                gap = abs(true_value - predicted_value)
-                error_pairs.append({
-                    "true_vnd": true_value, "predicted_vnd": predicted_value,
-                    "count": count, "gap_vnd": gap,
-                    "total_gap_vnd": count * gap,
-                })
+            if i == j or count == 0:
+                continue
 
-    total_gap = int(np.abs(true - pred).sum())
+            gap = abs(true_vnd - predicted_vnd)
+            error_pairs.append({
+                "true_vnd": true_vnd,
+                "predicted_vnd": predicted_vnd,
+                "count": count,
+                "gap_vnd": gap,
+                "total_gap_vnd": count * gap,
+            })
+
     return {
         "class_order_vnd": list(CLASS_ORDER),
-        "n_samples": int(len(true)),
+        "n_samples": n_samples,
         "confusion_matrix": matrix.tolist(),
-        "accuracy": float(np.trace(matrix) / len(true)),
-        "macro_f1": float(np.mean(f1)),
-        "mae_vnd": total_gap / len(true),
+        "accuracy": accuracy,
+        "macro_f1": macro_f1,
+        "mae_vnd": mae_vnd,
         "total_gap_vnd": total_gap,
         "per_class": per_class,
         "error_pairs": error_pairs,
