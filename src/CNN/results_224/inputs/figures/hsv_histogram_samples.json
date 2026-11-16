@@ -1,0 +1,14 @@
+{
+  "samples": [
+    {
+      "relative_path": "train/10000/10000_000896.png",
+      "label_vnd": 10000
+    },
+    {
+      "relative_path": "train/500000/500000_001722.png",
+      "label_vnd": 500000
+    }
+  ],
+  "bins_per_channel": 12,
+  "role": "Marginal histograms for illustration; classifier uses JOINT 1728-D histogram."
+}

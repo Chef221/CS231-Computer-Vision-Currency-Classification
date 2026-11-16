@@ -1,22 +1,29 @@
-# Kết quả SVM RGB224
+# SVM — Kết quả cuối của nhóm
 
-Thư mục này giữ kết quả thực nghiệm SVM RGB224 đã chạy trên Kaggle. Các CSV, JSON và hình được lưu để kiểm tra số liệu; ma trận đặc trưng NPY và PCA pickle được giữ ngoài Git do dung lượng lớn. Phương án đã khóa là HSV12+HOG với SVC RBF, `C=10`, `gamma='scale'`; kết quả test có trong `test_final/metrics_test.json`.
+Cấu hình chọn trên dev: **HSV12 + HOG, SVC RBF, C=10, gamma=scale.**
 
-Test đúng **1.362/1.553 ảnh**, Accuracy **87,70%**, Macro-F1 **0,881102**, MAE **32.891,18đ/ảnh**. Tổng chênh lệch danh nghĩa là **51.080.000đ**, với **191 lỗi**.
+## Chọn cấu hình trên dev
 
-- [So sánh dev](DEV_COMPARISON.md) và [35 cấu hình gốc](selection/all_35_configurations_dev.csv).
-- [Kiểm tra test](test_final/TEST_REVIEW.md).
-- [Phân tích lỗi](error_analysis/ERROR_ANALYSIS_REVIEW.md).
-- [Báo cáo học phần](../../../docs/SVM_REPORT/BAO_CAO_THUC_NGHIEM_SVM.md).
-- [Kiểm tra hash, số liệu và hình](../../../docs/SVM_REPORT/review/validation.json).
+| Biểu diễn | Kernel | C | Gamma | Accuracy | Macro-F1 | MAE (đ/ảnh) |
+|---|---|---|---|---|---|---|
+| HSV12_HOG | rbf | 10.0 | scale | 87.85% | 0.881213 | 27,653.45 |
+| HSV12 | rbf | 10.0 | scale | 87.40% | 0.879544 | 29,705.88 |
+| HSV12_HOG_PCA | rbf | 10.0 | scale | 84.40% | 0.846732 | 36,809.46 |
+| HOG_PCA | rbf | 10.0 | scale | 52.69% | 0.514872 | 99,757.03 |
+| HOG | rbf | 10.0 | scale | 51.85% | 0.506556 | 100,409.21 |
 
-| Thư mục | Nội dung được tạo |
-|---|---|
-| `inputs` | Manifest, kiểm tra ảnh, cấu hình thực nghiệm |
-| `hsv12`, `hog`, `hog_pca` | Feature, grid dev, dự đoán và metric |
-| `hsv12_hog`, `hsv12_hog_pca` | Hai biến thể kết hợp và kết quả dev |
-| `selection` | Bảng 35 cấu hình, đối chứng cố định, cấu hình khóa |
-| `test_final` | Dự đoán, metric, ma trận nhầm lẫn và thông tin lần chạy test |
-| `error_analysis` | Bảng lỗi, điểm quyết định, ví dụ và ghi chú thị giác |
+## Đánh giá test
 
-Muốn chạy lại notebook phụ thuộc cache, cần dùng đúng đầu ra đầy đủ từ các bước trước, bao gồm NPY và PKL. Các kết quả CSV/JSON/PNG trong Git đủ để đọc và kiểm tra bảng báo cáo, nhưng không thay thế cache cần cho bước fit hoặc phân tích lỗi.
+| Mô hình | Đúng | Sai | Accuracy | Macro-F1 | MAE (đ/ảnh) |
+|---|---|---|---|---|---|
+| SVM | 1362 | 191 | 87.70% | 0.881102 | 32,891.18 |
+
+![Ma trận nhầm lẫn](test_final/confusion_matrix_test.png)
+
+## Xem ảnh lỗi
+
+![Ví dụ phân tích lỗi](error_analysis/SVM_TRAIN_REFERENCES_01.png)
+
+Các hình là kết quả thực nghiệm thật. Ảnh train gần của SVM chỉ dùng đối chiếu; heatmap CNN chưa chứng minh nguyên nhân lỗi.
+
+Các CSV/JSON lưu số liệu gốc. `SOURCE.json` ghi nguồn; cấu hình đầy đủ nằm trong `inputs/experiment_config.json` và `selection/`. Đây là bộ kết quả đã dùng trong slide, không tự thay đổi khi chạy code mới. Model/checkpoint và ma trận lớn được Git bỏ qua; sau khi clone cần chạy lại notebook để tạo chúng hoặc dùng Output đã lưu của nhóm.

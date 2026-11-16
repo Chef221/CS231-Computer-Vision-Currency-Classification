@@ -1,0 +1,5 @@
+{
+  "relative_path": "train/10000/10000_000001.png",
+  "seed": 42,
+  "implementation": "same augment_rgb function used by training; uint8 before Rescaling"
+}

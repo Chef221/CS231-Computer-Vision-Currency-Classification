@@ -1,36 +1,28 @@
-# Kết quả CNN RGB224
+# CNN — Kết quả cuối của nhóm
 
-Thư mục giữ output tích lũy của chuỗi notebook 01–08 đã chạy trên Kaggle. Phương án khóa là **C04_DEEP_AUG**, CNN RGB bốn khối 32–64–128–256 có augmentation train, checkpoint **epoch 24**. Trên 1.553 ảnh test, mô hình đúng **1.507 ảnh**, sai **46 ảnh**: Accuracy **97,04%**, Macro-F1 **0,969963**, MAE **9.104,96đ/ảnh**, tổng chênh lệch danh nghĩa **14.140.000đ**.
+Cấu hình chọn trên dev: **C04_DEEP_AUG, RGB bốn khối32–64–128–256, augmentation, checkpoint epoch25.**
 
-## Đọc kết quả
+## Chọn cấu hình trên dev
 
-| Nội dung | File |
-|---|---|
-| So sánh bốn cấu hình dev | [DEV_COMPARISON.md](DEV_COMPARISON.md) |
-| Cấu hình/checkpoint đã chọn | [locked_cnn_config.json](selection/locked_cnn_config.json) |
-| Kiểm tra test | [TEST_REVIEW.md](test_final/TEST_REVIEW.md) |
-| Phân tích lỗi và Grad-CAM | [ERROR_ANALYSIS_REVIEW.md](error_analysis/ERROR_ANALYSIS_REVIEW.md) |
-| So sánh toàn test | [metrics_comparison_test.csv](comparison/metrics_comparison_test.csv) |
-| So sánh đúng/sai từng ảnh | [paired_summary_test.csv](comparison/paired_summary_test.csv) |
-| Báo cáo có hình | [BAO_CAO_THUC_NGHIEM_CNN.md](report/BAO_CAO_THUC_NGHIEM_CNN.md) |
-| Hồ sơ kiểm tra khi nhập output | [validation.json](../../../docs/CNN_REPORT/review/validation.json) |
+| Cấu hình | Epoch | Accuracy | Macro-F1 | MAE (đ/ảnh) |
+|---|---|---|---|---|
+| C04_DEEP_AUG | 25 | 96.36% | 0.963952 | 9,296.68 |
+| C01_RGB | 25 | 93.09% | 0.932439 | 18,177.75 |
+| C03_RGB_AUG | 25 | 92.01% | 0.921336 | 21,643.22 |
+| C02_GRAY | 25 | 37.34% | 0.324916 | 150,645.78 |
 
-## Cấu trúc
+## Đánh giá test
 
-| Thư mục | Nội dung |
-|---|---|
-| `inputs` | Manifest train/dev, protocol, mapping, kiến trúc, ảnh minh họa |
-| `candidates/C01_RGB` | CNN RGB cơ sở: 25 epoch, chọn epoch 25 |
-| `candidates/C02_GRAY` | CNN ảnh xám: 25 epoch, chọn epoch 25 |
-| `candidates/C03_RGB_AUG` | CNN RGB có augmentation: 25 epoch, chọn epoch 24 |
-| `candidates/C04_DEEP_AUG` | CNN bốn khối có augmentation: 25 epoch, chọn epoch 24 |
-| `selection` | Bảng bốn cấu hình, đủ 100 dòng epoch, cấu hình và hash khóa |
-| `feature_analysis` | GAP train/dev, PCA fit train, feature map |
-| `test_final` | Manifest, dự đoán, metric, ma trận nhầm lẫn và khóa đã dùng |
-| `error_analysis` | 46 lỗi, cặp nhầm, 12 ví dụ, Grad-CAM và mẫu ghi chú |
-| `comparison` | KNN/SVM trên cùng ba manifest và dự đoán ghép cặp |
-| `report` | Báo cáo và hình dựng từ số liệu đã lưu |
+| Mô hình | Đúng | Sai | Accuracy | Macro-F1 | MAE (đ/ảnh) |
+|---|---|---|---|---|---|
+| CNN | 1512 | 41 | 97.36% | 0.973945 | 7,250.48 |
 
-41 hash trong cấu hình khóa khớp bản local khi nhập output; khóa dùng trên test trùng byte với khóa lựa chọn. Tất cả manifest train/dev/test khớp KNN và SVM theo đường dẫn, nhãn và thứ tự dòng. File nguồn tải về được giữ riêng, không ghi đè.
+![Ma trận nhầm lẫn](test_final/confusion_matrix_test.png)
 
-Checkpoint `.pt/.pth` và ma trận `.npy/.npz/.pkl` được giữ local/output Kaggle, bỏ qua bởi Git. Giữ cả bốn `best.pt` vì khóa kiểm tra các run; `last.pt` phục vụ resume. CSV/JSON/PNG đủ đọc báo cáo nhưng không thay trọng số khi cần suy luận, xem feature map hoặc Grad-CAM. Bản báo cáo trong `report/` đã được bổ sung khi nhập về repository; bản xuất ban đầu từ Kaggle vẫn còn trong gói tải về.
+## Xem ảnh lỗi
+
+![Ví dụ phân tích lỗi](error_analysis/CNN_GRADCAM_01.png)
+
+Các hình là kết quả thực nghiệm thật. Ảnh train gần của SVM chỉ dùng đối chiếu; heatmap CNN chưa chứng minh nguyên nhân lỗi.
+
+Các CSV/JSON lưu số liệu gốc. `SOURCE.json` ghi nguồn; cấu hình đầy đủ nằm trong `inputs/experiment_config.json` và `selection/`. Đây là bộ kết quả đã dùng trong slide, không tự thay đổi khi chạy code mới. Model/checkpoint và ma trận lớn được Git bỏ qua; sau khi clone cần chạy lại notebook để tạo chúng hoặc dùng Output đã lưu của nhóm.

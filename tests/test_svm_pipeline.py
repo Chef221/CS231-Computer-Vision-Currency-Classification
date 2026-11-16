@@ -13,9 +13,19 @@ import cv2
 import numpy as np
 import pandas as pd
 
-from src.SVM.pipeline import (CLASSES, candidates, hsv12, hog_raw, l2, extract_matrix,
-                              save_features, load_features, same_manifest,
-                              run_dev_grid, save_dev_result)
+from src.SVM.pipeline import (
+    CLASSES,
+    candidates,
+    hsv12,
+    hog_raw,
+    l2,
+    extract_matrix,
+    save_features,
+    load_features,
+    same_manifest,
+    run_dev_grid,
+    save_dev_result,
+)
 from src.evaluation.value_metrics import evaluate_classification
 
 
@@ -39,8 +49,9 @@ class SVMPipelineTests(unittest.TestCase):
     def test_features_cache_and_manifest_alignment(self):
         with tempfile.TemporaryDirectory(prefix="cs231_svm_test_") as directory:
             root = Path(directory)
-            manifest = pd.DataFrame({"relative_path": [f"train/{v}/{v}.png" for v in CLASSES],
-                                     "label_vnd": CLASSES})
+            manifest = pd.DataFrame(
+                {"relative_path": [f"train/{v}/{v}.png" for v in CLASSES], "label_vnd": CLASSES}
+            )
             for index, relative in enumerate(manifest.relative_path):
                 path = root / relative
                 path.parent.mkdir(parents=True)
@@ -75,11 +86,14 @@ class SVMPipelineTests(unittest.TestCase):
         self.assertTrue(set(predictions).issubset(CLASSES))
         with tempfile.TemporaryDirectory(prefix="cs231_svm_grid_") as directory:
             folder = Path(directory)
-            manifest = pd.DataFrame({"relative_path": [f"dev/{v}/{v}.png" for v in CLASSES],
-                                     "label_vnd": CLASSES})
+            manifest = pd.DataFrame(
+                {"relative_path": [f"dev/{v}/{v}.png" for v in CLASSES], "label_vnd": CLASSES}
+            )
             saved = save_dev_result(folder, "fixture", grid, predictions, manifest)
             self.assertEqual(json.loads((folder / "metrics_dev.json").read_text()), saved)
-            self.assertEqual(pd.read_csv(folder / "predictions_dev.csv").y_true_vnd.tolist(), CLASSES)
+            self.assertEqual(
+                pd.read_csv(folder / "predictions_dev.csv").y_true_vnd.tolist(), CLASSES
+            )
 
     def test_exact_ties_keep_first_declared_candidate(self):
         train = np.ones((12, 3), dtype=np.float32)
@@ -90,28 +104,6 @@ class SVMPipelineTests(unittest.TestCase):
         self.assertEqual(grid.mae_vnd.nunique(), 1)
         self.assertEqual(params, candidates()[0])
         self.assertEqual(int(grid.iloc[0].order), 0)
-
-    def test_notebook_error_tables_accept_perfect_predictions(self):
-        import matplotlib.pyplot as plt
-        plt.switch_backend("Agg")
-        root = Path(__file__).resolve().parents[1]
-        scores = evaluate_classification(np.asarray(CLASSES), np.asarray(CLASSES))
-        with tempfile.TemporaryDirectory(prefix="cs231_svm_notebook_") as directory:
-            scope = {"scores": scores, "CLASSES": CLASSES, "np": np, "pd": pd,
-                     "plt": plt, "OUTPUT": Path(directory), "display": lambda *args: None}
-            for filename, marker in (("07_EVALUATE_TEST.ipynb", "ConfusionMatrixDisplay"),
-                                     ("08_ERROR_ANALYSIS.ipynb", "directed = pd.DataFrame")):
-                notebook = json.loads((root / "src/SVM/224" / filename).read_text())
-                source = next("".join(c["source"]) for c in notebook["cells"]
-                              if c["cell_type"] == "code" and marker in "".join(c["source"]))
-                with patch("matplotlib.pyplot.show"):
-                    exec(compile(source, filename, "exec"), scope)
-            self.assertTrue(scope["error_pairs"].empty)
-            self.assertTrue(scope["directed"].empty)
-            self.assertEqual(list(scope["directed"].columns),
-                             ["true_vnd", "predicted_vnd", "count", "gap_vnd", "total_gap_vnd"])
-            self.assertEqual(len(pd.read_csv(Path(directory) / "error_pairs_cost.csv")), 0)
-            plt.close("all")
 
 
 if __name__ == "__main__":

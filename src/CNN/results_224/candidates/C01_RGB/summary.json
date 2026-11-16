@@ -1,22 +1,29 @@
 {
   "candidate_id": "C01_RGB",
   "best_epoch": 25,
-  "epochs_run": 25,
-  "embedding_dim": 128,
-  "parameters": 304742,
-  "accuracy": 0.9354219948849105,
-  "macro_f1": 0.9355540349428012,
-  "mae_vnd": 17794.117647058825,
-  "train_seconds": 2262.782684833999,
+  "color": "rgb",
+  "augmentation": false,
+  "channels": [
+    32,
+    64,
+    128
+  ],
+  "accuracy": 0.9309462915601023,
+  "macro_f1": 0.9324386007916332,
+  "mae_vnd": 18177.749360613812,
+  "parameters": 305638,
+  "epochs_completed": 25,
+  "train_seconds": 6078.572868949002,
+  "dev_seconds": 597.2476006919999,
+  "protocol_id": "cnn_tf_pytorch_parity_v2",
   "environment": {
     "python": "3.13.16",
-    "torch": "2.11.0+cu130",
+    "tensorflow": "2.21.0",
     "numpy": "2.1.3",
-    "pandas": "2.3.3",
-    "opencv": "4.14.0",
-    "sklearn": "1.6.1",
-    "device": "cuda:0",
-    "gpu": "Tesla T4",
-    "cuda": "13.0"
+    "precision_policy": "mixed_float16",
+    "gpus": [
+      "/physical_device:GPU:0",
+      "/physical_device:GPU:1"
+    ]
   }
 }

@@ -1,4 +1,4 @@
-split,denomination_vnd,count
+split,label_vnd,count
 train,10000,2299
 train,20000,1916
 train,50000,1646

@@ -1,7 +1,10 @@
-torch>=2.4,<3
+# Local Python 3.11-3.12. Kaggle: use installed TensorFlow; avoid upgrading GPU packages.
+tensorflow>=2.16,<2.22
 numpy>=1.26,<3
-pandas>=2.2,<3
-opencv-python-headless>=4.10,<5
-scikit-learn>=1.6,<2
+pandas>=2,<4
 matplotlib>=3.8,<4
+opencv-python-headless>=4.8,<6
+scikit-learn>=1.4,<2
+scikit-image>=0.22,<0.27
 ipykernel
+nbformat>=5.10

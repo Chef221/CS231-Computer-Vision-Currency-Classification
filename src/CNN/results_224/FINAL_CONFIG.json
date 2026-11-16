@@ -1,0 +1,51 @@
+{
+  "framework": "tensorflow",
+  "protocol_id": "cnn_tf_pytorch_parity_v2",
+  "training": {
+    "seed": 42,
+    "epochs": 25,
+    "batch_size": 64,
+    "learning_rate": 0.001,
+    "optimizer": "AdamW",
+    "weight_decay": 0.0001,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "epsilon": 1e-08,
+    "gradient_clip_norm": 5.0,
+    "patience": 6,
+    "scheduler": "CosineAnnealingLR_epoch_equivalent",
+    "eta_min": 1e-05,
+    "mixed_precision_on_gpu": true,
+    "evaluation_precision": "float32",
+    "shuffle": "full path permutation per epoch"
+  },
+  "candidate": "C04_DEEP_AUG",
+  "config": {
+    "candidate_id": "C04_DEEP_AUG",
+    "color": "rgb",
+    "augmentation": true,
+    "channels": [
+      32,
+      64,
+      128,
+      256
+    ]
+  },
+  "best_epoch": 25,
+  "checkpoint": "candidates/C04_DEEP_AUG/best.keras",
+  "classes_vnd": [
+    10000,
+    20000,
+    50000,
+    100000,
+    200000,
+    500000
+  ],
+  "dev_metrics": {
+    "accuracy": 0.9635549872122762,
+    "macro_f1": 0.9639522142003512,
+    "mae_vnd": 9296.675191815857
+  }
+}

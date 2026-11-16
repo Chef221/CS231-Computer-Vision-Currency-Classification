@@ -1,0 +1,7 @@
+{
+  "model": "SVM",
+  "description": "Kết quả đã chạy, dùng trong slide cuối của nhóm. Không phải kết quả chạy lại khi dọn code.",
+  "source": "results.zip — bộ SVM đã dùng trong slide",
+  "code_notes": "Code trình bày lại cho dễ đọc, giữ nguyên các cấu hình và cách xử lý của baseline.",
+  "public_figures": "Giữ PNG và trang ví dụ đầu. PDF/trang ảnh bổ sung vẫn ở bản sao lưu local; CSV chứa đầy đủ số liệu."
+}
