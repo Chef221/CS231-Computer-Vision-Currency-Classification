@@ -1,134 +1,93 @@
-# Phân loại mệnh giá tiền polymer Việt Nam
+# 🇻🇳 ResNet-18 & Web Demo — Phân Loại Mệnh Giá Tiền Polymer Việt Nam
 
-[![Live Web Demo](https://img.shields.io/badge/%F0%9F%9A%80%20LIVE%20WEB%20DEMO-VISIT%20ONLINE-00b894?style=for-the-badge&logo=googlechrome&logoColor=white)](https://chef221.github.io/CS231-Computer-Vision-Currency-Classification/)
-[![ResNet-18 Notebook](https://img.shields.io/badge/%F0%9F%93%93%20RESNET--18%20NOTEBOOK-OPEN%20RESULTS-6c5ce7?style=for-the-badge&logo=jupyter&logoColor=white)](src/ResNet/notebooks/resnet18_evaluation.ipynb)
+[![Live Web Demo](https://img.shields.io/badge/%F0%9F%9A%80%20LIVE%20WEB%20DEMO-VISIT%20ONLINE-00b894?style=for-the-badge&logo=googlechrome&logoColor=white)](https://thienphucng-1410.github.io/CS231-Computer-Vision-Currency-Classification/)
+[![Evaluation Notebook](https://img.shields.io/badge/%F0%9F%93%93%20EVALUATION%20NOTEBOOK-OPEN%20VIEWER-6c5ce7?style=for-the-badge&logo=jupyter&logoColor=white)](src/ResNet/notebooks/resnet18_evaluation.ipynb)
 
 ![Python](https://img.shields.io/badge/Python-3.10+-3776ab?style=flat-square)
 ![PyTorch](https://img.shields.io/badge/PyTorch-ResNet--18-ee4c2c?style=flat-square)
-![Accuracy](https://img.shields.io/badge/ResNet--18%20Accuracy-99.68%25-44cc11?style=flat-square)
+![Accuracy](https://img.shields.io/badge/Accuracy-99.68%25-44cc11?style=flat-square)
 ![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Active-2ea44f?style=flat-square)
+![ONNX Web](https://img.shields.io/badge/ONNX%20Runtime-In--Browser%20AI-005CED?style=flat-square)
 
-> 🌟 **TRẢI NGHIỆM WEB DEMO TRỰC TIẾP TRÊN TRÌNH DUYỆT (KHÔNG CẦN CÀI ĐẶT / TẢI VỀ):**  
-> 🔗 **Web Demo Nhận diện Tiền Polymer (ResNet-18 ONNX):** [https://chef221.github.io/CS231-Computer-Vision-Currency-Classification/](https://chef221.github.io/CS231-Computer-Vision-Currency-Classification/)  
-> 📓 **Tài liệu & Notebook ResNet-18:** [src/ResNet/README.md](src/ResNet/README.md)
+> 🌟 **TRẢI NGHIỆM DỰ ÁN TRỰC TIẾP TRÊN TRÌNH DUYỆT (KHÔNG CẦN CÀI ĐẶT / TẢI VỀ):**  
+> 🔗 **Web Demo Nhận diện Tiền Polymer (ResNet-18 ONNX):** [https://thienphucng-1410.github.io/CS231-Computer-Vision-Currency-Classification/](https://thienphucng-1410.github.io/CS231-Computer-Vision-Currency-Classification/)  
+> 📓 **Notebook đã chạy hoàn chỉnh (kèm biểu đồ & phân tích lỗi):** [src/ResNet/notebooks/resnet18_evaluation.ipynb](src/ResNet/notebooks/resnet18_evaluation.ipynb)
 
-## Bộ dữ liệu
+Nhánh **`ResNet-+-demo`** chứa toàn bộ mã nguồn huấn luyện/đánh giá mô hình học sâu **ResNet-18** (Transfer Learning từ ImageNet) và ứng dụng **Web Demo nhận diện 6 mệnh giá tiền polymer Việt Nam** (10.000đ, 20.000đ, 50.000đ, 100.000đ, 200.000đ, 500.000đ) thuộc đồ án môn học **CS231 — Thị giác Máy tính (UIT)**.
 
-Bộ cuối gồm 15.611 ảnh PNG, chia theo thư mục lớp và tập dữ liệu:
+---
 
-| Mệnh giá | Train | Dev | Test | Tổng |
-|---:|---:|---:|---:|---:|
-| 10.000 | 2.299 | 315 | 281 | 2.895 |
-| 20.000 | 1.916 | 238 | 224 | 2.378 |
-| 50.000 | 1.646 | 195 | 223 | 2.064 |
-| 100.000 | 1.918 | 250 | 247 | 2.415 |
-| 200.000 | 2.525 | 309 | 317 | 3.151 |
-| 500.000 | 2.190 | 257 | 261 | 2.708 |
-| **Tổng** | **12.494** | **1.564** | **1.553** | **15.611** |
+## 📊 Kết Quả Đánh Giá Trên Tập Test (1.553 ảnh độc lập)
 
-Thư mục có dạng `DATA/{train,dev,test}/{10000,20000,50000,100000,200000,500000}/`. Tên ảnh là `<mệnh_giá>_<số thứ tự sáu chữ số>.png`; số thứ tự tăng theo từng lớp trên toàn bộ dữ liệu. `DATA/metadata/dataset.csv` lưu nguồn, đường dẫn ảnh gốc và ảnh crop, nhóm ảnh, split, mệnh giá và đường dẫn kết quả tương đối `DATA`.
+**Cấu hình khóa:** ResNet-18 (Pretrained ImageNet, **11,18 triệu tham số**), AdamW, `LR = 1e-4`, ảnh đầu vào `224x224` (không CenterCrop), `ColorJitter` với `hue = 0`.
 
-## Tải dự án và dữ liệu
+### 1. Chỉ số tổng thể
+| Nội dung | Kết quả |
+| :--- | :---: |
+| **Số ảnh test** | **1.553** |
+| **Dự đoán đúng** | **1.548** *(chỉ sai 5 ảnh)* |
+| **Accuracy** | **99,68%** |
+| **Macro-F1** | **0,9968** |
+| **MAE (đ/ảnh)** | **978,75** |
 
-Clone nông để lấy code và metadata hiện tại, không tải lịch sử cũ có chứa ảnh lớn:
+### 2. Chi tiết hiệu năng từng mệnh giá
+| Mệnh giá | Precision | Recall | F1-score | Đúng / Tổng |
+| :--- | :---: | :---: | :---: | :---: |
+| **10.000đ** | 99,65% | **100,0%** | 99,82% | 281 / 281 |
+| **20.000đ** | 99,56% | **100,0%** | 99,78% | 224 / 224 |
+| **50.000đ** | **100,0%** | 99,55% | 99,78% | 222 / 223 |
+| **100.000đ** | 99,60% | **100,0%** | 99,80% | 247 / 247 |
+| **200.000đ** | 99,68% | 99,68% | 99,68% | 316 / 317 |
+| **500.000đ** | 99,61% | 98,85% | 99,23% | 258 / 261 |
+| **Trung bình** | **99,68%** | **99,68%** | **99,68%** | **1.548 / 1.553** |
 
-```powershell
-git clone --depth 1 https://github.com/Chef221/CS231-Computer-Vision-Currency-Classification.git
+---
+
+## 🏗️ Cấu Trúc Nội Dung Nhánh `ResNet-+-demo`
+
+```text
+├── src/ResNet/                             # Mã nguồn cốt lõi mô hình ResNet-18
+│   ├── model.py                            # Kiến trúc ResNet-18 Transfer Learning (6 lớp)
+│   ├── dataset.py                          # Dataset loader & Data Augmentation (hue=0)
+│   ├── eval.py                             # Script đánh giá trên tập test
+│   ├── compare.py                          # So sánh chiến lược Argmax vs Bayes Decider
+│   ├── cost_metrics.py                     # Ma trận chi phí đối xứng & đánh giá rủi ro
+│   ├── requirements.txt                    # Thư viện Python cần thiết
+│   └── notebooks/
+│       ├── resnet18_evaluation.ipynb       # Notebook đã chạy đầy đủ output & Confusion Matrix
+│       └── train_resnet_kaggle.ipynb       # Notebook huấn luyện trên GPU Kaggle
+│
+├── web_demo/                               # Ứng dụng Web Demo (Full-Stack)
+│   ├── backend/
+│   │   ├── app.py                          # Server FastAPI nhận diện thời gian thực
+│   │   └── weights/best_resnet18_baseline.pth  # Checkpoint PyTorch (42,7 MB)
+│   ├── frontend/                           # Mã nguồn giao diện React + Vite + TypeScript
+│   └── Dockerfile                          # Cấu hình Docker triển khai Cloud (nếu cần)
+│
+└── docs/                                   # Bản build tĩnh host trực tiếp trên GitHub Pages
+    ├── index.html                          # Giao diện Web Demo chạy ONNX Runtime Web
+    └── models/resnet18_vnd.onnx            # Mô hình ResNet-18 ONNX chạy ngay trên trình duyệt
+```
+
+---
+
+## 🚀 Hướng Dẫn Sử Dụng & Khởi Chạy Local
+
+### 1. Cài đặt môi trường Python
+```bash
+git clone -b ResNet-+-demo --single-branch https://github.com/Chef221/CS231-Computer-Vision-Currency-Classification.git
 cd CS231-Computer-Vision-Currency-Classification
-```
-
-Nếu đã có bản clone, dùng `git pull` sau khi lưu hoặc commit công việc local cần giữ; không dùng lệnh reset hoặc clean để cập nhật.
-
-Tải bốn ZIP từ [GitHub Release m0-dataset-2026-11-01](https://github.com/Chef221/CS231-Computer-Vision-Currency-Classification/releases/tag/m0-dataset-2026-11-01). Mỗi ZIP chứa đường dẫn bắt đầu bằng `DATA/`; hai tệp train chứa các phần ảnh khác nhau. Tệp dev có thêm `DATA/metadata/dataset.csv`. `manifest.json` ghi kích thước, SHA-256 và nguồn của bộ dữ liệu.
-
-- [data-train-1-of-2.zip](https://github.com/Chef221/CS231-Computer-Vision-Currency-Classification/releases/download/m0-dataset-2026-11-01/data-train-1-of-2.zip)
-- [data-train-2-of-2.zip](https://github.com/Chef221/CS231-Computer-Vision-Currency-Classification/releases/download/m0-dataset-2026-11-01/data-train-2-of-2.zip)
-- [data-dev.zip](https://github.com/Chef221/CS231-Computer-Vision-Currency-Classification/releases/download/m0-dataset-2026-11-01/data-dev.zip)
-- [data-test.zip](https://github.com/Chef221/CS231-Computer-Vision-Currency-Classification/releases/download/m0-dataset-2026-11-01/data-test.zip)
-- [manifest.json](https://github.com/Chef221/CS231-Computer-Vision-Currency-Classification/releases/download/m0-dataset-2026-11-01/manifest.json)
-
-```powershell
-Expand-Archive .\data-train-1-of-2.zip -DestinationPath . -Force
-Expand-Archive .\data-train-2-of-2.zip -DestinationPath . -Force
-Expand-Archive .\data-dev.zip -DestinationPath . -Force
-Expand-Archive .\data-test.zip -DestinationPath . -Force
-```
-
-Dùng train để huấn luyện, dev để chọn mô hình/cấu hình, và chỉ dùng test để đánh giá cuối. Resize ảnh trong pipeline của mô hình khi cần; ảnh PNG trong bộ dữ liệu được giữ nguyên độ phân giải.
-
-## Quy trình M0
-
-Cài thư viện và mở notebook trong `src/M0` theo thứ tự `00` đến `05`:
-
-```powershell
-pip install -r requirements.txt
-```
-
-1. `00_COUNT_RAW_DATA.ipynb`: đếm ảnh và nhãn nguồn.
-2. `01_READ_LABELS.ipynb`: đọc nhãn, tổng hợp sáu mệnh giá và xem ví dụ.
-3. `02_CROP_BANKNOTES.ipynb`: tạo một crop cho mỗi nhãn; vùng crop thêm padding 20% mỗi phía. Ảnh giữ nguyên kích thước, không augment.
-4. `03_REMOVE_EXACT_DUPLICATES.ipynb`: bỏ bản trùng pixel hoàn toàn trong cùng mệnh giá; giữ ảnh nguồn.
-5. `04_SPLIT_TRAIN_DEV_TEST.ipynb`: chia train/dev/test theo nhóm tên ảnh gốc với seed cố định.
-6. `05_EXPORT_FINAL_DATA.ipynb`: sao chép và đặt tên ảnh cuối theo thư mục lớp.
-
-Các ảnh nguồn chưa được đóng gói trong release. Muốn chạy lại các bước từ đầu, tải bốn bộ nguồn từ trang Roboflow bên dưới và đặt chúng theo cấu trúc mà `00_COUNT_RAW_DATA.ipynb` đọc dưới `DATA_RAW/`.
-
-## Nguồn và ghi công
-
-Bốn bộ nguồn ghi giấy phép CC BY 4.0 trong tệp `README.dataset.txt`/`README.roboflow.txt` đi kèm:
-
-- [Banknotes Recognition v2](https://universe.roboflow.com/money-recognition/banknotes-recognition/dataset/2)
-- [Money v1](https://universe.roboflow.com/bao-vu/money-bx6u5-a5myk/dataset/1)
-- [Money_VN_Regconization v1](https://universe.roboflow.com/blindtrix/money_vn_regconization-2-cumhs/dataset/1)
-- [Vietnamese Currency v6](https://universe.roboflow.com/first-qkz37/vietnamese-currency-lgi9i/dataset/6)
-
-Bộ cuối là kết quả xử lý và kết hợp các nguồn trên: chỉ giữ sáu mệnh giá mục tiêu, crop theo nhãn, loại trùng pixel hoàn toàn trong cùng lớp, rồi chia lại theo nhóm. Việc ghi nguồn không hàm ý các tác giả nguồn bảo trợ dự án này.
-
-## Chuẩn đánh giá
-
-KNN, SVM, CNN và ResNet dùng **Macro-F1 làm tiêu chí chính trên dev**; nếu bằng nhau thì ưu tiên **MAE theo VND thấp hơn**. Kết quả cuối báo cáo Accuracy, Macro-F1, MAE, Precision/Recall/F1 từng lớp, ma trận nhầm lẫn và bảng các cặp lỗi.
-
-Hướng dẫn import, mapping và lưu kết quả nằm tại [docs/METRICS_STANDARD.md](docs/METRICS_STANDARD.md). Công thức và ví dụ được giải thích trong [M2.2](docs/M2.2%20-%20Mô%20tả%20độ%20đo%20đánh%20giá.md). Truyền nhãn thật/dự đoán là giá trị VND thực tế, không phải chỉ số lớp:
-
-```python
-from src.evaluation.value_metrics import evaluate_classification
-
-metrics = evaluate_classification(y_true_vnd, y_pred_vnd)
-print("Macro-F1:", metrics["macro_f1"])
-print("Accuracy:", metrics["accuracy"])
-print("MAE (VND/ảnh):", metrics["mae_vnd"])
-print(metrics["confusion_matrix"])
-```
-
-Giữ nguyên import cũ nhưng đổi chỗ đọc `macro_value_f1` sang `macro_f1`; các trường value metric cũ đã bỏ. Cách chuyển được ghi trong hướng dẫn dùng chung. Hàm đánh giá vẫn là một hàm tại [src/evaluation/value_metrics.py](src/evaluation/value_metrics.py).
-
-Chạy kiểm tra bằng `python -m unittest discover -s tests -p test_value_metrics.py -v`.
-
-## Đề cương thực nghiệm
-
-[docs/EXPERIMENT_PLAN.md](docs/EXPERIMENT_PLAN.md) quy định ba phần: so sánh bốn mô hình, phân tích lỗi mệnh giá và thí nghiệm từ chối dự đoán ở bước mở rộng. Các nguồn và phần nhóm kế thừa được ghi trong [docs/REFERENCES.md](docs/REFERENCES.md).
-
-So sánh chính luôn dùng toàn bộ test sau khi khóa cấu hình. Cơ chế từ chối hiện mới là đề cương, chưa được triển khai; kết quả trên phần được trả lời sau này phải báo cáo riêng cùng coverage.
-
-## Thực nghiệm KNN
-
-Notebook hiện tại nằm trong [src/KNN/224](src/KNN/224/README.md); thứ tự chạy và kết quả được hướng dẫn tại [README KNN](src/KNN/README.md). Lượt thực nghiệm dùng RGB224, không augmentation, năm biến thể thuộc ba họ feature: HSV12, HOG và kết hợp; PCA là biến thể của nhánh HOG. Tổng cộng 100 cấu hình được đánh giá trên dev với Euclidean.
-
-Phương án khóa là HSV12, k=1, uniform. Trên 1.553 ảnh test hiện có, mô hình nhận đúng 1.187 ảnh: Accuracy 76,43%, Macro-F1 0,768710, MAE 53.947,20đ/ảnh. Test từng được đánh giá trong khảo sát trước, nên không gọi đây là holdout hoàn toàn chưa xem. Không trộn các kết quả cũ vào bảng RGB224.
-
-[Báo cáo KNN](docs/KNN_REPORT/BAO_CAO_THUC_NGHIEM_KNN.md) trình bày từ tiền xử lý đến phân tích lỗi, với năm bảng và sáu hình từ dữ liệu thật. [Cấu hình khóa](src/KNN/results_224/selection/locked_knn_config.json), [kết quả test](src/KNN/results_224/test_final/TEST_REVIEW.md) và [phân tích lỗi](src/KNN/results_224/error_analysis/ERROR_ANALYSIS_REVIEW.md) được lưu riêng để đối chiếu. Các notebook/kết quả khảo sát cũ đã được dọn khỏi checkout hiện tại.
-
-
-## Thực nghiệm ResNet-18 & Web Demo
-
-Mã nguồn, notebook đã chạy và hướng dẫn chi tiết nằm tại [src/ResNet/README.md](src/ResNet/README.md). Cấu hình khóa dùng **ResNet-18** (Transfer Learning từ ImageNet, 11,18 triệu tham số), đầu vào $224\times224$ (không CenterCrop), `ColorJitter` với `hue = 0`, bộ tối ưu AdamW (`LR = 1e-4`).
-
-Trên 1.553 ảnh test độc lập, mô hình nhận đúng **1.548 / 1.553 ảnh**: **Accuracy 99,68%**, **Macro-F1 0,9968**, **MAE 978,75đ/ảnh** (3/6 mệnh giá đạt Recall 100%, 50k đạt Precision 100%).
-
-Ứng dụng **Web Demo** nằm tại [web_demo/](web_demo/) và đã được build sẵn bản chạy trực tiếp trên trình duyệt bằng **ONNX Runtime Web** tại [docs/](docs/) để host trên **GitHub Pages** không cần máy chủ backend:
-
-```powershell
-# Chạy Web Demo local với FastAPI backend:
 pip install -r src/ResNet/requirements.txt
+```
+
+### 2. Khởi chạy Web Demo trên máy cá nhân (1 câu lệnh)
+```bash
 python web_demo/backend/app.py
+```
+* **Giao diện Web:** [http://localhost:8080](http://localhost:8080)
+* **Tài liệu API (Swagger UI):** [http://localhost:8080/docs](http://localhost:8080/docs)
+
+### 3. Xem Notebook kết quả thực nghiệm
+```bash
+jupyter notebook src/ResNet/notebooks/resnet18_evaluation.ipynb
 ```

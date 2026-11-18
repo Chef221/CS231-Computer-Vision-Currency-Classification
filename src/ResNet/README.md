@@ -1,6 +1,6 @@
 # 🇻🇳 ResNet-18 — Phân Loại Mệnh Giá Tiền Polymer Việt Nam & Web Demo
 
-[![Live Web Demo](https://img.shields.io/badge/%F0%9F%9A%80%20LIVE%20WEB%20DEMO-VISIT%20ONLINE-00b894?style=for-the-badge&logo=googlechrome&logoColor=white)](https://chef221.github.io/CS231-Computer-Vision-Currency-Classification/)
+[![Live Web Demo](https://img.shields.io/badge/%F0%9F%9A%80%20LIVE%20WEB%20DEMO-VISIT%20ONLINE-00b894?style=for-the-badge&logo=googlechrome&logoColor=white)](https://thienphucng-1410.github.io/CS231-Computer-Vision-Currency-Classification/)
 [![Evaluation Notebook](https://img.shields.io/badge/%F0%9F%93%93%20EVALUATION%20NOTEBOOK-OPEN%20RESULTS-6c5ce7?style=for-the-badge&logo=jupyter&logoColor=white)](./notebooks/resnet18_evaluation.ipynb)
 
 ![Python](https://img.shields.io/badge/Python-3.10+-3776ab?style=flat-square)
@@ -10,7 +10,7 @@
 ![ONNX Web](https://img.shields.io/badge/ONNX%20Runtime-In--Browser%20AI-005CED?style=flat-square)
 
 > 🌟 **TRẢI NGHIỆM DỰ ÁN TRỰC TIẾP TRÊN TRÌNH DUYỆT (KHÔNG CẦN CÀI ĐẶT / TẢI VỀ):**  
-> 🔗 **Web Demo Nhận diện Tiền Polymer (ResNet-18 chạy trực tiếp trên trình duyệt):** [https://chef221.github.io/CS231-Computer-Vision-Currency-Classification/](https://chef221.github.io/CS231-Computer-Vision-Currency-Classification/)  
+> 🔗 **Web Demo Nhận diện Tiền Polymer (ResNet-18 chạy trực tiếp trên trình duyệt):** [https://thienphucng-1410.github.io/CS231-Computer-Vision-Currency-Classification/](https://thienphucng-1410.github.io/CS231-Computer-Vision-Currency-Classification/)  
 > 📓 **Notebook đã chạy hoàn chỉnh (kèm biểu đồ & phân tích lỗi):** [notebooks/resnet18_evaluation.ipynb](./notebooks/resnet18_evaluation.ipynb)
 
 ---
