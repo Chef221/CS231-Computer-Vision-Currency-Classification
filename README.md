@@ -1,5 +1,17 @@
 # Phân loại mệnh giá tiền polymer Việt Nam
 
+[![Live Web Demo](https://img.shields.io/badge/%F0%9F%9A%80%20LIVE%20WEB%20DEMO-VISIT%20ONLINE-00b894?style=for-the-badge&logo=googlechrome&logoColor=white)](https://chef221.github.io/CS231-Computer-Vision-Currency-Classification/)
+[![ResNet-18 Notebook](https://img.shields.io/badge/%F0%9F%93%93%20RESNET--18%20NOTEBOOK-OPEN%20RESULTS-6c5ce7?style=for-the-badge&logo=jupyter&logoColor=white)](src/ResNet/notebooks/resnet18_evaluation.ipynb)
+
+![Python](https://img.shields.io/badge/Python-3.10+-3776ab?style=flat-square)
+![PyTorch](https://img.shields.io/badge/PyTorch-ResNet--18-ee4c2c?style=flat-square)
+![Accuracy](https://img.shields.io/badge/ResNet--18%20Accuracy-99.68%25-44cc11?style=flat-square)
+![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Active-2ea44f?style=flat-square)
+
+> 🌟 **TRẢI NGHIỆM WEB DEMO TRỰC TIẾP TRÊN TRÌNH DUYỆT (KHÔNG CẦN CÀI ĐẶT / TẢI VỀ):**  
+> 🔗 **Web Demo Nhận diện Tiền Polymer (ResNet-18 ONNX):** [https://chef221.github.io/CS231-Computer-Vision-Currency-Classification/](https://chef221.github.io/CS231-Computer-Vision-Currency-Classification/)  
+> 📓 **Tài liệu & Notebook ResNet-18:** [src/ResNet/README.md](src/ResNet/README.md)
+
 ## Bộ dữ liệu
 
 Bộ cuối gồm 15.611 ảnh PNG, chia theo thư mục lớp và tập dữ liệu:
@@ -105,3 +117,18 @@ Notebook hiện tại nằm trong [src/KNN/224](src/KNN/224/README.md); thứ t�
 Phương án khóa là HSV12, k=1, uniform. Trên 1.553 ảnh test hiện có, mô hình nhận đúng 1.187 ảnh: Accuracy 76,43%, Macro-F1 0,768710, MAE 53.947,20đ/ảnh. Test từng được đánh giá trong khảo sát trước, nên không gọi đây là holdout hoàn toàn chưa xem. Không trộn các kết quả cũ vào bảng RGB224.
 
 [Báo cáo KNN](docs/KNN_REPORT/BAO_CAO_THUC_NGHIEM_KNN.md) trình bày từ tiền xử lý đến phân tích lỗi, với năm bảng và sáu hình từ dữ liệu thật. [Cấu hình khóa](src/KNN/results_224/selection/locked_knn_config.json), [kết quả test](src/KNN/results_224/test_final/TEST_REVIEW.md) và [phân tích lỗi](src/KNN/results_224/error_analysis/ERROR_ANALYSIS_REVIEW.md) được lưu riêng để đối chiếu. Các notebook/kết quả khảo sát cũ đã được dọn khỏi checkout hiện tại.
+
+
+## Thực nghiệm ResNet-18 & Web Demo
+
+Mã nguồn, notebook đã chạy và hướng dẫn chi tiết nằm tại [src/ResNet/README.md](src/ResNet/README.md). Cấu hình khóa dùng **ResNet-18** (Transfer Learning từ ImageNet, 11,18 triệu tham số), đầu vào $224\times224$ (không CenterCrop), `ColorJitter` với `hue = 0`, bộ tối ưu AdamW (`LR = 1e-4`).
+
+Trên 1.553 ảnh test độc lập, mô hình nhận đúng **1.548 / 1.553 ảnh**: **Accuracy 99,68%**, **Macro-F1 0,9968**, **MAE 978,75đ/ảnh** (3/6 mệnh giá đạt Recall 100%, 50k đạt Precision 100%).
+
+Ứng dụng **Web Demo** nằm tại [web_demo/](web_demo/) và đã được build sẵn bản chạy trực tiếp trên trình duyệt bằng **ONNX Runtime Web** tại [docs/](docs/) để host trên **GitHub Pages** không cần máy chủ backend:
+
+```powershell
+# Chạy Web Demo local với FastAPI backend:
+pip install -r src/ResNet/requirements.txt
+python web_demo/backend/app.py
+```
