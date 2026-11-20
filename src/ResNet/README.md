@@ -1,5 +1,7 @@
 # ResNet-18 và demo
 
+[Mở demo ResNet-18 trên trình duyệt](https://thienphucng-1410.github.io/CS231-Computer-Vision-Currency-Classification/)
+
 Mô hình fine-tune ResNet-18 từ trọng số ImageNet để phân loại sáu mệnh giá. Baseline dùng cross-entropy, AdamW, resize RGB 224 × 224 và chuẩn hóa ImageNet. Augmentation áp dụng trên train. Quyết định của demo là argmax.
 
 Trên 1.553 ảnh test, checkpoint đi kèm demo dự đoán đúng 1.548 ảnh, đạt Accuracy 99,68%, Macro-F1 0,996814 và MAE 978,75 đồng/ảnh. [Báo cáo chung](../../docs/RESULTS.md) · [Chỉ số từng lớp và cặp nhầm](results/metrics_test.json) · [Dự đoán từng ảnh](results/predictions_test.csv) · [Ma trận nhầm lẫn](results/confusion_matrix.png)

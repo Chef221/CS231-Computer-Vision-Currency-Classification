@@ -2,6 +2,7 @@
 
 Đồ án CS231 khảo sát bốn phương pháp phân loại ảnh chứa một tờ tiền polymer Việt Nam. Đầu ra là một trong sáu mệnh giá từ 10.000 đến 500.000 đồng.
 
+- [Mở demo ResNet-18 trên trình duyệt](https://thienphucng-1410.github.io/CS231-Computer-Vision-Currency-Classification/)
 - [Báo cáo tổng hợp của nhóm](docs/RESULTS.md)
 - [Danh mục tài liệu và hướng dẫn thực nghiệm](docs/README.md)
 - [Hướng dẫn chạy demo ResNet-18](src/ResNet/README.md)
