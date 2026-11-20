@@ -1,12 +1,10 @@
-# Tài liệu của nhóm
+# Tài liệu CS231
 
-- [Kết quả cuối dùng trong slide](RESULTS.md).
-- [Slide và code: đọc phần nào để giải thích](SLIDE_CODE.md).
-- [Chạy SVM/CNN trên Kaggle](REBUILD_KAGGLE.md).
-- [Báo cáo KNN gốc](KNN_REPORT/BAO_CAO_THUC_NGHIEM_KNN.md).
-- [Báo cáo SVM](SVM_REPORT/BAO_CAO_THUC_NGHIEM_SVM.md).
-- [Báo cáo CNN TensorFlow mới](CNN_REPORT/BAO_CAO_THUC_NGHIEM_CNN.md).
-- [Chuẩn đánh giá](METRICS_STANDARD.md) và [giải thích độ đo](M2.2%20-%20Mô%20tả%20độ%20đo%20đánh%20giá.md).
-- [Tài liệu tham khảo](REFERENCES.md).
+- [Báo cáo tổng hợp bốn mô hình](RESULTS.md)
+- [Chuẩn đánh giá](METRICS_STANDARD.md) và [giải thích độ đo](M2.2%20-%20M%C3%B4%20t%E1%BA%A3%20%C4%91%E1%BB%99%20%C4%91o%20%C4%91%C3%A1nh%20gi%C3%A1.md)
+- [Báo cáo KNN](KNN_REPORT/BAO_CAO_THUC_NGHIEM_KNN.md), [SVM](SVM_REPORT/BAO_CAO_THUC_NGHIEM_SVM.md), [CNN](CNN_REPORT/BAO_CAO_THUC_NGHIEM_CNN.md) và [ResNet-18](../src/ResNet/README.md)
+- [Đối chiếu slide với code SVM/CNN](SLIDE_CODE.md)
+- [Chạy lại SVM/CNN trên Kaggle](REBUILD_KAGGLE.md)
+- [Tài liệu tham khảo](REFERENCES.md)
 
-KNN giữ nguyên baseline. SVM/CNN được trình bày lại cho dễ đọc nhưng giữ lưới khảo sát, kiến trúc và thiết lập cuối. CSV/JSON và hình đã chạy nằm trong `src/<mô hình>/results_224`. Tài liệu KNN còn kèm các bước kiểm tra từ lượt gốc; đó không phải yêu cầu bổ sung để chạy SVM/CNN mới.
+Bản build web tĩnh nằm trong cùng thư mục này. Các bảng, hình và dự đoán thực nghiệm được liên kết từ báo cáo tổng hợp.
