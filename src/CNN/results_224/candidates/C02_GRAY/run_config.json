@@ -1,0 +1,33 @@
+{
+  "config": {
+    "candidate_id": "C02_GRAY",
+    "color": "gray",
+    "augmentation": false,
+    "channels": [
+      32,
+      64,
+      128
+    ]
+  },
+  "training": {
+    "seed": 42,
+    "epochs": 25,
+    "batch_size": 64,
+    "learning_rate": 0.001,
+    "optimizer": "AdamW",
+    "weight_decay": 0.0001,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "epsilon": 1e-08,
+    "gradient_clip_norm": 5.0,
+    "patience": 6,
+    "scheduler": "CosineAnnealingLR_epoch_equivalent",
+    "eta_min": 1e-05,
+    "mixed_precision_on_gpu": true,
+    "evaluation_precision": "float32",
+    "shuffle": "full path permutation per epoch"
+  },
+  "protocol_sha256": "c29ae9ff7e45656a6e80c63a153bae1afc70e861a75e4dbdce7c786cf4da8198"
+}

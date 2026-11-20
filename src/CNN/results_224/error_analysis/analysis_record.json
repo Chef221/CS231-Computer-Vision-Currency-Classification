@@ -1,0 +1,7 @@
+{
+  "n_test": 1553,
+  "n_errors": 41,
+  "predictions_sha256": "2bf8573330674eb4dd466c2a00c4c3669954b00c631c20dababd0bad91b73198",
+  "checkpoint_sha256": "8bcc63f550dff56a2b7df18afdef475d38f32003676e0f667787e580c4aad81a",
+  "test_used_for_retuning": false
+}

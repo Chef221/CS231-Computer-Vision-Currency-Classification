@@ -1,0 +1,26 @@
+{
+  "feature_id": "HSV12_HOG",
+  "feature_folder": "hsv12_hog",
+  "feature_dim": 7812,
+  "classes_vnd": [
+    10000,
+    20000,
+    50000,
+    100000,
+    200000,
+    500000
+  ],
+  "svm": {
+    "kernel": "rbf",
+    "C": 10.0,
+    "gamma": "scale",
+    "cache_size": 512,
+    "decision_function_shape": "ovr",
+    "break_ties": true
+  },
+  "dev_metrics": {
+    "accuracy": 0.8785166240409207,
+    "macro_f1": 0.8812126158644066,
+    "mae_vnd": 27653.452685421995
+  }
+}

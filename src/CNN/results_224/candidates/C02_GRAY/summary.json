@@ -1,0 +1,29 @@
+{
+  "candidate_id": "C02_GRAY",
+  "best_epoch": 25,
+  "color": "gray",
+  "augmentation": false,
+  "channels": [
+    32,
+    64,
+    128
+  ],
+  "accuracy": 0.3734015345268542,
+  "macro_f1": 0.32491606565649506,
+  "mae_vnd": 150645.78005115088,
+  "parameters": 305062,
+  "epochs_completed": 25,
+  "train_seconds": 6054.761977391997,
+  "dev_seconds": 592.4814569000016,
+  "protocol_id": "cnn_tf_pytorch_parity_v2",
+  "environment": {
+    "python": "3.13.16",
+    "tensorflow": "2.21.0",
+    "numpy": "2.1.3",
+    "precision_policy": "mixed_float16",
+    "gpus": [
+      "/physical_device:GPU:0",
+      "/physical_device:GPU:1"
+    ]
+  }
+}

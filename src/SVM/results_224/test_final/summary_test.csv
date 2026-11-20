@@ -1,0 +1,2 @@
+feature_id,kernel,C,gamma,n_test,accuracy,macro_f1,mae_vnd
+HSV12_HOG,rbf,10.0,scale,1553,0.8770122343850612,0.8811015854426875,32891.17836445589

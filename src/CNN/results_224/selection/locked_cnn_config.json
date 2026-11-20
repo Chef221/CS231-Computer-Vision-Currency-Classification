@@ -1,0 +1,84 @@
+{
+  "framework": "tensorflow",
+  "protocol_id": "cnn_tf_pytorch_parity_v2",
+  "training": {
+    "seed": 42,
+    "epochs": 25,
+    "batch_size": 64,
+    "learning_rate": 0.001,
+    "optimizer": "AdamW",
+    "weight_decay": 0.0001,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "epsilon": 1e-08,
+    "gradient_clip_norm": 5.0,
+    "patience": 6,
+    "scheduler": "CosineAnnealingLR_epoch_equivalent",
+    "eta_min": 1e-05,
+    "mixed_precision_on_gpu": true,
+    "evaluation_precision": "float32",
+    "shuffle": "full path permutation per epoch"
+  },
+  "candidate": "C04_DEEP_AUG",
+  "config": {
+    "candidate_id": "C04_DEEP_AUG",
+    "color": "rgb",
+    "augmentation": true,
+    "channels": [
+      32,
+      64,
+      128,
+      256
+    ]
+  },
+  "best_epoch": 25,
+  "checkpoint": "candidates/C04_DEEP_AUG/best.keras",
+  "classes_vnd": [
+    10000,
+    20000,
+    50000,
+    100000,
+    200000,
+    500000
+  ],
+  "dev_metrics": {
+    "accuracy": 0.9635549872122762,
+    "macro_f1": 0.9639522142003512,
+    "mae_vnd": 9296.675191815857
+  },
+  "sha256": {
+    "inputs/experiment_config.json": "c29ae9ff7e45656a6e80c63a153bae1afc70e861a75e4dbdce7c786cf4da8198",
+    "inputs/train_manifest.csv": "df553bde8a2d1bd8c8f2dc9d78fccbfb55411829e54afcf10c4877816d5e9999",
+    "inputs/dev_manifest.csv": "b09ad96958bc0ac97cf4ee1685488ad3e05b53144c4bb8fff0a43723b5f59a8d",
+    "candidates/C01_RGB/best.keras": "81cf8bd442fa67ace1cb3f8c89bc1a861dbe748befd4ff8be5560a820768335b",
+    "candidates/C01_RGB/architecture.json": "80fb33a12079bb3637045b21cddc28988760e4069ccbf92104d5acdbcf2d1084",
+    "candidates/C01_RGB/history.csv": "711b195adc2db3364c72a4309d68e7faf6a213f1f62d6014c8ed849a34e05ba4",
+    "candidates/C01_RGB/summary.json": "144c96a54638cbd2fbc1071c67610046ae96280d6d5c8e1f61ef75ad0430d513",
+    "candidates/C01_RGB/run_config.json": "00fd504b6cc508d18c9d141b5210b200f5edf1881c0905090d246b908af99bf4",
+    "candidates/C01_RGB/predictions_dev.csv": "4f737284cd525653e5d4679af6f21eb633b68d723e029a7c3a702aef4e30e17f",
+    "candidates/C01_RGB/metrics_dev.json": "6787d8f5101ceebfb541857fa3ea46af4d41950237341e23d15cac81c0b703c3",
+    "candidates/C02_GRAY/best.keras": "3c207b765684ce8a85d74087b8e9559142b8b9792e94ebe47dfbad5eb60dc577",
+    "candidates/C02_GRAY/architecture.json": "2764b2459df314db7516ef920add30d19672c0bd088222919bdc40fe662f507f",
+    "candidates/C02_GRAY/history.csv": "8df860db4ecb95e30e02a6fef00ad5a0c61a6aeca0ad155bd0038aebbb0e31d1",
+    "candidates/C02_GRAY/summary.json": "918fa245b93a31a006bb2d1f0b30eaebc32202d763f04588754d0508ac234de5",
+    "candidates/C02_GRAY/run_config.json": "c3179040391d5e5c8fdfdb9837bb23a5299be1fc144749d669b07581cae49640",
+    "candidates/C02_GRAY/predictions_dev.csv": "a31c143c9113f1559b998c8a5bc909e91976dcd26cf7dc70e666d717ea21f34d",
+    "candidates/C02_GRAY/metrics_dev.json": "0615ecfbc54fd4819f7664278ae71d693bf6e2d81fc5476b4dd0bda8a0116764",
+    "candidates/C03_RGB_AUG/best.keras": "2977613a8a8cd90a8ad56f0a612637ab673765afb4a0ad991e2b69dcd304b180",
+    "candidates/C03_RGB_AUG/architecture.json": "37c0ae0d8e52733a6a90db57a7ffd2cc8aa7ebcc126ea2b9db02c8076f8bcd8d",
+    "candidates/C03_RGB_AUG/history.csv": "a2af5e15bc061692bbb273c3b439142891faf809ab24d9526c835909099ea883",
+    "candidates/C03_RGB_AUG/summary.json": "1342f5ff70b228576ef7e4a50d1f0a29e441b331ed8a6eb989dffbf3a876b8f1",
+    "candidates/C03_RGB_AUG/run_config.json": "22f1edb6ae2c8b3cc00f57cf0a3e0a5ec6c5b6f426d76dabafd21163bf393af1",
+    "candidates/C03_RGB_AUG/predictions_dev.csv": "e0cb828f76faa6c429bd3716fe0ae9ae3aedb3ddb00570fa45c34f77023e2fd2",
+    "candidates/C03_RGB_AUG/metrics_dev.json": "4a8bf9e78bb3f59df73b0ee0edab075840f4e4cfe1d2f792063888ad1bee7c2a",
+    "candidates/C04_DEEP_AUG/best.keras": "8bcc63f550dff56a2b7df18afdef475d38f32003676e0f667787e580c4aad81a",
+    "candidates/C04_DEEP_AUG/architecture.json": "267e2fd301081a675550957f4c8d5a37c1701f669bdae165f57037bb7a6b5f7c",
+    "candidates/C04_DEEP_AUG/history.csv": "998fa907a9441da59b351eed17f97735f105abf3380885592b57852717595df7",
+    "candidates/C04_DEEP_AUG/summary.json": "f5af5ef539ad95138e7b051d05e1bf66f0146677c5191925559540f823333d32",
+    "candidates/C04_DEEP_AUG/run_config.json": "ad5a929e90e68c8b38035937a7ed2e773208fe24091593d0cabd7719cc6ad493",
+    "candidates/C04_DEEP_AUG/predictions_dev.csv": "1ba678be96639d58edd5cda3c612eee5b9657e4e5bb49a17f7dee862af17a0d1",
+    "candidates/C04_DEEP_AUG/metrics_dev.json": "1e0030a4a84dd1392cb7698cb126ce196a87ce9fe0badab25574a133fdab2dc6"
+  }
+}

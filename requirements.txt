@@ -1,8 +1,14 @@
-ipykernel
-jupyter
-matplotlib
-numpy
-pandas
+# Python 3.11–3.12. Kaggle dùng TensorFlow có sẵn, không cần cài lại CUDA.
+numpy>=1.26,<3
+pandas>=2,<4
+matplotlib>=3.8,<4
+opencv-python-headless>=4.8,<6
+scikit-learn>=1.4,<2
+scikit-image>=0.22,<0.27
+tensorflow>=2.16,<2.22
+joblib>=1.3,<2
 Pillow
 PyYAML
-scikit-learn
+jupyterlab
+ipykernel
+nbformat>=5.10

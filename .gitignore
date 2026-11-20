@@ -1,16 +1,37 @@
-# Temporary and generated notebook files
-*.tmp
-.ipynb_checkpoints/
-__pycache__/
-cs231-computer-vision/
-
-# Large data is distributed through the dataset release.
+# Dữ liệu ảnh được tải riêng từ Release.
 DATA/**/*.png
 DATA_RAW/
 DATA_CROP/
-DATA_BUILD_05_*/
+DATA_BUILD_*/
+cs231-computer-vision/
 
-# Recreated locally by the KNN notebooks; too large for regular Git.
-src/KNN/results_224/**/*.npy
-src/KNN/results_224/**/*.pkl
+# Model và ma trận lớn: tạo lại bằng notebook hoặc giữ trong Output Kaggle.
+src/**/results_224/**/*.npy
+src/**/results_224/**/*.npz
+src/**/results_224/**/*.pkl
+src/**/results_224/**/*.joblib
+src/**/results_224/**/*.keras
+src/**/results_224/**/*.h5
+src/**/results_224/**/*.pt
+src/**/results_224/**/*.pth
+
+# Kết quả chạy lại và bản sao lưu riêng trên máy.
+runs/
+output/
+.local_backup/
 .scratch/
+src/CNN/results_tf_224/
+src/CNN/results_tf_parity_224/
+src/SVM/results_rebuild_224/
+
+# Môi trường, file tạm và thiết lập riêng.
+.venv/
+.env
+.aws/
+.codex/
+.agents/
+__pycache__/
+.ipynb_checkpoints/
+*.pyc
+*.tmp
+*.log

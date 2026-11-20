@@ -1,0 +1,116 @@
+{
+  "classes_vnd": [
+    10000,
+    20000,
+    50000,
+    100000,
+    200000,
+    500000
+  ],
+  "splits": {
+    "train": 12494,
+    "dev": 1564,
+    "test": 1553
+  },
+  "preprocessing": {
+    "color": "RGB",
+    "size": [
+      224,
+      224
+    ],
+    "dtype": "uint8",
+    "resize": "direct",
+    "library": "opencv",
+    "interpolation": "INTER_LINEAR",
+    "augmentation": false
+  },
+  "hsv": {
+    "bins": [
+      12,
+      12,
+      12
+    ],
+    "ranges": [
+      0,
+      180,
+      0,
+      256,
+      0,
+      256
+    ],
+    "norm": "L2"
+  },
+  "hog": {
+    "grayscale": true,
+    "orientations": 9,
+    "pixels_per_cell": [
+      16,
+      16
+    ],
+    "cells_per_block": [
+      2,
+      2
+    ],
+    "block_norm": "L2-Hys",
+    "transform_sqrt": false,
+    "dimensions_before_pca": 6084
+  },
+  "pca": {
+    "n_components": 0.95,
+    "svd_solver": "full",
+    "whiten": false,
+    "fit_split": "train",
+    "norm_after_transform": "L2"
+  },
+  "fusion": "concatenate separately L2-normalized HSV12 and HOG branch",
+  "feature_order": [
+    "HSV12",
+    "HOG",
+    "HOG_PCA",
+    "HSV12_HOG",
+    "HSV12_HOG_PCA"
+  ],
+  "svm_candidates": [
+    {
+      "kernel": "linear",
+      "C": 0.1,
+      "gamma": "scale"
+    },
+    {
+      "kernel": "linear",
+      "C": 1.0,
+      "gamma": "scale"
+    },
+    {
+      "kernel": "linear",
+      "C": 10.0,
+      "gamma": "scale"
+    },
+    {
+      "kernel": "rbf",
+      "C": 1.0,
+      "gamma": "scale"
+    },
+    {
+      "kernel": "rbf",
+      "C": 1.0,
+      "gamma": 10.0
+    },
+    {
+      "kernel": "rbf",
+      "C": 10.0,
+      "gamma": "scale"
+    },
+    {
+      "kernel": "rbf",
+      "C": 10.0,
+      "gamma": 10.0
+    }
+  ],
+  "selection": [
+    "max unrounded macro_f1",
+    "min unrounded mae_vnd",
+    "feature order then candidate order"
+  ],
+  "test_history": "Previously inspected in earlier experiments; not an untouched holdout."
+}

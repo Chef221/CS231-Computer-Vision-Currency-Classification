@@ -1,0 +1,29 @@
+{
+  "candidate_id": "C03_RGB_AUG",
+  "best_epoch": 25,
+  "color": "rgb",
+  "augmentation": true,
+  "channels": [
+    32,
+    64,
+    128
+  ],
+  "accuracy": 0.920076726342711,
+  "macro_f1": 0.9213359134495066,
+  "mae_vnd": 21643.22250639386,
+  "parameters": 305638,
+  "epochs_completed": 25,
+  "train_seconds": 6171.401606507002,
+  "dev_seconds": 573.4464446059992,
+  "protocol_id": "cnn_tf_pytorch_parity_v2",
+  "environment": {
+    "python": "3.13.16",
+    "tensorflow": "2.21.0",
+    "numpy": "2.1.3",
+    "precision_policy": "mixed_float16",
+    "gpus": [
+      "/physical_device:GPU:0",
+      "/physical_device:GPU:1"
+    ]
+  }
+}

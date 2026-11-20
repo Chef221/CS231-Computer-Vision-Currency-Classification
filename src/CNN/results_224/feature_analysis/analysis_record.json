@@ -1,0 +1,10 @@
+{
+  "checkpoint_sha256": "8bcc63f550dff56a2b7df18afdef475d38f32003676e0f667787e580c4aad81a",
+  "pca_fit_split": "train",
+  "pca_explained_variance": [
+    0.3090459406375885,
+    0.20742996037006378
+  ],
+  "embedding_dim": 256,
+  "sample": "train/10000/10000_000001.png"
+}

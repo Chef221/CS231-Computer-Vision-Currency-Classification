@@ -1,0 +1,23 @@
+{
+  "feature_id": "HSV12_HOG",
+  "svm": {
+    "kernel": "rbf",
+    "C": 10.0,
+    "gamma": "scale",
+    "cache_size": 512,
+    "decision_function_shape": "ovr",
+    "break_ties": true
+  },
+  "n_test": 1553,
+  "n_errors": 191,
+  "n_selected_cases": 12,
+  "selection": "top 3 frequent pairs both ways; top 3 cost directions; one small score gap error; two correct controls",
+  "decision_scores_are_probabilities": false,
+  "visual_causes_verified": false,
+  "test_used_for_retuning": false,
+  "sha256": {
+    "lock": "0e1fe5a75547927876fe2e0e9ad40653974cddf65ddd1a61a9d0cd25002db512",
+    "test_predictions": "4b57616ceb7eb8a19eada0bca3ffa2e1e96bd119270e7f3884922fcf848f85ca",
+    "test_feature": "928233d10f7fd5dfc80fadef35ebac5125fd3948db3b1b2d55120d926f47473a"
+  }
+}

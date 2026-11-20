@@ -48,6 +48,6 @@ Notebook có thể ghi đè kết quả khi chạy lại. Nếu chỉ muốn xem
 - [Phân tích lỗi](results_224/error_analysis/ERROR_ANALYSIS_REVIEW.md), kèm bảng hàng xóm và ảnh.
 - [Báo cáo học phần](../../docs/KNN_REPORT/BAO_CAO_THUC_NGHIEM_KNN.md), dùng sáu hình thật.
 
-Giữ các file NPY, PCA pickle và manifest trong `results_224`: các notebook sau dùng lại chúng, file khóa cũng ghi hash một số file. Không xóa cache chỉ vì đã có CSV; muốn chạy lại từ đầu phải thực hiện đúng thứ tự và xác minh lại trước test. Cấu hình, feature và nhãn này có thể bàn giao để thành viên SVM dùng cùng biểu diễn; chưa xác nhận code SVM đã đồng bộ.
+Giữ các file NPY, PCA pickle và manifest trong `results_224`: các notebook sau dùng lại chúng, file khóa cũng ghi hash một số file. Không xóa cache chỉ vì đã có CSV; muốn chạy lại từ đầu phải thực hiện đúng thứ tự và xác minh lại trước test. Quy tắc biểu diễn SVM và đầu vào RGB224/mapping của CNN đã được đối chiếu với KNN trong [hồ sơ rà soát chung](../../docs/MODEL_FORMAT_REVIEW.md). CNN học biểu diễn riêng; việc khớp manifest và cấu hình không khẳng định các ma trận feature của các lượt chạy trùng từng byte.
 
 Các file `.npy` và `.pkl` được giữ local và bỏ qua bởi Git vì tổng kích thước lớn. Sau khi clone, đọc báo cáo/CSV/hình được ngay; muốn chạy notebook phụ thuộc feature, cần chạy các bước trước theo thứ tự để tạo lại cache. Nếu hash không khớp cấu hình đã khóa, dừng để kiểm tra phiên bản thư viện và dữ liệu, không tự ghi đè file khóa để bỏ qua khác biệt.

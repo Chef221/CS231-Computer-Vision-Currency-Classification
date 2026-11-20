@@ -1,0 +1,8 @@
+{
+  "model": "CNN",
+  "description": "Kết quả đã chạy, dùng trong slide cuối của nhóm. Không phải kết quả chạy lại khi dọn code.",
+  "source": "results.zip — bộ CNN Kaggle mới",
+  "code_notes": "Code trình bày lại cho dễ đọc, giữ nguyên các cấu hình và cách xử lý của baseline.",
+  "archive_sha256": "5caa83130a1c34aea3a329b37f1d0113773caa5e7b2f21a0d5af564c00ff6513",
+  "public_figures": "Giữ PNG và trang ví dụ đầu. PDF/trang ảnh bổ sung vẫn ở bản sao lưu local; CSV chứa đầy đủ số liệu."
+}

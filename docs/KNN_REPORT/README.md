@@ -35,6 +35,6 @@ py -3 docs/KNN_REPORT/review/verify_report_224.py
 
 Script tạo hình đọc DATA và các bảng đã có, không fit KNN/PCA hay chạy lại grid. Script kiểm tra đối chiếu các bảng và số liệu với CSV/JSON gốc; hồ sơ nội bộ nằm trong `review/`. Không đưa hồ sơ kiểm tra vào nội dung báo cáo nộp.
 
-Báo cáo công khai lịch sử test đã được xem, giới hạn một split và phạm vi năm biến thể. Việc đồng bộ code SVM/CNN/ResNet chưa được xác minh tại phần KNN này. Chưa commit/push trong bước viết báo cáo.
+Báo cáo công khai lịch sử test đã được xem, giới hạn một split và phạm vi năm biến thể. Phần này ghi lại thực nghiệm KNN; đối chiếu SVM/CNN hiện được lưu trong [hồ sơ chung](../MODEL_FORMAT_REVIEW.md) và [mục lục báo cáo](../README.md). Kết quả ResNet chưa được kiểm tra trong các báo cáo này.
 
 Theo lựa chọn trình bày của tác giả, caption riêng dưới sáu hình và dòng chú thích ở đáy hình HSV đã được bỏ. Nhãn nội bộ trong hình, thang giá trị và phần giải thích khoa học trong thân bài được giữ.

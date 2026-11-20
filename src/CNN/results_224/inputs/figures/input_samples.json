@@ -1,0 +1,17 @@
+{
+  "split": "train",
+  "selection": "first filename in train/10000 and train/500000",
+  "samples": [
+    {
+      "relative_path": "train/10000/10000_000001.png",
+      "label_vnd": 10000,
+      "sha256": "3283191dc4a76e7d6b420de0814d7a3c6793227dc01b64fdca6f5bb38a6d10c0"
+    },
+    {
+      "relative_path": "train/500000/500000_000001.png",
+      "label_vnd": 500000,
+      "sha256": "fa84e156da56bd7c491bc8dd39e25135db249331ffe453b3ffe3f7cb81de6e42"
+    }
+  ],
+  "hsv_hog_role": "SVM input descriptors; for CNN these figures illustrate inputs only, not learned features"
+}

@@ -1,0 +1,146 @@
+{
+  "framework": "tensorflow",
+  "version": 2,
+  "protocol_id": "cnn_tf_pytorch_parity_v2",
+  "classes_vnd": [
+    10000,
+    20000,
+    50000,
+    100000,
+    200000,
+    500000
+  ],
+  "seed": 42,
+  "candidates": [
+    {
+      "candidate_id": "C01_RGB",
+      "color": "rgb",
+      "augmentation": false,
+      "channels": [
+        32,
+        64,
+        128
+      ]
+    },
+    {
+      "candidate_id": "C02_GRAY",
+      "color": "gray",
+      "augmentation": false,
+      "channels": [
+        32,
+        64,
+        128
+      ]
+    },
+    {
+      "candidate_id": "C03_RGB_AUG",
+      "color": "rgb",
+      "augmentation": true,
+      "channels": [
+        32,
+        64,
+        128
+      ]
+    },
+    {
+      "candidate_id": "C04_DEEP_AUG",
+      "color": "rgb",
+      "augmentation": true,
+      "channels": [
+        32,
+        64,
+        128,
+        256
+      ]
+    }
+  ],
+  "training": {
+    "seed": 42,
+    "epochs": 25,
+    "batch_size": 64,
+    "learning_rate": 0.001,
+    "optimizer": "AdamW",
+    "weight_decay": 0.0001,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "epsilon": 1e-08,
+    "gradient_clip_norm": 5.0,
+    "patience": 6,
+    "scheduler": "CosineAnnealingLR_epoch_equivalent",
+    "eta_min": 1e-05,
+    "mixed_precision_on_gpu": true,
+    "evaluation_precision": "float32",
+    "shuffle": "full path permutation per epoch"
+  },
+  "augmentation": {
+    "implementation": "OpenCV original PyTorch pipeline before gray/rescale",
+    "degrees": [
+      -12,
+      12
+    ],
+    "scale": [
+      0.95,
+      1.05
+    ],
+    "translate_fraction": [
+      -0.05,
+      0.05
+    ],
+    "border_fill": [
+      127,
+      127,
+      127
+    ],
+    "contrast": [
+      0.9,
+      1.1
+    ],
+    "brightness_add_fraction": [
+      -0.1,
+      0.1
+    ],
+    "train_only": true
+  },
+  "batch_norm": {
+    "implementation": "TorchBatchNormalization (TensorFlow)",
+    "epsilon": 1e-05,
+    "new_statistics_weight": 0.1,
+    "running_variance": "unbiased",
+    "training_variance": "biased"
+  },
+  "initialization": "Conv untruncated Kaiming normal fan_out; Dense GlorotUniform; biases0",
+  "preprocessing": "OpenCV RGB224 INTER_LINEAR; float32 [0,255]; model Rescaling(1/255)",
+  "selection": "max dev macro_f1; min mae_vnd; candidate order; earliest epoch",
+  "code_sha256": {
+    "src/CNN/224/01_PREPARE_INPUT.ipynb": "a59f764e3a874bdc5ca5e4cc66e0052474a43ebce4a0934641e85fa1173f2d8a",
+    "src/CNN/224/02_TRAIN_RGB.ipynb": "9154c7e8a58c41ce127aaf30d76d1829d6c34661639e8794ed0835799814c724",
+    "src/CNN/224/03_TRAIN_GRAY.ipynb": "0f57d20ec2b00dd8b3652da96386221bf7ecee299ae4f84695ca8cc8171bde55",
+    "src/CNN/224/04_TRAIN_RGB_AUG.ipynb": "84b88b93650cea0db1ae9957d54cd393b67c84823dee22308c3c8222d380ab1b",
+    "src/CNN/224/05_TRAIN_DEEP_AUG.ipynb": "9c80eef1b578472cce86be87b4359db4e193d848a630dec07dde9a6dd35afa0f",
+    "src/CNN/224/06_SELECT_FINAL_CNN.ipynb": "ae33c485d078296c419dd547daef175bb174226611f7e74124a80238fc4e1e1b",
+    "src/CNN/224/07_EVALUATE_TEST.ipynb": "83e08bb0d70b6a81d16cc80e30479649d3daee45962d29295967a88286ec842f",
+    "src/CNN/224/08_ERROR_ANALYSIS.ipynb": "859d2a6fa6234bb624d7b6f2002365fbd3603e638bdb18781ce2ce2006fd896e",
+    "src/CNN/__init__.py": "546a59d274a9073223ab1b509692ce5164b11f3bc3a92a19f32b111837fd2330",
+    "src/CNN/analysis.py": "0ff09d1907c36643a36cd6685c7357c182251b5ccf85733d2e35a2032a86fc65",
+    "src/CNN/build_kaggle_bundle.py": "3e21a163b101e7c669b90c868156d15b5b2453e8a0ff1367d2d1253a082647b4",
+    "src/CNN/data.py": "f3e0e5bc2e5d705f1df40c1630ed981aed4240871f9884390a82c351598d44e3",
+    "src/CNN/model.py": "3c17c4beacc5bc06d030c28ff57e2b0aee3f0ec7df8ac365e08a3a2301262391",
+    "src/CNN/pipeline.py": "da6ed30d353474d218333059ec98fe11b986bda439e36e8d8e0cd62dae751f9b",
+    "src/CNN/runtime.py": "f4885cd05cc9fc63d0c27746835dcf0511f5b42aedf510a9efaa6bac8dba0b74",
+    "src/evaluation/value_metrics.py": "783375c180999515d6862659d9bdf735b5a3675f6a5881afdf3f275cda9ecc3c",
+    "src/experiments/__init__.py": "a88207d22773c9f26875e3353c040715513b7f4d22717dae170b6d613ffbaf99",
+    "src/experiments/build_kaggle_bundle.py": "d8b3a5195e724414ff0d6fba060ad7ec5e7154055cb9f4fd0f379d4ccd7a5c14",
+    "src/experiments/figures.py": "1f452cb0481ef4de0af6aeac8beaf03abf3603ba406aae1d137ede3ddd2dffea",
+    "src/experiments/report.py": "dc41ef267e85b2847debdf0f979b8a7a338ac972c5d4596cc1ea1b0dfb10ea41",
+    "src/experiments/runtime.py": "0185a13d8edd3ca68074390680cd03e4c95ef74c2cc1b9ab19a00d8fe662f8fc",
+    "src/preprocessing.py": "1cbada4dae212889baa6f62b30c68177a5b1f9bb6488d9b7fac8ca26b041d831"
+  },
+  "manifest_sha256": {
+    "train": "df553bde8a2d1bd8c8f2dc9d78fccbfb55411829e54afcf10c4877816d5e9999",
+    "dev": "b09ad96958bc0ac97cf4ee1685488ad3e05b53144c4bb8fff0a43723b5f59a8d"
+  },
+  "expected_full_dataset": true,
+  "test_history": "Previously inspected; not an untouched holdout."
+}
