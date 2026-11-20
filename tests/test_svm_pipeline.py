@@ -70,6 +70,8 @@ class SVMPipelineTests(unittest.TestCase):
             np.save(cache / "y_train.npy", labels[::-1])
             with self.assertRaises(ValueError):
                 load_features(cache, "train")
+            # Release the read-only memmap before Windows removes the temporary directory.
+            del loaded
 
     def test_seven_candidates_choose_by_f1_then_vnd_mae(self):
         train = np.repeat(np.eye(6, dtype=np.float32), 2, axis=0)

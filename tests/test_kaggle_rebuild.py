@@ -108,6 +108,8 @@ class KaggleRebuildTests(unittest.TestCase):
                     for cell in nbformat.read(path, as_version=4).cells:
                         if cell.cell_type == "code":
                             exec(compile(cell.source, str(path), "exec"), scope)
+                    # Each notebook has a fresh scope, just like a separate kernel.
+                    scope.clear()
             self.assertEqual(
                 len(pd.read_csv(results / "selection/all_35_configurations_dev.csv")), 35
             )
